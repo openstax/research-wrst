@@ -1,0 +1,745 @@
+term,base_term,type
+cell,cell,entity
+cells,cell,entity
+celled,cell,entity
+unit,unit,entity
+living,living,event
+bacteria,bacteria,entity
+human,human,entity
+humans,human,entity
+basic,basic,entity
+organisms,organisms,entity
+function form tissues,function form tissue,entity
+tissues,tissue,entity
+tissue,tissue,entity
+form,form,entity
+formed,form,entity
+forms,form,entity
+organ,organ,entity
+organs,organ,entity
+heart,heart,entity
+organ system,organ system,entity
+digestive system,digestive system,entity
+circulatory system,circulatory system,entity
+nervous system,nervous system,entity
+systems,system,entity
+function,function,entity
+functions,function,entity
+structure,structure,entity
+structures,structure,entity
+group,group,entity
+grouped,group,entity
+prokaryotic,Prokaryotic,entity
+eukaryotic,eukaryotic,entity
+animal,animal,entity
+animals,animal,entity
+plant cells,plant cell,entity
+plant cell,plant cell,entity
+eukaryotic cells,eukaryotic cell,entity
+eukaryotic cell,eukaryotic cell,entity
+bacterial cells,bacterial cell,entity
+study,study,entity
+studying,study,entity
+studies,study,entity
+microscopes,microscope,entity
+microscope,microscope,entity
+small,small,entity
+magnifies,magnify,event
+magnify,magnify,event
+micrographs,micrograph,entity
+micrograph,micrograph,entity
+optics,optic,entity
+lenses,lense,entity
+change,change,entity
+changes,change,entity
+changing,change,entity
+side,side,entity
+facing,face,entity
+face,face,entity
+faces,face,entity
+light,light,entity
+lens system,lens system,entity
+binocular,binocular,entity
+dissecting,dissect,event
+work,work,entity
+works,work,entity
+working,work,entity
+magnification system,magnification system,entity
+sense,sense,entity
+human red blood cell,human red blood cell,entity
+micrometers,micrometer,entity
+pin head,pin head,entity
+red blood cells,red blood cell,entity
+student microscopes,student microscope,entity
+light microscopes,light microscope,entity
+light microscope,light microscope,entity
+living organisms,living organisms,entity
+special stains,special stain,entity
+undergraduates,undergraduate,entity
+microscopy,microscopy,entity
+magnification,magnification,event
+power,power,entity
+powers,power,entity
+resolution,resolution,entity
+order,order,entity
+orders,order,entity
+cellular structure,cellular structure,entity
+cellular structures,cellular structure,entity
+electron microscopes,electron microscope,entity
+electron microscope,electron microscope,entity
+binocular lenses,binocular lense,entity
+objective lenses,objective lense,entity
+stage,stage,entity
+objective lens,objective lens,entity
+carried,carry,event
+carry,carry,event
+carries,carry,event
+carrying,carry,event
+center,center,entity
+biology,biology,entity
+nanometers,nanometer,entity
+picometers,picometer,entity
+credit,credit,entity
+modification,modification,event
+modifications,modification,event
+electron,electron,entity
+electrons,electron,entity
+contrast,contrast,entity
+beam,beam,entity
+photons,photon,entity
+scanning electron microscope,scanning electron microscope,entity
+surface,surface,entity
+surfaces,surface,entity
+cell surface,cell surface,entity
+transmission electron microscope,transmission electron microscope,entity
+electron beam,electron beam,entity
+internal structures,internal structure,entity
+salmonella,Salmonella,entity
+scanning electron micrograph,scanning electron micrograph,entity
+human cells,human cell,entity
+complex,complex,entity
+salmonella bacteria,Salmonella bacteria,entity
+scanning electron microscope micrograph,scanning electron microscope micrograph,entity
+red,red,entity
+cdc,CDC,entity
+forces,force,entity
+force,force,entity
+niaid,niaid,entity
+scale-bar,scale-bar,entity
+link,LINK,entity
+movements,movement,event
+movement,movement,event
+single,single,entity
+animalcules,animalcule,entity
+cork tissue,cork tissue,entity
+lens,lens,entity
+protozoa,protozoa,entity
+staining,stain,entity
+stains,stain,entity
+cell theory,cell theory,entity
+basic unit,basic unit,entity
+life,life,entity
+lives,life,entity
+theory,theory,entity
+career,career,entity
+careers,career,entity
+test,test,entity
+tests,test,entity
+smear,smear,entity
+uterine cervix,uterine cervix,entity
+cytotechnologist,cytotechnologist,entity
+cervical,cervical,entity
+microbial infection,microbial infection,entity
+cyto,cyto,entity
+examinations,examination,entity
+examination,examination,entity
+cellular changes,cellular change,entity
+normal limits,normal limit,entity
+focus,focus,entity
+limited,limit,entity
+cervical cells,cervical cell,entity
+cellular,cellular,entity
+disease,disease,entity
+diseases,disease,entity
+body tissue,body tissue,entity
+cause,cause,event
+causes,cause,event
+causing,cause,event
+vital,vital,entity
+normal cells,normal cell,entity
+infected,infect,event
+hpv,hpv,entity
+nucleus,nucleus,entity
+uninfected cells,uninfected cell,entity
+uterine cervix cells,uterine cervix cell,entity
+human papillomavirus,human papillomavirus,entity
+normal number,normal number,entity
+section,section,entity
+sections,section,entity
+following,follow,event
+follows,follow,event
+follow,follow,event
+organisms bacteria,organisms bacteria,entity
+archaea,Archaea,entity
+prokaryotes,prokaryote,entity
+prokaryote,prokaryote,entity
+animal cells,animal cell,entity
+animal cell,animal cell,entity
+animals cells,animal cell,entity
+plants,plant,entity
+plant,plant,entity
+protists,protist,entity
+eukaryotes,eukaryote,entity
+true,true,entity
+plasma membrane,plasma membrane,entity
+plasma membranes,plasma membrane,entity
+outer,outer,entity
+cytoplasm,cytoplasm,entity
+cytosol,cytosol,entity
+dna,dna,entity
+genetic,genetic,entity
+ribosomes,Ribosomes,entity
+proteins,protein,entity
+protein,protein,entity
+membrane-bound organelle,membrane-bound organelle,entity
+prokaryotic dna,Prokaryotic dna,entity
+central,central,entity
+nucleoid,nucleoid,entity
+prokaryotic cell,Prokaryotic cell,entity
+prokaryotic cells,Prokaryotic cell,entity
+circular chromosome,circular chromosome,entity
+concentrated,concentrate,event
+region,region,entity
+capsule,capsule,entity
+flagellum,flagellum,entity
+small protrusions,small protrusion,entity
+project,project,entity
+generalized,generalize,event
+chromosomal dna,chromosomal dna,entity
+cell membrane,cell membrane,entity
+cell membranes,cell membrane,entity
+peptidoglycan cell,peptidoglycan cell,entity
+polysaccharide capsule,polysaccharide capsule,entity
+dehydration,dehydration,event
+flagella,flagella,entity
+fimbriae,fimbriae,entity
+locomotion,locomotion,entity
+conjugation,conjugation,event
+contact,contact,entity
+host cell,host cell,entity
+host cells,host cell,entity
+contagious,contagious,entity
+microbes,microbe,entity
+doorknobs,doorknob,entity
+doorknob,doorknob,entity
+sneezer,sneezer,entity
+mucus,mucus,entity
+body,body,entity
+bodies,body,entity
+microorganisms,microorganism,entity
+vitamin,vitamin,entity
+microbiologists,microbiologist,entity
+number,number,entity
+development,development,event
+bacterial infections,bacterial infection,entity
+hazardous elements,hazardous element,entity
+microbes bioremediation,microbe bioremediation,event
+specificity,specificity,entity
+models,model,entity
+bacterial,bacterial,entity
+ions,ion,entity
+organic molecules,organic molecule,entity
+structural,structural,entity
+intracellular transport,intracellular transport,entity
+logarithmic scale,logarithmic scale,entity
+atom,atom,entity
+atoms,atom,entity
+lipids,lipid,entity
+molecules,molecule,entity
+molecule,molecule,entity
+mitochondria,mitochondria,entity
+greek,greek,entity
+ostrich,ostrich,entity
+volume,volume,entity
+divide,divide,event
+divides,divide,event
+organelles,organelle,entity
+organelle,organelle,entity
+visual,visual,entity
+small cell,small cell,entity
+plasma,plasma,entity
+major cell,major cell,entity
+philosophy,philosophy,entity
+activities,activity,entity
+emergency room,emergency room,entity
+cell biology,cell biology,entity
+membrane,membrane,entity
+membranes,membrane,entity
+bound,bound,entity
+endoplasmic reticulum,endoplasmic reticulum,entity
+golgi apparatus,Golgi apparatus,entity
+chloroplasts,chloroplast,entity
+chloroplast,chloroplast,entity
+chromosomes,chromosome,entity
+chromosome,chromosome,entity
+true nucleus,true nucleus,entity
+cellular functions,cellular function,entity
+complex structure,complex structure,entity
+eukaryotic animal cell,eukaryotic animal cell,entity
+chromatin,chromatin,entity
+associated,associate,event
+nucleolus,Nucleolus,entity
+nuclear envelope,nuclear envelope,entity
+lined,line,event
+line,line,event
+lines,line,event
+pores,pore,entity
+pore,pore,entity
+rough,Rough,entity
+smooth endoplasmic reticulum,Smooth endoplasmic reticulum,entity
+smooth,Smooth,entity
+lipid synthesis,lipid synthesis,event
+secretory proteins,secretory protein,entity
+flat membranes,flat membrane,entity
+outer membrane,outer membrane,entity
+outer membranes,outer membrane,entity
+inner membrane,inner membrane,entity
+inner membranes,inner membrane,entity
+peroxisomes,peroxisomes,entity
+lysosomes,lysosome,entity
+lysosome,lysosome,entity
+vacuoles,vacuole,entity
+vacuole,vacuole,entity
+protein synthesis,protein synthesis,event
+cytoskeleton,cytoskeleton,entity
+cytoskeletons,cytoskeleton,entity
+microfilaments,microfilament,entity
+intermediate filaments,Intermediate filament,event
+microtubules,microtubule,entity
+microtubule,microtubule,entity
+centrosomes,centrosome,entity
+cellular cortex,cellular cortex,entity
+mitotic spindle,mitotic spindle,entity
+centrosome,Centrosome,entity
+microtubule-organizing center,microtubule-organizing center,entity
+eukaryotic plant cell,eukaryotic plant cell,entity
+cytoskeletal,cytoskeletal,entity
+plastids,plastid,entity
+central vacuole,central vacuole,entity
+central vacuoles,central vacuole,entity
+photosynthesis,photosynthesis,event
+stack,stack,entity
+stacked,stack,entity
+stacks,stack,entity
+pressure,pressure,entity
+plastids store pigments,plastid store pigment,entity
+major organelles,major organelle,entity
+cellular organelles,cellular organelle,entity
+phospholipid bilayer,phospholipid bilayer,entity
+phospholipid bilayers,phospholipid bilayer,entity
+internal contents,internal content,entity
+phospholipid,phospholipid,entity
+phospholipids,phospholipid,entity
+lipid molecule,lipid molecule,entity
+fatty acid chains,fatty acid chain,entity
+phosphate,phosphate,entity
+bilayer,bilayer,entity
+hydrophobic,hydrophobic,entity
+hydrophilic head group,hydrophilic head group,entity
+integral membrane proteins,integral membrane protein,entity
+integral membrane protein,integral membrane protein,entity
+protein channels,protein channel,entity
+peripheral membrane proteins,peripheral membrane protein,entity
+peripheral membrane protein,peripheral membrane protein,entity
+phospholipid head groups,phospholipid head group,entity
+carbohydrates,carbohydrate,entity
+carbohydrate,carbohydrate,entity
+filaments,filament,event
+eukaryotic plasma membrane,eukaryotic plasma membrane,entity
+cholesterol,cholesterol,entity
+absorption,absorption,event
+microvilli,microvilli,entity
+microvillus,microvillus,entity
+small intestine,small intestine,entity
+nutrients,nutrient,entity
+celiac disease,celiac disease,entity
+immune response,immune response,entity
+gluten,gluten,entity
+barley,barley,entity
+malnutrition,malnutrition,event
+gluten-free diet,gluten-free diet,entity
+transmission electron micrograph,transmission electron micrograph,entity
+chemicals,chemical,entity
+glucose,glucose,entity
+sugars,sugar,entity
+polysaccharides,polysaccharide,entity
+polysaccharide,polysaccharide,entity
+amino acids,amino acid,entity
+nucleic acids,nucleic acid,entity
+fatty acids,fatty acid,entity
+elements,element,entity
+metabolic reactions,metabolic reaction,entity
+synthesis,synthesis,event
+circular,circular,entity
+gaps,gap,entity
+gap,gap,entity
+nuclear pores,nuclear pore,entity
+nuclear pore,nuclear pore,entity
+nucleus stores chromatin,nucleus store chromatin,entity
+nucleoplasm,nucleoplasm,entity
+chromatin region,chromatin region,entity
+ribosome synthesis,ribosome synthesis,event
+boundary,boundary,entity
+nuclear membrane,nuclear membrane,entity
+nuclear,nuclear,entity
+double-membrane structure,double-membrane structure,entity
+inner,inner,entity
+rna,RNA,entity
+single circular chromosome,single circular chromosome,entity
+linear structures,linear structure,entity
+chromosome number,chromosome number,entity
+fruit,fruit,entity
+growth,growth,entity
+protein-chromosome complexes chromatin,protein-chromosome complex chromatin,entity
+decondensed,decondense,entity
+histones,histone,entity
+paired,pair,event
+pair,pair,event
+tubes,tube,entity
+tube,tube,entity
+ribosomal rna,ribosomal RNA,entity
+nucleoli,nucleoli,entity
+aggregates,aggregate,entity
+ribosomal subunits,ribosomal subunit,entity
+transported,transport,entity
+transport,transport,entity
+transporting,transport,entity
+polyribosomes,polyribosome,entity
+cytoplasmic side,cytoplasmic side,entity
+electron microscopy,electron microscopy,entity
+rna complexes,RNA complex,entity
+subunits,subunit,entity
+subunit,subunit,entity
+messenger rna,messenger RNA,entity
+mrna,mRNA,entity
+nitrogenous bases,nitrogenous basis,entity
+ribosome,ribosome,entity
+small subunit,small subunit,entity
+small subunits,small subunit,entity
+chain,chain,entity
+protein chain,protein chain,entity
+enzymes,enzyme,entity
+enzyme,enzyme,entity
+hormones,hormone,entity
+pigments,pigment,entity
+pigment,pigment,entity
+surface receptors,surface receptor,entity
+digestive enzymes,digestive enzyme,entity
+mitochondrion,mitochondrion,entity
+powerhouses,powerhouse,entity
+energy,energy,entity
+triphosphate,triphosphate,entity
+atp,atp,entity
+energy-carrying molecule,energy-carry molecule,entity
+stored,store,event
+storing,store,event
+cellular respiration,cellular respiration,event
+chemical energy,chemical energy,entity
+cellular reactions,cellular reaction,entity
+byproduct,byproduct,entity
+muscle cells,muscle cell,entity
+concentration,concentration,event
+lactic acid,lactic acid,entity
+double membrane organelles,double membrane organelle,entity
+cristae,cristae,entity
+mitochondrial matrix,mitochondrial matrix,entity
+matrix,matrix,entity
+space,space,entity
+electron micrograph,electron micrograph,entity
+intermembrane space,intermembrane space,entity
+atp synthesis,atp synthesis,event
+single membranes,single membrane,entity
+oxidation reactions,oxidation reaction,entity
+peroxide,peroxide,entity
+reactions,reaction,entity
+liver cells,liver cell,entity
+fats,fat,entity
+pathogene defense,pathogene defense,entity
+stress response,stress response,entity
+vesicles,vesicle,entity
+vesicle,vesicle,entity
+sacs,sac,entity
+vesicle membranes,vesicle membrane,entity
+fuse,fuse,entity
+fuses,fuse,entity
+fused,fuse,entity
+membrane systems,membrane system,entity
+plant vacuoles,plant vacuole,entity
+macromolecules,macromolecule,entity
+microtubule organizing centers,microtubule organizing center,entity
+mtocs,mtoc,entity
+mtoc,mtoc,entity
+centrioles,centriole,entity
+centriole,centriole,entity
+triplets,triplet,entity
+microtubule triplet,microtubule triplet,entity
+microtubule triplets,microtubule triplet,entity
+centriole tube,centriole tube,entity
+nontubulin proteins,nontubulin protein,entity
+dividing cell,divide cell,entity
+exact function,exact function,entity
+cell division,cell division,event
+digestive,digestive,entity
+acidic,acidic,entity
+plant cell diagram,plant cell diagram,entity
+structure external,structure external,entity
+fungal,fungal,entity
+protistan cells,protistan cell,entity
+peptidoglycan,peptidoglycan,entity
+major organic molecule,major organic molecule,entity
+cellulose,cellulose,entity
+glucose units,glucose unit,entity
+celery,celery,entity
+celery cells,celery cell,entity
+glucose subunits,glucose subunit,entity
+glucose subunit,glucose subunit,entity
+cellulose fiber,cellulose fiber,entity
+linkage,linkage,entity
+cellulose molecule,cellulose molecule,entity
+plant cell organelles,plant cell organelle,entity
+light energy,light energy,entity
+major,major,entity
+autotrophs,autotroph,entity
+heterotrophs,heterotroph,entity
+membrane sacs,membrane sac,entity
+thylakoids,thylakoid,entity
+thylakoid stack,thylakoid stack,entity
+granum,granum,entity
+grana,grana,entity
+stroma,stroma,entity
+flat,flat,entity
+liquid,liquid,entity
+thylakoid space,thylakoid space,entity
+membrane structures-thylakoids,membrane structure-thylakoid,entity
+thylakoid membranes,thylakoid membrane,entity
+sugar synthesis,sugar synthesis,event
+chlorophyll,chlorophyll,entity
+endosymbiosis,endosymbiosis,event
+endo,endo,entity
+endosymbiotic,endosymbiotic,entity
+intestine,intestine,entity
+aerobic,aerobic,entity
+autotrophic bacteria,autotrophic bacteria,entity
+cyanobacteria,cyanobacteria,entity
+aerobic bacteria,aerobic bacteria,entity
+endomembrane,endomembrane,entity
+endomembrane system,endomembrane system,entity
+transport lipids,transport lipid,entity
+endomembranous organelles,endomembranous organelle,entity
+chloroplast membranes,chloroplast membrane,entity
+cisternae,cisternae,entity
+trans face,tran face,entity
+golgi,Golgi,entity
+vesicle fuses,vesicle fuse,entity
+contents,content,entity
+rough endoplasmic reticulum,Rough endoplasmic reticulum,entity
+rer,RER,entity
+integral protein bud,integral protein bud,entity
+buds,bud,entity
+bud,bud,entity
+integral,integral,entity
+magnus,Magnus,entity
+lumen,lume,entity
+endoplasmic,endoplasmic,entity
+tubules,tubule,entity
+hollow,hollow,entity
+cisternal space,cisternal space,entity
+cytoplasmic surface,cytoplasmic surface,entity
+pancreatic cell,pancreatic cell,entity
+structural modifications,structural modification,event
+side chains,side chain,entity
+cellular membranes—,cellular membranes—,entity
+protein hormones,protein hormone,entity
+cellular membranes,cellular membrane,entity
+transport vesicles,transport vesicle,entity
+ser,ser,entity
+ser functions,ser function,entity
+steroid hormones,steroid hormone,entity
+detoxification,detoxification,event
+sarcoplasmic reticulum,sarcoplasmic reticulum,entity
+heart disease,heart disease,entity
+heart diseases,heart disease,entity
+trans-fat diets,tran-fat diet,entity
+blood,blood,entity
+vital organs,vital organ,entity
+kidney,kidney,entity
+kidneys,kidney,entity
+cardiac muscle tissue,cardiac muscle tissue,entity
+cardiac muscle,cardiac muscle,entity
+endoplasmic reticula,endoplasmic reticula,entity
+contractile force,contractile force,entity
+ecg,ECG,entity
+electrical activity,electrical activity,entity
+intake,intake,entity
+golgi body,Golgi body,entity
+white blood cell,white blood cell,entity
+white blood cells,white blood cell,entity
+sugar molecule chains,sugar molecule chain,entity
+phosphate groups,phosphate group,entity
+small molecules,small molecule,entity
+secretory vesicles,secretory vesicle,entity
+secretory activity,secretory activity,entity
+salivary gland cells,salivary gland cell,entity
+immune system cells,immune system cell,entity
+genetic mutations,genetic mutation,event
+critical proteins,critical protein,entity
+lowe disease,Lowe disease,entity
+oculocerebrorenal syndrome,oculocerebrorenal syndrome,entity
+cataracts,cataract,entity
+kidney disease,kidney disease,entity
+mutation,mutation,event
+human sex chromosomes,human sex chromosome,entity
+sex,sex,entity
+genes,gene,entity
+gene,gene,entity
+lowe disease gene,Lowe disease gene,entity
+symptoms,symptom,entity
+mutated,mutate,event
+genetic diseases,genetic disease,entity
+prenatal,prenatal,entity
+fetus,fetus,entity
+prenatal genetic test,prenatal genetic test,entity
+hydrolytic enzymes,hydrolytic enzyme,entity
+pathogens,pathogen,entity
+pathogen,pathogen,entity
+macrophages,macrophage,entity
+macrophage,macrophage,entity
+immune system,immune system,entity
+phagocytosis,phagocytosis,event
+endocytosis,endocytosis,event
+cilia,cilia,entity
+protein fibers,protein fiber,entity
+positions,position,entity
+positioned,position,entity
+fibers,fiber,entity
+cortex,cortex,entity
+tension,tension,event
+compressive forces,compressive force,entity
+cellular movement,cellular movement,event
+globular protein,globular protein,entity
+globular proteins,globular protein,entity
+strands,strand,entity
+actin,actin,entity
+microfilaments actin filaments,microfilament actin filament,event
+actin filaments,actin filament,event
+actin filament,actin filament,event
+actin subunits,actin subunit,entity
+actin strands,actin strand,entity
+myosin,myosin,entity
+cellular events,cellular event,entity
+cytoplasmic streaming,cytoplasmic stream,event
+cell cytoplasm,cell cytoplasm,entity
+circular movement,circular movement,event
+myosin filaments,myosin filament,event
+muscles,muscle,entity
+muscle,muscle,entity
+rigidity,rigidity,entity
+depolymerize,depolymerize,entity
+disassemble,disassemble,event
+infection,infection,entity
+fighting,fighting,event
+intermediate,Intermediate,entity
+cytoskeleton elements,cytoskeleton element,entity
+intermediate filament fibers,Intermediate filament fiber,entity
+cell movement,cell movement,event
+anchor,anchor,entity
+cytoskeletal elements,cytoskeletal element,entity
+keratin,keratin,entity
+epidermis,epidermis,entity
+small hollow tubes,small hollow tube,entity
+molecular model,molecular model,entity
+hollow tube,hollow tube,entity
+tubulin structure,tubulin structure,entity
+molecular structure,molecular structure,entity
+structural elements,structural element,entity
+cilium,cilium,entity
+paramecia,paramecia,entity
+outer surface,outer surface,entity
+ovum,ovum,entity
+uterus,uterus,entity
+particulate matter,particulate matter,entity
+length,length,entity
+single flagellum,single flagellum,entity
+microtubule doublets,microtubule doublet,entity
+microtubule doublet,microtubule doublet,entity
+single microtubule doublet,single microtubule doublet,entity
+extracellular,extracellular,entity
+tight junctions,tight junction,entity
+tight junction,tight junction,entity
+desmosomes,desmosome,entity
+desmosome,desmosome,entity
+gap junctions,gap junction,entity
+gap junction,gap junction,entity
+group project,group project,entity
+extracellular matrix,extracellular matrix,entity
+extracellular space,extracellular space,entity
+collagen,collage,entity
+collagen fibers,collage fiber,entity
+proteoglycans,proteoglycan,entity
+protein molecules,protein molecule,entity
+integrins,integrin,entity
+fibronectin,fibronectin,entity
+proteoglycan complexes,proteoglycan complex,entity
+proteoglycan complex,proteoglycan complex,entity
+polysaccharide core,polysaccharide core,entity
+core,core,entity
+cytoplasmic membrane,cytoplasmic membrane,entity
+protein receptors,protein receptor,entity
+protein receptor,protein receptor,entity
+extracellular surfaces,extracellular surface,entity
+receptor,receptor,entity
+chemical signals,chemical signal,entity
+dna sections,dna section,entity
+blood clotting,blood clotting,event
+cell communication,cell communication,event
+blood vessel,blood vessel,entity
+tissue factor,tissue factor,entity
+factor,factor,entity
+platelets,platelet,entity
+smooth muscle cells,Smooth muscle cell,entity
+clotting factors,clotting factor,entity
+intercellular,intercellular,entity
+intercellular junctions,intercellular junction,entity
+fungal cells,fungal cell,entity
+plasmodesmata,Plasmodesmata,entity
+junctions,junction,entity
+animal cell contacts,animal cell contact,entity
+vascular tissues,vascular tissue,entity
+xylem,xylem,entity
+phloem,phloem,entity
+plasmodesma,plasmodesma,entity
+channels,channel,entity
+channel,channel,entity
+plant cells side,plant cell side,entity
+tight,tight,entity
+claudins,claudin,entity
+occludins,occludin,entity
+connections,connection,entity
+tight junction adherence,tight junction adherence,entity
+tight adherence,tight adherence,entity
+epithelial tissues,epithelial tissue,entity
+internal organs,internal organ,entity
+epithelial cells,epithelial cell,entity
+urinary bladder,urinary bladder,entity
+spot welds,spot weld,entity
+spot weld,spot weld,entity
+cadherins,Cadherins,entity
+protein pores,protein pore,entity
+connexins,connexin,entity
+donut,donut,entity
+connexon,connexon,entity
+doughnut holes,doughnut hole,entity
+cells forms,cell form,entity
+electrical signal,electrical signal,entity
+heart muscle cells,heart muscle cell,entity
+virtual microscopy,virtual microscopy,entity

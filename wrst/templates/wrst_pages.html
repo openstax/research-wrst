@@ -1,0 +1,149 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">OpenStax</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user_email }} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{ url_for('user_routes.edit_user')}}">Edit Profile</a></li>
+            <li><a href="{{ url_for('user_routes.logout')}}">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Total Time on Task: {{ time_on_task_str }}</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- FLEX GRID MARKERS FOR LAYOUT DEBUGGING!
+<div class="row">
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+  <div class="col-md-1">.col-md-1</div>
+</div>
+<div class="row">
+  <div class="col-md-8">.col-md-8</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+</div>
+<div class="row">
+  <div class="col-md-6">.col-md-6</div>
+  <div class="col-md-6">.col-md-6</div>
+</div>
+-->
+
+  <div class="row">
+  <div class="col-md-5" style="border-right: 2px solid black; padding-left: -20px; padding-top: 10px; height: 350px">
+      {{ textbook_content }}
+
+      <br>
+
+      <a href="{{ content_url }}" target="_blank">Click here for the full content (will open a new tab)</a>
+
+      <br><br><br>
+          {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <h2 style="color: red">{{ message }}</h2>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <br>
+  {% if next_arrow %}
+    <a href="{{ next_link }}">
+     <img src="static/images/next_screen.png" width="200" />
+    </a>
+  {% endif %}
+
+  </div>
+  <div class="col-md-7 align-self-center" style="padding-left: -10px; padding-top: 10px">
+      <div class="row">
+
+          <h3> {{question_text}} </h3>
+
+      </div>
+      <div class="row">
+          <div class="col-md-4", style="padding-top: {{term_padding}}px;">
+              <p class="text-center" style="font-size:18px;">{{ term_1 }}</p>
+          </div>
+          <div class="col-md-4">
+          <form action="" method="post" class="form" role="form">
+            {{ form.csrf_token() }}
+
+              {% if form.type=="relationship" %}
+                {{ wtf.form_field(form.flip_relationship, title="Change the term order as needed for things to make sense", data_toggle="tooltip", class='btn btn-warning btn-block') }}
+                <br>
+              {% endif %}
+
+              {% if form.type=="submit" %}
+                {{ wtf.form_field(form.submit, data_toggle="tooltip", class='btn btn-warning btn-block') }}
+                <br>
+              {% endif %}
+
+
+              {% if form.type!="submit" %}
+                {#% for key in button_keys %#}
+                {% for ii in range(button_keys|length) %}
+                {{ wtf.form_field(form[button_keys[ii]], data_toggle="tooltip", title=hovertext[ii], data_placement="right", class='btn btn-primary btn-block') }}
+                {% endfor %}
+              {% endif %}
+
+              {% if form.type!="family" %}
+                  <br>
+                {{ wtf.form_field(form.go_back_button, class='btn btn-warning btn-block') }}
+                <br>
+              {% endif %}
+
+          </form>
+
+          </div>
+          <div class="col-md-4", style="padding-top: {{term_padding}}px;">
+              <p class="text-center" style="font-size:18px;">{{ term_2 }}</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+    {{super()}}
+    <script>
+    $('[data-toggle="tooltip"]').tooltip();
+</script>
+{% endblock %}
+
