@@ -95,6 +95,10 @@ def login_ed():
             # Need to create the user so redirect there
             return redirect(url_for('user_routes.create_user'))
 
+@user_routes.route('/stupid', methods=['GET', 'POST'])
+def stupid():
+    return "stupid"
+
 
 # TODO: Assign cohort based on current number of participants
 @user_routes.route('/create_user', methods=['GET', 'POST'])
