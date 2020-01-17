@@ -3,7 +3,7 @@ import logging.config
 import os
 from flask import Flask, Blueprint, session
 from flask_session import Session
-# from redis import Redis
+import redis
 from wrst import settings
 from wrst.routes.wrst_routes import wrst_routes
 from wrst.routes.instruction_routes import instruction_routes
@@ -17,12 +17,12 @@ from wrst.database.models import User, Relationship
 def configure_app(flask_app):
     flask_app.config.from_object(os.environ['APP_SETTINGS']) #SESSION_TYPE 'redis' set here
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = settings.SQLALCHEMY_TRACK_MODIFICATIONS
-    # flask_app.config['SESSION_REDIS'] = Redis(os.environ['REDIS_URL'])
+    flask_app.config['SESSION_REDIS'] = redis.from_url(os.environ['REDIS_URL'])
 
 def initialize_app(flask_app):
     configure_app(flask_app)
     Bootstrap(flask_app)
-    # Session(flask_app)
+    Session(flask_app)
     flask_app.register_blueprint(wrst_routes)
     flask_app.register_blueprint(instruction_routes)
     flask_app.register_blueprint(reading_routes)

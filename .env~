@@ -1,4 +1,5 @@
 source env/bin/activate
 export APP_SETTINGS="config.DevelopmentConfig"
 export DATABASE_URL="postgresql://localhost/wrst"
+export REDIS_URL="localhost"
 export TEST_DATABASE_URL="postgresql://localhost/wrst"
