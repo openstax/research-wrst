@@ -45,12 +45,12 @@ class ComponentForm(FlaskForm):
     type = "relationship"
     button_dict = {'submit0': 'contains',
                    'submit1': 'contains several',
-                   'submit2': 'has attribute',
+                   'submit2': 'has material',
                    'submit3': 'I am not sure'}
     button_keys = list(button_dict.keys())
     hovertext = ["Ex: 'Table' contains 'leg'",
                  "Ex: 'Mouth contains several teeth",
-                 "Ex: 'Table' has attribute 'wooden'",
+                 "Ex: 'Table' has material 'wood'",
                  ""]
     submit0 = SubmitField(label=button_dict['submit0'])
     submit1 = SubmitField(label=button_dict['submit1'])

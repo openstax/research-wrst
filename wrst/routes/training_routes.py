@@ -46,7 +46,10 @@ def training_2():
     content_items = [
         "These relationships describe how types of one thing relate to other things",
     ]
-    images = ['type_of.png', 'instance_of.png']
+    images = [
+              ['type_of.png', 'Type relationships relationships define subclasses of an entity'],
+              ['instance_of.png', 'Instance relationship define specific occurences of a entity']
+             ]
 
     if not form.validate_on_submit():
 
@@ -70,7 +73,10 @@ def training_3():
     content_items = [
         "These relationships describe how some things are made of up other things",
     ]
-    images = ['contains.png', 'has_part.png']
+    images = [
+        ['contains.png', 'Contains denotes that an entity contains some other entity'],
+        ['has_part.png', 'Material relationships denote when an underlying material makes up an entity']
+    ]
 
     if not form.validate_on_submit():
 
@@ -94,7 +100,11 @@ def training_4():
     content_items = [
         "These relationships describe how things are located around other things",
     ]
-    images = ['resides_against.png', 'is_above.png', 'is_inside.png']
+    images = [
+        ['resides_against.png', 'For entities that are next to each other'],
+        ['is_above.png', 'An entity resides above another entity'],
+        ['is_inside.png', 'An entity resides inside another entity']
+    ]
 
     if not form.validate_on_submit():
 
@@ -118,7 +128,10 @@ def training_5():
     content_items = [
         "These relationships describe how things interact or how some things cause other things to happen",
     ]
-    images = ['has_function.png', 'facilitates.png']
+    images = [
+        ['has_function.png', 'The function of one entity is some event (A hammer nails things)'],
+        ['facilitates.png', 'An entity facilitates some function (the hammerhead facilitates the nailing)']
+    ]
 
     if not form.validate_on_submit():
 
