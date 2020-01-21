@@ -2,9 +2,23 @@ from flask import Blueprint, render_template, abort, flash, request, Markup, red
 from wrst.database import db
 from wrst.database.models import User, Relationship
 import time
-from wrst.forms.wrst_forms import FamilyForm, TaxonomyForm, ComponentForm, SpatialForm, FunctionalForm, FinalSubmitForm
+from wrst.forms.wrst_forms import (
+    FamilyForm,
+    AllFamilyForm,
+    EntityEntityForm,
+    EntityEventForm,
+    EventEventForm,
+    TaxonomyForm,
+    ComponentForm,
+    SpatialForm,
+    FunctionalForm,
+    CausalForm,
+    ParticipantForm,
+    EventStructureForm,
+    FinalSubmitForm
+)
 from wrst.logic.decorators import login_required
-from wrst.logic.task_selection import get_text_dynamic
+from wrst.logic.task_selection import get_text_dynamic, get_next_form_by_ref, get_form_by_name
 import numpy as np
 
 wrst_routes = Blueprint('wrst_routes', __name__)
@@ -51,7 +65,10 @@ def make_time_str(t):
 def get_new_task():
 
     # Get the next task details
-    paragraph_id, term_1, term_2, content, question_text, content_url = get_text_dynamic()
+    paragraph_id, term_1, term_2, family_form_name, content, question_text, content_url = get_text_dynamic()
+
+    print("In GNT")
+    print(family_form_name)
 
     # Reset the timing session variables
     session['family_time_on_task'] = 0
@@ -80,6 +97,7 @@ def get_new_task():
                                 question_text=question_text,
                                 term_1=term_1,
                                 term_2=term_2,
+                                family_form_name=family_form_name,
                                 user_email=session['email_address'],
                                 content_url=content_url
                                 )
@@ -93,12 +111,14 @@ def do_wrst_family():
     paragraph_id = request.args["paragraph_id"]
     term_1 = request.args["term_1"]
     term_2 = request.args["term_2"]
+    family_form_name = request.args["family_form_name"]
     content = Markup(request.args["content"])
     question_text = request.args["question_text"]
     content_url = request.args["content_url"]
 
     # Load the form
-    form = FamilyForm(request.form)
+    form = get_form_by_name(family_form_name)
+    # form = FamilyForm(request.form)  # Old default
 
 
     if not form.validate_on_submit():
@@ -118,29 +138,36 @@ def do_wrst_family():
                                time_on_task_str=session['total_time_on_task'],
                                content_url=content_url)
     if request.method == 'POST':
-        if form.submit0.data:
-            return_text = "Taxonomic"
-        elif form.submit1.data:
-            return_text = "Component"
-        elif form.submit2.data:
-            return_text = "Spatial"
-        elif form.submit3.data:
-            return_text = "Functional"
-        elif form.submit4.data:
-            return_text = "No direct relationship"
-        elif form.submit5.data:
-            return_text = "I don't know"
-        else:
-            return_text = "We should never see this!"
+
+        # Test out the form stuff:
+        return_text = get_next_form_by_ref(form)
+        print("OUTPUT: {}".format(return_text))
+
+        # if form.submit0.data:
+#        if getattr(form, 'submit0').data:
+#            return_text = "Taxonomic"
+#        elif form.submit1.data:
+#            return_text = "Component"
+#        elif form.submit2.data:
+#            return_text = "Spatial"
+#        elif form.submit3.data:
+#            return_text = "Functional"
+#        elif form.submit4.data:
+#            return_text = "No direct relationship"
+#        elif form.submit5.data:
+#            return_text = "I don't know"
+#        else:
+#            return_text = "We should never see this!"
 
         # Update the family selection time-on-task
         session["family_time_on_task"] += (time.time() - session["last_family_start_time"])
         print(session["family_time_on_task"])
 
         # Route to the relationship selection task if a suitable option was chosen
-        if return_text not in ["I don't know", "No direct relationship"]:
+        if return_text not in ["no_relationship", "dont_know"]:
             return redirect(url_for('wrst_routes.do_wrst_relationship',
                                     form_title=return_text,
+                                    family_form_name=family_form_name,
                                     paragraph_id=paragraph_id,
                                     content=content,
                                     question_text=question_text,
@@ -172,6 +199,7 @@ def do_wrst_relationship():
 
     # Unpack the data from the family form
     form_title = request.args["form_title"]
+    family_form_name = request.args["family_form_name"]
     paragraph_id = request.args["paragraph_id"]
     family_category = form_title
     content = Markup(request.args["content"])
@@ -180,17 +208,17 @@ def do_wrst_relationship():
     term_2 = request.args["term_2"]
     content_url = request.args["content_url"]
 
-    form = None
-    if form_title == "Taxonomic":
-        form = TaxonomyForm(request.form)
-    elif form_title == "Component":
-        form = ComponentForm(request.form)
-    elif form_title == "Spatial":
-        form = SpatialForm(request.form)
-    elif form_title == "Functional":
-        form = FunctionalForm(request.form)
-    else:
-        return "Rut roh . . ."
+    form = get_form_by_name(form_title)
+    #if form_title == "Taxonomic":
+    #    form = TaxonomyForm(request.form)
+    #elif form_title == "Component":
+    #    form = ComponentForm(request.form)
+    #elif form_title == "Spatial":
+    #    form = SpatialForm(request.form)
+    #elif form_title == "Functional":
+    #    form = FunctionalForm(request.form)
+    #else:
+    #    return "Rut roh . . ."
 
     # Calculate the padding on the terms
     # Number of (buttons + 2) x some height
@@ -224,6 +252,7 @@ def do_wrst_relationship():
             # Just re-render the template with the terms inverted
             return redirect(url_for('wrst_routes.do_wrst_relationship',
                                     form_title=form_title,
+                                    family_form_name=family_form_name,
                                     paragraph_id=paragraph_id,
                                     content=content,
                                     question_text=question_text,
@@ -239,6 +268,7 @@ def do_wrst_relationship():
                                     question_text=question_text,
                                     term_1=term_1,
                                     term_2=term_2,
+                                    family_form_name=family_form_name,
                                     user_email=session['email_address'],
                                     content_url=content_url
                                     )
@@ -256,6 +286,7 @@ def do_wrst_relationship():
                                     question_text=question_text,
                                     term_1=term_1,
                                     term_2=term_2,
+                                    family_form_name=family_form_name,
                                     family_category=family_category,
                                     relationship=relationship,
                                     user_email=session['email_address'],
@@ -275,6 +306,7 @@ def submission():
     content = Markup(request.args["content"])
     term_1 = request.args["term_1"]
     term_2 = request.args["term_2"]
+    family_form_name = request.args["family_form_name"]
     family_category = request.args["family_category"]
     relationship = request.args["relationship"]
     question_text = request.args["question_text"]
@@ -311,6 +343,7 @@ def submission():
                                     question_text=question_text,
                                     term_1=term_1,
                                     term_2=term_2,
+                                    family_form_name=family_form_name,
                                     user_email=session['email_address'],
                                     content_url=content_url
                                     )

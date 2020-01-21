@@ -4,12 +4,42 @@
 # We keep track of how many times tasks have been assigned and completed
 # We try to keep a user within a piece of content until they have exhausted it (probably)
 
-from flask import session, Markup
+from flask import session, Markup, request
 from wrst.database import db
 from wrst.database.models import User, Relationship
+from wrst.forms.wrst_forms import (
+    FamilyForm,
+    AllFamilyForm,
+    EntityEntityForm,
+    EntityEventForm,
+    EventEventForm,
+    TaxonomyForm,
+    ComponentForm,
+    SpatialForm,
+    FunctionalForm,
+    CausalForm,
+    ParticipantForm,
+    EventStructureForm,
+    FinalSubmitForm
+)
+
 import pandas as pd
 import numpy as np
 import re
+
+all_forms = [
+    FamilyForm,
+    EntityEntityForm,
+    EntityEventForm,
+    EventEventForm,
+    TaxonomyForm,
+    ComponentForm,
+    SpatialForm,
+    FunctionalForm,
+    EventStructureForm,
+    CausalForm,
+    ParticipantForm
+]
 
 def get_term_list(text, all_terms):
     text_lower = text.lower()
@@ -54,12 +84,9 @@ def get_text_dynamic():
     terms = sample['terms'].iloc[0]
     content = text
     content_url = "https://archive.cnx.org/contents/{}".format(sample['page_id'].iloc[0])
-
-    print(text)
-    print(terms)
+    family_form_name = 'basic_family'
 
     # Pick two at random terms from the term set, get corresponding locations in the text
-    # OLD Code
     term_selection = list(np.random.choice(terms, 2, replace=False))
     for t in term_selection:
         pattern = re.compile(t, re.IGNORECASE)
@@ -68,9 +95,47 @@ def get_text_dynamic():
     sentence_id = sample['sentence_id'].iloc[0]
     term_1 = term_selection[0]
     term_2 = term_selection[1]
+
+    # Get the types so we can select which form to use
+    type_1 = df_terms[df_terms['term']==term_1].iloc[0]['type']
+    type_2 = df_terms[df_terms['term'] == term_2].iloc[0]['type']
+    types = [type_1, type_2]
+    N_entity = sum([t=='entity' for t in types])
+    N_event = sum([t=='event' for t in t])
+    if N_entity == 2: # entity-entity relationship
+        family_form_name = 'entity_entity'
+    elif N_entity == 2: # entity-event relationship
+        family_form_name = 'entity_event'
+    else: # event-event relationship
+        family_form_name = 'event_event'
+
+
     question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
     content = "<h3>{}</h3>".format(content)
 
 
     # Return
-    return sentence_id, term_1, term_2, content, question_text, content_url
+    return sentence_id, term_1, term_2, family_form_name, content, question_text, content_url
+
+def get_next_form_by_ref(form):
+
+    # Prep the set of keys that correspond to valid form selections
+    keys = list(form.button_keys)
+
+    # Iterate over the valid form keys and return the stringified form name if there is a match
+    for ii, label in enumerate(keys):
+        if getattr(form, label).data:
+            return form.form_link_names[ii]
+
+    # Default behavior in case something gets messed up . . .
+    return AllFamilyForm.name
+
+def get_form_by_name(form_name):
+    for form in all_forms:
+        print(form_name)
+        if form.name == form_name:
+            return form(request.form)
+
+    # Default form in case something gets messed up
+    print("Iz bad")
+    return AllFamilyForm(request.form)
