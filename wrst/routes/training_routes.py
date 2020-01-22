@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, abort, flash, request, Markup, red
 from wrst.database import db
 from wrst.database.models import User, Relationship
 import time
-from wrst.forms.wrst_forms import FamilyForm, TaxonomyForm, ComponentForm, SpatialForm, FunctionalForm, FinalSubmitForm
+from wrst.forms.wrst_forms import EntityEntityForm, TaxonomyForm, ComponentForm, SpatialForm, FunctionalForm, FinalSubmitForm
 from wrst.forms.instruction_forms import InstructionForm
 from wrst.logic.decorators import login_required
 
@@ -19,8 +19,8 @@ def training_1():
         "Each task will give some Biology textbook content along with a pair of terms selected from that content",
         "Your job will be to identify the relationship that exists between the terms (if any)",
         "There are a LOT of possible relationships available and so to make this easier we have broken the task up into two parts:",
-        "First, you will select a high level relationships family",
-        "Second, you will select the specific relationship within the family that you have chosen",
+        "      First, you will select a high level relationships family",
+        "      Second, you will select the specific relationship within the family that you have chosen",
         "DON'T FEEL LIKE YOU NEED TO MEMORIZE ALL THE RELATIONSHIPS -- there will be reminders in task to help you if you get stuck!"
     ]
     content = Markup(header)
@@ -34,17 +34,43 @@ def training_1():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes.training_2')
+        return redirect(url_for('training_routes.training_1b')
                         )
+
+@training_routes.route('/training_1b', methods=['GET', 'POST'])
+@login_required
+def training_1b():
+
+    form = InstructionForm(request.form)
+    header = "Entities vs Events"
+    content_items = [
+        "There are two kinds of terms that you will link: Entities and Events",
+        "Entities correspond to actual things (like cats, tables, cells, etc)",
+        "Events correspond to things that happen (like falling, starting a car, mitosis, etc)",
+        "Some relationships only apply to certain combinations of term types:",
+    ]
+    content = Markup(header)
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+
+        return redirect(url_for('training_routes.training_2'))
+
 
 @training_routes.route('/training_2', methods=['GET', 'POST'])
 @login_required
 def training_2():
 
     form = InstructionForm(request.form)
-    header = "Taxonomic Relationship Family"
+    header = "Taxonomic Relationship Family (Entity to Entity)"
     content_items = [
-        "These relationships describe how types of one thing relate to other things",
+        "These relationships describe how types of one entity relate to other entities",
     ]
     images = [
               ['type_of.png', 'Type relationships relationships define subclasses of an entity'],
@@ -69,9 +95,9 @@ def training_2():
 def training_3():
 
     form = InstructionForm(request.form)
-    header = "Component Family"
+    header = "Component Family (Entity to Entity)"
     content_items = [
-        "These relationships describe how some things are made of up other things",
+        "These relationships describe how some entities are made of up other entities",
     ]
     images = [
         ['contains.png', 'Contains denotes that an entity contains some other entity'],
@@ -96,9 +122,9 @@ def training_3():
 def training_4():
 
     form = InstructionForm(request.form)
-    header = "Spatial Relationshiops"
+    header = "Spatial Relationships (Entity to Entity)"
     content_items = [
-        "These relationships describe how things are located around other things",
+        "These relationships describe how entities are located around other entities",
     ]
     images = [
         ['resides_against.png', 'For entities that are next to each other'],
@@ -124,9 +150,9 @@ def training_4():
 def training_5():
 
     form = InstructionForm(request.form)
-    header = "Functional Relationships"
+    header = "Functional Relationships (Entity to Event)"
     content_items = [
-        "These relationships describe how things interact or how some things cause other things to happen",
+        "These relationships describe how entities cause certain events to happen",
     ]
     images = [
         ['has_function.png', 'The function of one entity is some event (A hammer nails things)'],
@@ -175,11 +201,11 @@ def training_6():
 @login_required
 def training_7():
 
-    form = FamilyForm(request.form)
+    form = EntityEntityForm(request.form)
     content = '<h3>The <span style="background-color: #FFFF00">nucleus</span> resides inside the <span style="background-color: #FFFF00">cytoplasm</span></h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format("cytoplasm", "nucleus")
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
 
     if not form.validate_on_submit():
         flash("This is an example screen for concept mapping!")
@@ -208,11 +234,11 @@ def training_7():
 @login_required
 def training_8():
 
-    form = FamilyForm(request.form)
+    form = EntityEntityForm(request.form)
     content = '<h3>The <span style="background-color: #FFFF00">nucleus</span> resides inside the <span style="background-color: #FFFF00">cytoplasm</span></h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format("cytoplasm", "nucleus")
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
 
     if not form.validate_on_submit():
         flash("On the left is the content pane. You will have the selected text with the two terms highlighted.  There is also a link to the original textbook if you think that will be helpful.")
@@ -242,11 +268,11 @@ def training_8():
 @login_required
 def training_9():
 
-    form = FamilyForm(request.form)
+    form = EntityEntityForm(request.form)
     content = '<h3>The <span style="background-color: #FFFF00">nucleus</span> resides inside the <span style="background-color: #FFFF00">cytoplasm</span></h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format("cytoplasm", "nucleus")
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
 
     if not form.validate_on_submit():
         flash("On the right is the relationship selection pane. You can click on one of the buttons to choose a relationship family or (later) a specific relationship. You can hover your mouse over any of the buttons to get a reminder of what each relationship entails.")
@@ -279,11 +305,11 @@ def training_9():
 def training_10():
 
     flash_message = request.args["flash_message"]
-    form = FamilyForm(request.form)
+    form = EntityEntityForm(request.form)
     content = '<h3>The <span style="background-color: #FFFF00">nucleus</span> resides inside the <span style="background-color: #FFFF00">cytoplasm</span></h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format("cytoplasm", "nucleus")
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
 
     if not form.validate_on_submit():
         flash(flash_message)
@@ -303,7 +329,7 @@ def training_10():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
         if form.submit2.data:  # Spatial relationship is submit2
-            return redirect(url_for('training_routes.training_11', flash_message="Good job! Now we need to select the correct relationship from the list. Note the order of the terms -- we want to select 'is outside of' since cytoplasm comes first")
+            return redirect(url_for('training_routes.training_11', flash_message="Good job! Now we need to select the correct relationship from the list. Note the order of the terms -- we want to select 'is inside of' since cytoplasm comes first")
                         )
         else:
             return redirect(url_for('training_routes.training_10', flash_message="This is a spatial relationship so click on that button to continue on.")
@@ -318,7 +344,7 @@ def training_11():
     content = '<h3>The <span style="background-color: #FFFF00">nucleus</span> resides inside the <span style="background-color: #FFFF00">cytoplasm</span></h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format("cytoplasm", "nucleus")
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
 
     Nb = len(form.button_keys) + 2
     term_padding = Nb * 20
@@ -357,7 +383,8 @@ def training_12():
     content = '<h3>The <span style="background-color: #FFFF00">nucleus</span> resides inside the <span style="background-color: #FFFF00">cytoplasm</span></h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format("cytoplasm", "nucleus")
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+    # content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
     term_1 = "nucleus"
     term_2 = "cytoplasm"
     relationship = "is inside of"
@@ -388,13 +415,13 @@ def training_12():
 @login_required
 def training_13():
 
-    form = FamilyForm(request.form)
+    form = EntityEntityForm(request.form)
     term_1 = "cell"
     term_2 = "eukaryotic"
     content = '<h3>The <span style="background-color: #FFFF00">Cells</span> fall into one of two broad categories: prokaryotic and <span style="background-color: #FFFF00">eukaryotic</span>. We classify only the predominantly single-cells organisms Bacteria and Archaea as prokaryotes (pro- = “before”; -kary- = “nucleus”). Animal cells, plants, fungi, and protists are all eukaryotes (eu- = “true”)</h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
     flash_message = request.args["flash_message"]
 
     if not form.validate_on_submit():
@@ -435,7 +462,7 @@ def training_14():
     content = '<h3>The <span style="background-color: #FFFF00">Cells</span> fall into one of two broad categories: prokaryotic and <span style="background-color: #FFFF00">eukaryotic</span>. We classify only the predominantly single-cells organisms Bacteria and Archaea as prokaryotes (pro- = “before”; -kary- = “nucleus”). Animal cells, plants, fungi, and protists are all eukaryotes (eu- = “true”)</h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
     flash_message = request.args["flash_message"]
     Nb = len(form.button_keys) + 2
     term_padding = Nb * 20
@@ -478,7 +505,7 @@ def training_15():
     content = '<h3>The <span style="background-color: #FFFF00">Cells</span> fall into one of two broad categories: prokaryotic and <span style="background-color: #FFFF00">eukaryotic</span>. We classify only the predominantly single-cells organisms Bacteria and Archaea as prokaryotes (pro- = “before”; -kary- = “nucleus”). Animal cells, plants, fungi, and protists are all eukaryotes (eu- = “true”)</h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
     flash_message = request.args["flash_message"]
     Nb = len(form.button_keys) + 2
     term_padding = Nb * 20
@@ -521,7 +548,7 @@ def training_16():
     term_2 = "cell"
     content = '<h3>The <span style="background-color: #FFFF00">Cells</span> fall into one of two broad categories: prokaryotic and <span style="background-color: #FFFF00">eukaryotic</span>. We classify only the predominantly single-cells organisms Bacteria and Archaea as prokaryotes (pro- = “before”; -kary- = “nucleus”). Animal cells, plants, fungi, and protists are all eukaryotes (eu- = “true”)</h3>'
     content = Markup(content)
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
     flash_message = request.args["flash_message"]
     relationship = "is a type of"
     if not form.validate_on_submit():
@@ -552,13 +579,13 @@ def training_16():
 def training_17():
 
     flash_message = request.args["flash_message"]
-    form = FamilyForm(request.form)
+    form = EntityEntityForm(request.form)
     term_1 = "eukaryotic cells"
     term_2 = "protein"
     question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
     content = '<h3>Like prokaryotes, <span style="background-color: #FFFF00">eukaryotic cells</span> have a plasma membrane, a phospholipid bilayer with embedded <span style="background-color: #FFFF00">proteins</span> that separates the internal contents of the cell from its surrounding environment.</h3>'
     content = Markup(content)
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
     flash_message = request.args["flash_message"]
     if not form.validate_on_submit():
         flash(flash_message)
@@ -579,7 +606,7 @@ def training_17():
 
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
-        if form.submit4.data:  # 'is inside of' is submit2 for the spatial form
+        if form.submit3.data:  # 'is inside of' is submit2 for the spatial form
             return redirect(url_for('training_routes.training_18', flash_message="Excellent job! While there definitely are connections between eukaryotic cells and proteins, here proteins refers to a component of the plasma membrane. Hence, there is no *direct* relationship.")
                         )
         else:
@@ -589,13 +616,13 @@ def training_17():
 @login_required
 def training_18():
     flash_message = request.args["flash_message"]
-    form = FamilyForm(request.form)
+    form = EntityEntityForm(request.form)
     term_1 = "eukaryotic cells"
     term_2 = "protein"
     question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
     content = '<h3>Like prokaryotes, <span style="background-color: #FFFF00">eukaryotic cells</span> have a plasma membrane, a phospholipid bilayer with embedded <span style="background-color: #FFFF00">proteins</span> that separates the internal contents of the cell from its surrounding environment.</h3>'
     content = Markup(content)
-    content_url = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
 
     if not form.validate_on_submit():
         flash(flash_message)

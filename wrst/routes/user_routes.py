@@ -105,6 +105,15 @@ def stupid():
 def create_user():
 
     # If we are creating/logging in a new user clear out the session
+    session_keys = list(session.keys())
+    print(session_keys)
+    if '_permanent' in session_keys:
+        session_keys.remove('_permanent')
+    if 'csrf_token' in session_keys:
+        session_keys.remove('csrf_token')
+    for key in session_keys:
+        session.pop(key)
+
     #session.clear()
 
     # Get the users email address and check if already registered

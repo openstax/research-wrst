@@ -21,14 +21,10 @@
     {% endfor %}
     </ul>
 
-    <a href="{{ reading_link }}" target="_blank">Link to reading material (will open a new tab)</a>
+            <a href="{{ reading_link }}" target="_blank">Link to reading material (will open a new tab)</a>
 
 
-<div>
-    {#% if True %}yay{% endif %#}
-</div>
-
-<div class="timer">
+<div class="timers", style="width: 400px; padding-left: 100px; font-size: 60px; font-weight: bold; align-items: center; justify-content: center;">
     <p id="time"></p>
 </div>
 
@@ -43,10 +39,11 @@
       {% endif %}
     {% endwith %}
 
-    <div class="container">
-        {{ wtf.quick_form(form) }}
-    </div>
 
+          <form action="" method="post" class="form" role="form">
+            {{ form.csrf_token() }}
+                {{ wtf.form_field(form.reading_submit_button, style="width: 50%; font-size: 30px; border-width: thick;") }}
+          </form>
 
 
 

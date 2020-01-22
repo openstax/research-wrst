@@ -15,7 +15,7 @@ def display_reading_instructions():
 
     # Load the form
     form = ReadingForm(request.form)
-    reading_link = "https://archive.cnx.org/contents/8d50a0af-948b-4204-a71d-4826cba765b8@15.1:2ec76ad2-c275-4b81-9168-244ef063caee@13"
+    reading_link = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
     header = "First, you are going to read a brief section from an introductory Biology textbook"
     content_items = [
         "We want you to spend at least 10 minutes reading this text. We have provided a timer on this page to help you keep track.",

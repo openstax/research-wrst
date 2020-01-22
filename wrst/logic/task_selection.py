@@ -83,7 +83,8 @@ def get_text_dynamic():
     text = sample['sentence'].iloc[0]
     terms = sample['terms'].iloc[0]
     content = text
-    content_url = "https://archive.cnx.org/contents/{}".format(sample['page_id'].iloc[0])
+    #content_url = "https://archive.cnx.org/contents/{}".format(sample['page_id'].iloc[0])
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
     family_form_name = 'basic_family'
 
     # Pick two at random terms from the term set, get corresponding locations in the text
