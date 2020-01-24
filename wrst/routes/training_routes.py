@@ -15,7 +15,7 @@ def training_1():
     form = InstructionForm(request.form)
     header = "TRAINING: What exactly is going on here?"
     content_items = [
-        "You are going to be completing exericses in concept mapping",
+        "You are going to be completing exercises in concept mapping",
         "Each task will give some Biology textbook content along with a pair of terms selected from that content",
         "Your job will be to identify the relationship that exists between the terms (if any)",
         "There are a LOT of possible relationships available and so to make this easier we have broken the task up into two parts:",
@@ -60,12 +60,12 @@ def training_1b():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes.training_2'))
+        return redirect(url_for('training_routes.training_taxonomic'))
 
 
-@training_routes.route('/training_2', methods=['GET', 'POST'])
+@training_routes.route('/training_taxonomic', methods=['GET', 'POST'])
 @login_required
-def training_2():
+def training_taxonomic():
 
     form = InstructionForm(request.form)
     header = "Taxonomic Relationship Family (Entity to Entity)"
@@ -87,12 +87,12 @@ def training_2():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes.training_3')
+        return redirect(url_for('training_routes.training_component')
                         )
 
-@training_routes.route('/training_3', methods=['GET', 'POST'])
+@training_routes.route('/training_component', methods=['GET', 'POST'])
 @login_required
-def training_3():
+def training_component():
 
     form = InstructionForm(request.form)
     header = "Component Family (Entity to Entity)"
@@ -114,12 +114,12 @@ def training_3():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes.training_4')
+        return redirect(url_for('training_routes.training_spatial')
                         )
 
-@training_routes.route('/training_4', methods=['GET', 'POST'])
+@training_routes.route('/training_spatial', methods=['GET', 'POST'])
 @login_required
-def training_4():
+def training_spatial():
 
     form = InstructionForm(request.form)
     header = "Spatial Relationships (Entity to Entity)"
@@ -142,12 +142,12 @@ def training_4():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes.training_5')
+        return redirect(url_for('training_routes.training_functional')
                         )
 
-@training_routes.route('/training_5', methods=['GET', 'POST'])
+@training_routes.route('/training_functional', methods=['GET', 'POST'])
 @login_required
-def training_5():
+def training_functional():
 
     form = InstructionForm(request.form)
     header = "Functional Relationships (Entity to Event)"
@@ -169,12 +169,99 @@ def training_5():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes.training_6')
+        return redirect(url_for('training_routes.training_causal')
                         )
 
-@training_routes.route('/training_6', methods=['GET', 'POST'])
+@training_routes.route('/training_causal', methods=['GET', 'POST'])
 @login_required
-def training_6():
+def training_causal():
+
+    form = InstructionForm(request.form)
+    header = "Causal Relationships (Event to Event)"
+    content_items = [
+        "These relationships describe how events cause other events",
+    ]
+    images = [
+        ['key_starts_car.png', 'Turning the key causes the car to start'],
+        ['car_accelerating.png', 'Pushing on the gas enables motion'],
+        ['car_braking.png', 'Pushing on the brake inhibits motion'],
+        ['car_boot.png', 'A boot on the tire prevents motion']
+    ]
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items,
+                               images=images)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+
+        return redirect(url_for('training_routes.training_event_structure')
+                        )
+
+@training_routes.route('/training_event_structure', methods=['GET', 'POST'])
+@login_required
+def training_event_structure():
+
+    form = InstructionForm(request.form)
+    header = "Event Structure Relationships (Event to Event)"
+    content_items = [
+        "These relationships describe when events occur with respect to other events",
+        "How to boil potatoes:"
+    ]
+    images = [
+        ['boiling_water.jpeg', 'Step 1: Put pot of water on stove to boil (first event)'],
+        ['cut_potatoes.jpeg', 'Step 2: While the water boils, cut up the potatoes (subevent)'],
+        ['potatoes_water.jpeg', 'Step 3: After the water boils, add the potatoes (next event)'],
+    ]
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items,
+                               images=images)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+
+        return redirect(url_for('training_routes.training_participant')
+                        )
+@training_routes.route('/training_participant', methods=['GET', 'POST'])
+@login_required
+def training_participant():
+
+    form = InstructionForm(request.form)
+    header = "Participant Relationships (Entity to Event)"
+    content_items = [
+        "These relationships describe how to entities participate in events",
+        "The cat pushed the vase with it's paw. The vase broke on the ground into many pieces."
+    ]
+    images = [
+        ['cat_push_vase.png', 'The cat pushed the vase (agent)'],
+        ['cat_uses_paw.png', "The cat used it's paw (instrument)"],
+        ['vase_ground.png', 'The vase landed on the ground (site)'],
+        ['broken_vase.png', 'The vase broke into many pieces (result)']
+    ]
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items,
+                               images=images)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+
+        return redirect(url_for('training_routes.training_no_direct'))
+
+
+@training_routes.route('/training_no_direct', methods=['GET', 'POST'])
+@login_required
+def training_no_direct():
 
     form = InstructionForm(request.form)
     header = "No Direct Relationshiops"
