@@ -32,7 +32,7 @@ def display_task_instructions():
 @instruction_routes.route('/consent_not_provided', methods=['GET', 'POST'])
 def consent_not_provided():
     form = InstructionForm(request.form)
-    header = "Without providing consent, you will not be eligible to participate in the study"
+    header = "Without providing consent, you will not be eligible to participate in the study. If this was a mistake, hit the back button on your browser to give consent."
     content_items = Markup("<p></p>")
 
     if not form.validate_on_submit():

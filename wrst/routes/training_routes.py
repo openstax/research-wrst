@@ -5,6 +5,7 @@ import time
 from wrst.forms.wrst_forms import EntityEntityForm, TaxonomyForm, ComponentForm, SpatialForm, FunctionalForm, FinalSubmitForm
 from wrst.forms.instruction_forms import InstructionForm
 from wrst.logic.decorators import login_required
+from wrst.logic.experiment import ProlificExperiment
 
 training_routes = Blueprint('training_routes', __name__)
 
@@ -744,10 +745,10 @@ def training_19():
     header = "You have finished the training modules!"
     content_items = Markup(
         """
-        <p>You will now be moved on to create your own relationships on new content. <br>
+        <p>You will now be moved on to create your own relationships on new content. <br><br>
         You will spend 25 minutes on these tasks.  There is a timer in the upper right hand corner to show you how
-        long you have spent thus far. <br>
-        Remember that you can always hover your mouse over the relationship choices to get a reminder on what they mean. <br>
+        long you have spent thus far. <br><br>
+        Remember that you can always hover your mouse over the relationship choices to get a reminder on what they mean. <br><br>
         Finally, you can always chose the 'I don't know' button to get a new example if you get stuck on one example.<br>
         </p>
         """
@@ -775,14 +776,53 @@ def instruction_final():
     user.task_complete = True
     db.session.commit()
 
-    form = InstructionForm(request.form)
-    header = "You have finished the task! Thank you so much for all of your time on that!"
-    content_items = [
-        "If you came to us through another website (Prolific, Mechanical Turk, etc) we have already sent them your completion credentials.",
-        "If your course instructor sent you here, we will email them with your completion information",
-        "You can close this tab at any point",
-    ]
+    # Get the study name and route accordingly
+    study_name = user.study_name
+    print("Study name: {}".format(study_name))
 
+    if study_name == 'prolific':
+        return redirect(url_for('training_routes.prolific_final')
+                        )
+    else:
+        return redirect(url_for('training_routes.psych_final')
+                        )
+
+@training_routes.route('/prolific_final', methods=['GET', 'POST'])
+@login_required
+def prolific_final():
+
+    form = InstructionForm(request.form)
+    header = "You have finished the task!"
+    content_items = Markup(
+        """
+        <p> Thank you so much for all of your time! Click the 'Next' button to get routed back to Prolific
+        and get your completion logged.</p>
+        """
+    )
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items)
+    else:
+
+        experiment = ProlificExperiment()
+        prolific_url_final = experiment.redirect_link
+        return redirect(prolific_url_final)
+
+
+@training_routes.route('/psych_final', methods=['GET', 'POST'])
+@login_required
+def psych_final():
+
+    form = InstructionForm(request.form)
+    header = "You have finished the task!"
+    content_items = Markup(
+        """
+        <p> Thank you so much for all of your time! Contact the research coordinator for further instructions.</p>
+        """
+    )
     if not form.validate_on_submit():
 
         return render_template('instruction_pages.html',
