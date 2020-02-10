@@ -1,9 +1,13 @@
 {% extends "bootstrap/base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 {% block content %}
-
+    <div class="container">
     <h3> {{ main_message }}</h3>
-    <h4> {{ secondary_message}} </h4>
+    <textarea readonly rows="4" cols="100">
+    {{ secondary_message }}
+    </textarea>
+    </div>
+
 
     {% with messages = get_flashed_messages() %}
       {% if messages %}

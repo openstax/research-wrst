@@ -18,15 +18,6 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ user_email }} <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url_for('user_routes.edit_user')}}">Edit Profile</a></li>
-            <li><a href="{{ url_for('user_routes.logout')}}">Logout</a></li>
-          </ul>
-        </li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Total Time on Task: {{ time_on_task_str }}</a></li>
       </ul>
@@ -105,12 +96,12 @@
             {{ form.csrf_token() }}
 
               {% if form.type=="relationship" %}
-                {{ wtf.form_field(form.flip_relationship, title="Change the term order as needed for things to make sense", data_toggle="tooltip", class='btn btn-warning btn-block') }}
+                {{ wtf.form_field(form.flip_relationship, title="Change the term order as needed for things to make sense", data_toggle="tooltip", class='btn btn-success btn-block') }}
                 <br>
               {% endif %}
 
               {% if form.type=="submit" %}
-                {{ wtf.form_field(form.submit, data_toggle="tooltip", class='btn btn-warning btn-block') }}
+                {{ wtf.form_field(form.submit, data_toggle="tooltip", class='btn btn-success btn-block') }}
                 <br>
               {% endif %}
 
@@ -124,7 +115,7 @@
 
               {% if form.type!="family" %}
                   <br>
-                {{ wtf.form_field(form.go_back_button, class='btn btn-warning btn-block') }}
+                {{ wtf.form_field(form.go_back_button, class='btn btn-success btn-block') }}
                 <br>
               {% endif %}
 

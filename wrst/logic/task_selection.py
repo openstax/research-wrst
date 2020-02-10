@@ -44,9 +44,8 @@ all_forms = [
 def get_term_list(text, all_terms):
     text_lower = text.lower()
     words = set(text_lower.split())
-    term_list = list(all_terms)
-    compound_terms = [t for t in term_list if ' ' in t]
-    compound_terms = set(list(all_terms))
+    term_list = set(all_terms)
+    compound_terms = set([t for t in term_list if ' ' in t])
 
     # Extract simple single-word matches as well as full text matches
     terms_simple = (all_terms & words)
@@ -61,8 +60,6 @@ def get_term_list(text, all_terms):
     # Finally, check each term to see if it a substring of any other term in the list.  If so, kill it with fire!
     occ_count = [(t1, np.sum([t1 in t2 for t2 in final_term_list])) for t1 in final_term_list]
     final_term_list = [t[0] for t in occ_count if t[1]==1]
-
-
     return final_term_list
 
 # Pre-process all of the term and book data

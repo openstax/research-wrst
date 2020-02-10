@@ -10,6 +10,7 @@ from wrst.routes.instruction_routes import instruction_routes
 from wrst.routes.reading_routes import reading_routes
 from wrst.routes.training_routes import training_routes
 from wrst.routes.user_routes import user_routes
+from wrst.routes.admin_routes import admin_routes
 from wrst.database import db
 from flask_bootstrap import Bootstrap
 from wrst.database.models import User, Relationship
@@ -28,6 +29,7 @@ def initialize_app(flask_app):
     flask_app.register_blueprint(reading_routes)
     flask_app.register_blueprint(training_routes)
     flask_app.register_blueprint(user_routes)
+    flask_app.register_blueprint(admin_routes)
     db.init_app(flask_app)
     db.create_all(app=flask_app)
 

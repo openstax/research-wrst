@@ -75,8 +75,8 @@ def get_new_task():
     session['relationship_time_on_task'] = 0
 
     # Get the current total time-on-task value for the user
-    user = db.session.query(User).filter(User.email == session['email_address']).first()
-    relationship_completion_times = db.session.query(Relationship.total_time).filter(Relationship.user==session['email_address']).all()
+    user = db.session.query(User).filter(User.user_id == session['user_id']).first()
+    relationship_completion_times = db.session.query(Relationship.total_time).filter(Relationship.user==session['user_id']).all()
     total_time_on_task = float(np.sum(relationship_completion_times))
 
     session['total_time_on_task'] = make_time_str(total_time_on_task)
@@ -98,7 +98,7 @@ def get_new_task():
                                 term_1=term_1,
                                 term_2=term_2,
                                 family_form_name=family_form_name,
-                                user_email=session['email_address'],
+                                user_email=session['user_id'],
                                 content_url=content_url
                                 )
                         )
@@ -134,7 +134,7 @@ def do_wrst_family():
                                term_2="",
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str=session['total_time_on_task'],
                                content_url=content_url)
     if request.method == 'POST':
@@ -173,14 +173,14 @@ def do_wrst_family():
                                     question_text=question_text,
                                     term_1=term_1,
                                     term_2=term_2,
-                                    user_email=session['email_address'],
+                                    user_email=session['user_id'],
                                     content_url=content_url
                                     )
                             )
         else:
             # User chose an non-relational option, just log that
             log_relationship(
-                user=session["email_address"],
+                user=session["user_id"],
                 paragraph_id=paragraph_id,
                 term_1=term_1,
                 term_2=term_2,
@@ -238,7 +238,7 @@ def do_wrst_relationship():
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
                                term_padding=term_padding,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str=session['total_time_on_task'],
                                content_url=content_url)
 
@@ -258,7 +258,7 @@ def do_wrst_relationship():
                                     question_text=question_text,
                                     term_1=term_2,
                                     term_2=term_1,
-                                    user_email=session['email_address'],
+                                    user_email=session['user_id'],
                                     content_url=content_url)
                             )
         elif form.go_back_button.data:
@@ -269,7 +269,7 @@ def do_wrst_relationship():
                                     term_1=term_1,
                                     term_2=term_2,
                                     family_form_name=family_form_name,
-                                    user_email=session['email_address'],
+                                    user_email=session['user_id'],
                                     content_url=content_url
                                     )
                             )
@@ -289,7 +289,7 @@ def do_wrst_relationship():
                                     family_form_name=family_form_name,
                                     family_category=family_category,
                                     relationship=relationship,
-                                    user_email=session['email_address'],
+                                    user_email=session['user_id'],
                                     content_url=content_url
                                     )
                             )
@@ -326,7 +326,7 @@ def submission():
                                question_text="You selected: {} {} {}".format(term_1, relationship, term_2),
                                term_1="",
                                term_2="",
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str=session['total_time_on_task'],
                                content_url=content_url)
 
@@ -344,16 +344,16 @@ def submission():
                                     term_1=term_1,
                                     term_2=term_2,
                                     family_form_name=family_form_name,
-                                    user_email=session['email_address'],
+                                    user_email=session['user_id'],
                                     content_url=content_url
                                     )
                             )
         else:
             # The user has selected a relationship
             # So we need to get which one they selected and route to final submission page
-            print(session['email_address'])
+            print(session['user_id'])
             log_relationship(
-                user=session["email_address"],
+                user=session["user_id"],
                 paragraph_id=paragraph_id,
                 term_1=term_1,
                 term_2=term_2,

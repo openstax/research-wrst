@@ -5,4 +5,4 @@ from wtforms import SubmitField
 # TODO: Make tooltip texts for these!
 
 class InstructionForm(FlaskForm):
-    instruction_submit_button = SubmitField(label='Next screen')
+    instruction_submit_button = SubmitField(label='Next')

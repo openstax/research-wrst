@@ -14,12 +14,8 @@
     <source src="{{ url_for('static', filename='beepbeep.mp3') }}">
 </audio>
 
-    <h3>{{ instruction_header }}</h3>
-    <ul>
-    {%  for item in content_items %}
-        <li><h4>{{ item }}</h4</li>
-    {% endfor %}
-    </ul>
+        <h3> {{ instruction_header }}</h3>
+        <h4> {{ content_items}} </h4>
 
             <a href="{{ reading_link }}" target="_blank">Link to reading material (will open a new tab)</a>
 

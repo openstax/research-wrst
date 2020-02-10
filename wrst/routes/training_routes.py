@@ -13,16 +13,22 @@ training_routes = Blueprint('training_routes', __name__)
 def training_1():
 
     form = InstructionForm(request.form)
-    header = "TRAINING: What exactly is going on here?"
-    content_items = [
-        "You are going to be completing exercises in concept mapping",
-        "Each task will give some Biology textbook content along with a pair of terms selected from that content",
-        "Your job will be to identify the relationship that exists between the terms (if any)",
-        "There are a LOT of possible relationships available and so to make this easier we have broken the task up into two parts:",
-        "      First, you will select a high level relationships family",
-        "      Second, you will select the specific relationship within the family that you have chosen",
-        "DON'T FEEL LIKE YOU NEED TO MEMORIZE ALL THE RELATIONSHIPS -- there will be reminders in task to help you if you get stuck!"
-    ]
+    header = "Relationship selection: Training"
+    content_items = Markup(
+        """<p>In the next portion of this study, you will be identifying how the different biology concepts you just
+        read about are related. Before you begin, we will walk you through a brief training. <br><br>
+        During the relationships selection task, you will be shown two terms. Your job will be to identify the relationship 
+        that exists between the terms (if there is one).<br><br>
+        There are a LOT of possible relationships available and so, to make this easier, we have broken the task up into two parts: </p>
+        <ul>
+        <li>First, you will select a high-level relationship family</li>
+        <li>Second, you will select the specific relationship within the family that you have chosen</li>
+        </ul>
+        <br>
+        <p>DON'T FEEL LIKE YOU NEED TO MEMORIZE ALL THE RELATIONSHIPS! There will be reminders in the task to help you 
+        if you get stuck.<br></p>
+        """
+    )
     content = Markup(header)
 
     if not form.validate_on_submit():
@@ -43,13 +49,13 @@ def training_1b():
 
     form = InstructionForm(request.form)
     header = "Entities vs Events"
-    content_items = [
-        "There are two kinds of terms that you will link: Entities and Events",
-        "Entities correspond to actual things (like cats, tables, cells, etc)",
-        "Events correspond to things that happen (like falling, starting a car, mitosis, etc)",
-        "Some relationships only apply to certain combinations of term types:",
-    ]
-    content = Markup(header)
+    content_items = Markup("""
+    <p> There are two kinds of terms that you will link: Entities and Events. <br><br>
+    <ul>
+    <li>Entities correspond to actual things (like cats, tables, cells, etc)</li>
+    <li>Events correspond to things that happen (like falling, starting a car, mitosis, etc)</li>
+    </ul>
+    """)
 
     if not form.validate_on_submit():
 
@@ -69,9 +75,7 @@ def training_taxonomic():
 
     form = InstructionForm(request.form)
     header = "Taxonomic Relationship Family (Entity to Entity)"
-    content_items = [
-        "These relationships describe how types of one entity relate to other entities",
-    ]
+    content_items = Markup("<p>These relationships describe how types of one entity relate to other entities</p>")
     images = [
               ['type_of.png', 'Type relationships relationships define subclasses of an entity'],
               ['instance_of.png', 'Instance relationship define specific occurences of a entity']
@@ -96,9 +100,7 @@ def training_component():
 
     form = InstructionForm(request.form)
     header = "Component Family (Entity to Entity)"
-    content_items = [
-        "These relationships describe how some entities are made of up other entities",
-    ]
+    content_items = Markup("<p>These relationships describe how some entities are made of up other entities</p>")
     images = [
         ['contains.png', 'Contains denotes that an entity contains some other entity'],
         ['has_part.png', 'Material relationships denote when an underlying material makes up an entity']
@@ -123,9 +125,7 @@ def training_spatial():
 
     form = InstructionForm(request.form)
     header = "Spatial Relationships (Entity to Entity)"
-    content_items = [
-        "These relationships describe how entities are located around other entities",
-    ]
+    content_items = Markup("<p>These relationships describe how entities are located around other entities</p>")
     images = [
         ['resides_against.png', 'For entities that are next to each other'],
         ['is_above.png', 'An entity resides above another entity'],
@@ -151,9 +151,7 @@ def training_functional():
 
     form = InstructionForm(request.form)
     header = "Functional Relationships (Entity to Event)"
-    content_items = [
-        "These relationships describe how entities cause certain events to happen",
-    ]
+    content_items = Markup("<p>These relationships describe how entities are located around other entities</p>")
     images = [
         ['has_function.png', 'The function of one entity is some event (A hammer nails things)'],
         ['facilitates.png', 'An entity facilitates some function (the hammerhead facilitates the nailing)']
@@ -178,9 +176,7 @@ def training_causal():
 
     form = InstructionForm(request.form)
     header = "Causal Relationships (Event to Event)"
-    content_items = [
-        "These relationships describe how events cause other events",
-    ]
+    content_items = Markup("<p>These relationships describe how events cause other events</p>")
     images = [
         ['key_starts_car.png', 'Turning the key causes the car to start'],
         ['car_accelerating.png', 'Pushing on the gas enables motion'],
@@ -207,10 +203,10 @@ def training_event_structure():
 
     form = InstructionForm(request.form)
     header = "Event Structure Relationships (Event to Event)"
-    content_items = [
-        "These relationships describe when events occur with respect to other events",
-        "How to boil potatoes:"
-    ]
+    content_items = Markup(
+        """<p>These relationships describe when events occur with respect to other events.<br><br>
+        Consider the example of how to boil potatoes:<br></p>
+        """)
     images = [
         ['boiling_water.jpeg', 'Step 1: Put pot of water on stove to boil (first event)'],
         ['cut_potatoes.jpeg', 'Step 2: While the water boils, cut up the potatoes (subevent)'],
@@ -235,10 +231,11 @@ def training_participant():
 
     form = InstructionForm(request.form)
     header = "Participant Relationships (Entity to Event)"
-    content_items = [
-        "These relationships describe how to entities participate in events",
-        "The cat pushed the vase with it's paw. The vase broke on the ground into many pieces."
-    ]
+    content_items = Markup(
+        """<p>These relationships describe how to entities participate in events.<br><br>
+        The cat pushed the vase with it's paw. The vase broke on the ground into many pieces.<br></p>
+        """)
+
     images = [
         ['cat_push_vase.png', 'The cat pushed the vase (agent)'],
         ['cat_uses_paw.png', "The cat used it's paw (instrument)"],
@@ -264,13 +261,12 @@ def training_participant():
 def training_no_direct():
 
     form = InstructionForm(request.form)
-    header = "No Direct Relationshiops"
-    content_items = [
-        "Often (maybe most of the time) terms won't have a direct relationship",
-        "Ex: The cat is on the table. The dog is outside ==> the cat and dog have no direct relationship",
-        "Ex: The table has legs. The legs are plastic ==> the table and plastic are related through the legs, but not directly related to each other"
-    ]
-
+    header = "No Direct Relationships"
+    content_items = Markup(
+        """<p>Often (maybe most of the time) terms won't have a direct relationship.<br><br>
+        Ex: The cat is on the table. The dog is outside ==> the cat and dog have no direct relationship.<br><br>
+        Ex: The table has legs. The legs are plastic ==> the table and plastic are related through the legs, but not directly related to each other<br></p>
+        """)
 
     if not form.validate_on_submit():
 
@@ -295,7 +291,7 @@ def training_7():
     content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
 
     if not form.validate_on_submit():
-        flash("This is an example screen for concept mapping!")
+        flash("This is an example screen")
         return render_template('wrst_pages.html',
                                form=form,
                                textbook_content=content,
@@ -304,7 +300,7 @@ def training_7():
                                term_2="",
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url,
                                next_arrow=True,
@@ -337,7 +333,7 @@ def training_8():
                                term_2="",
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url,
                                next_arrow=True,
@@ -371,7 +367,7 @@ def training_9():
                                term_2="",
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url,
                                next_arrow=True,
@@ -408,7 +404,7 @@ def training_10():
                                term_2="",
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url)
 
@@ -447,7 +443,7 @@ def training_11():
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
                                term_padding=term_padding,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url)
 
@@ -483,7 +479,7 @@ def training_12():
                                question_text="You selected: {} {} {}".format(term_1, relationship, term_2),
                                term_1="",
                                term_2="",
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 min.",
                                content_url=content_url)
 
@@ -521,7 +517,7 @@ def training_13():
                                term_2="",
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url,
                                )
@@ -565,7 +561,7 @@ def training_14():
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
                                term_padding=term_padding,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url,
                                )
@@ -608,7 +604,7 @@ def training_15():
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
                                term_padding=term_padding,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url,
                                )
@@ -646,7 +642,7 @@ def training_16():
                                question_text="You selected: {} {} {}".format(term_1, relationship, term_2),
                                term_1="",
                                term_2="",
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 min.",
                                content_url=content_url)
 
@@ -684,7 +680,7 @@ def training_17():
                                term_2="",
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url,
                                )
@@ -721,7 +717,7 @@ def training_18():
                                term_2="",
                                button_keys=form.button_keys,
                                hovertext=form.hovertext,
-                               user_email=session['email_address'],
+                               user_email=session['user_id'],
                                time_on_task_str="0 sec",
                                content_url=content_url,
                                next_arrow=True,
@@ -739,21 +735,23 @@ def training_18():
 def training_19():
 
     # The user has finished the training, so mark training as complete
-    user = db.session.query(User).filter(User.email == session['email_address']).first()
+    user = db.session.query(User).filter(User.user_id == session['user_id']).first()
     user.training_complete = True
     db.session.commit()
 
 
     form = InstructionForm(request.form)
     header = "You have finished the training modules!"
-    content_items = [
-        "You will now be moved on to create your own relationships on new content",
-        "You will spend 25 minutes on these tasks.  There is a timer in the upper right hand corner to show you how long you have spent thus far",
-        "Remember that you can always hover over the relationship choices to get a reminder on what they mean",
-        "You can always choose the 'I don't know' button to get a new example if you get too stuck on one example",
-        "GOOD LUCK!"
-    ]
-    content = Markup(header)
+    content_items = Markup(
+        """
+        <p>You will now be moved on to create your own relationships on new content. <br>
+        You will spend 25 minutes on these tasks.  There is a timer in the upper right hand corner to show you how
+        long you have spent thus far. <br>
+        Remember that you can always hover your mouse over the relationship choices to get a reminder on what they mean. <br>
+        Finally, you can always chose the 'I don't know' button to get a new example if you get stuck on one example.<br>
+        </p>
+        """
+    )
 
     if not form.validate_on_submit():
 
@@ -773,7 +771,7 @@ def training_19():
 def instruction_final():
 
     # The user has finished the training, so mark training as complete
-    user = db.session.query(User).filter(User.email == session['email_address']).first()
+    user = db.session.query(User).filter(User.user_id == session['user_id']).first()
     user.task_complete = True
     db.session.commit()
 

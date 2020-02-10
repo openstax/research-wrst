@@ -6,38 +6,30 @@ from werkzeug.security import generate_password_hash, check_password_hash
 class User(db.Model):
     __tablename__ = 'users'
 
-    email = db.Column(db.String(120), primary_key=True)
-    contact_consent = db.Column(db.Boolean)
+    user_id = db.Column(db.String(120), primary_key=True)
     training_complete = db.Column(db.Boolean)
-    role = db.Column(db.String(64))
-    esl = db.Column(db.Boolean)
-    english_years = db.Column(db.String(20))
     study_name = db.Column(db.String(120))
     study_cohort = db.Column(db.String(120))
+    required_reading_time_seconds = db.Column(db.Integer)
     required_time_on_task_seconds = db.Column(db.Integer)
     task_complete = db.Column(db.Boolean)
 
     def __init__(
         self,
-        email,
-        contact_consent,
-        role,
-        esl,
-        english_years,
+        user_id,
         study_name,
         study_cohort,
-        required_time_on_task_seconds
+        required_time_on_task_seconds,
+        required_reading_time_seconds
+
     ):
 
-        self.email = email
-        self.contact_consent = contact_consent
+        self.user_id = user_id
         self.training_complete = False
-        self.role = role
-        self.esl = esl
-        self.english_years = english_years
         self.study_name = study_name
         self.study_cohort = study_cohort
         self.required_time_on_task_seconds = required_time_on_task_seconds
+        self.required_reading_time_seconds = required_reading_time_seconds
         self.task_complete = False
 
     def __repr__(self):

@@ -11,19 +11,18 @@ reading_routes = Blueprint('reading_routes', __name__)
 @login_required
 def display_reading_instructions():
 
-    total_reading_time = 30 # seconds
+    total_reading_time = session['required_reading_time']
 
     # Load the form
     form = ReadingForm(request.form)
-    reading_link = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+    reading_link = session["reading_link"]
     header = "First, you are going to read a brief section from an introductory Biology textbook"
-    content_items = [
-        "We want you to spend at least 10 minutes reading this text. We have provided a timer on this page to help you keep track.",
-        "Don't worry about trying to memorize all of the information.  Just try to get a general familiarity with the topic to the best of your ability.",
-        "When the timer expires, you can click on the 'Next' button to move to next step of the activity",
-        "Click the link below to access the reading material (it will open in a separate tab).",
-        "Note, for testing we have just reduced the time to 30 seconds -- will change before deployment"
-    ]
+    content_items = Markup(
+        """<p>During this portion of the study, please read the text that is linked at the bottom of this page. Don't worry about memorizing all of the information. Just try get a general familiarity with the topic to the best of your ability.<br><br>
+        Please spend at least 10 minutes reading the text. We have provided a timer on this page to help you keep track. <br><br>
+        When the timer expires, you can click on the 'Next' button to move to the next step of the activity.<br></p>
+        """
+    )
     content = Markup(header)
 
     if not form.validate_on_submit():

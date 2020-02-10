@@ -1,7 +1,10 @@
 from flask import Blueprint, render_template, abort, flash, request, Markup, redirect, url_for, request, session
 from wrst.database import db
 from wrst.database.models import User
+from wrst.logic.experiment import ProlificExperiment, PsychExperiment, TestExperiment
 from wrst.forms.user_forms import UserLogin, UserCreation, UserEdit
+import string
+import numpy as np
 
 user_routes = Blueprint('user_routes', __name__)
 
@@ -13,87 +16,6 @@ def splash_page():
     else:
         return redirect(url_for('user_routes.login'))
 
-@user_routes.route('/login_by_email', methods=['GET', 'POST'])
-def login_by_email():
-
-    # Get the users email address and check if already registered
-    # If everything checks out, route to task
-    # Otherwise route to user creation page
-
-    form = UserLogin(request.form)
-    if not form.validate_on_submit():
-        return render_template('user_form.html',
-                               main_message = "Welcome to the WRST activity ever!",
-                               secondary_message = "Enter your email address to log in.  If you haven't created an account you will be redirected.",
-                               form=form)
-
-    if request.method == 'POST':
-        session['study'] = "N/A"
-        email_address = form.email_address.data
-        user = db.session.query(User).filter(User.email == email_address).first()
-        if user:
-            # Set the session variable and go to the task
-            session['email_address'] = email_address
-            return redirect(url_for('wrst_routes.get_new_task'))
-        else:
-            # Need to create the user so redirect there
-            return redirect(url_for('user_routes.create_user'))
-
-@user_routes.route('/login_seed', methods=['GET', 'POST'])
-def login_seed():
-
-    # Get the users email address and check if already registered
-    # If everything checks out, route to task
-    # Otherwise route to user creation page
-
-    form = UserLogin(request.form)
-    if not form.validate_on_submit():
-        return render_template('user_form.html',
-                               main_message = "Welcome to the WRST activity ever!",
-                               secondary_message = "Enter your email address to log in.  If you haven't created an account you will be redirected.",
-                               form=form)
-
-    if request.method == 'POST':
-        session['study'] = 'seed data'
-        session['required_time_on_task'] = 5*60 # TODO make dynamic
-        email_address = form.email_address.data
-        user = db.session.query(User).filter(User.email == email_address).first()
-        if user:
-            # Set the session variable and go to the task
-            session['email_address'] = email_address
-            return redirect(url_for('wrst_routes.get_new_task'))
-        else:
-            # Need to create the user so redirect there
-            print("In login seed")
-            print(session.keys())
-            return redirect(url_for('user_routes.create_user'))
-
-@user_routes.route('/login_ed', methods=['GET', 'POST'])
-def login_ed():
-
-    # Get the users email address and check if already registered
-    # If everything checks out, route to task
-    # Otherwise route to user creation page
-
-    form = UserLogin(request.form)
-    if not form.validate_on_submit():
-        return render_template('user_form.html',
-                               main_message = "Welcome to the WRST activity ever!",
-                               secondary_message = "Enter your email address to log in.  If you haven't created an account you will be redirected.",
-                               form=form)
-
-    if request.method == 'POST':
-        session['study'] = 'education'
-        session['required_time_on_task'] = 60*5
-        email_address = form.email_address.data
-        user = db.session.query(User).filter(User.email == email_address).first()
-        if user:
-            # Set the session variable and go to the task
-            session['email_address'] = email_address
-            return redirect(url_for('wrst_routes.get_new_task'))
-        else:
-            # Need to create the user so redirect there
-            return redirect(url_for('user_routes.create_user'))
 
 @user_routes.route('/stupid', methods=['GET', 'POST'])
 def stupid():
@@ -101,8 +23,20 @@ def stupid():
 
 
 # TODO: Assign cohort based on current number of participants
-@user_routes.route('/create_user', methods=['GET', 'POST'])
-def create_user():
+@user_routes.route('/login_prolific', methods=['GET', 'POST'])
+def login_prolific():
+
+    experiment = ProlificExperiment()
+    user_id = request.args["PROLIFIC_PID"]
+    study_name = 'prolific'
+    prolific_cohorts = db.session.query(User.study_cohort).filter(User.study_name=='prolific')
+    N_a = len([c for c in prolific_cohorts if c=='a'])
+    N_b = len([c for c in prolific_cohorts if c == 'b'])
+    cohort = 'a'
+    if (N_a > N_b):
+        cohort = 'b'
+
+    consent_text = """Before beginning the study, you need to know your rights as a research participant. Please read the following consent form, and indicate whether you consent to participate. Note, you can scroll in the box to view the entire consent form."""
 
     # If we are creating/logging in a new user clear out the session
     session_keys = list(session.keys())
@@ -114,68 +48,129 @@ def create_user():
     for key in session_keys:
         session.pop(key)
 
-    #session.clear()
-
-    # Get the users email address and check if already registered
-    # If everything checks out, route to task
-    # Otherwise route to user creation page
-
-    if not session.get('study'):
-        session['study'] = 'seed data'
-    if not session.get('required_time_on_task'):
-        session['required_time_on_task'] = 60*5
+    cohort_idx = experiment.cohort_names.index(cohort)
+    session['required_time_on_task'] = experiment.task_time
+    session['required_reading_time'] = experiment.reading_time
+    session['reading_link'] = experiment.reading_links[cohort_idx]
 
     form = UserCreation(request.form)
     if not form.validate_on_submit():
         return render_template('user_create.html',
-                               main_message = "User creation page",
-                               secondary_message = "It looks like you are new user so let's get you set up!",
+                               main_message="Convergence Accelerator Study",
+                               secondary_message=consent_text,
                                form=form)
 
     if request.method == 'POST':
-        print(session.keys())
-        new_user = User(email=form.email_address.data,
-                        contact_consent=form.agree_to_contact_field.data,
-                        role=form.role_select_field.data,
-                        esl=form.esl_field.data=="True",
-                        english_years=form.english_years_field.data,
-                        study_name=session['study'],
-                        study_cohort='A',
-                        required_time_on_task_seconds=session['required_time_on_task'])
-        db.session.add(new_user)
-        db.session.commit()
 
-        session['email_address'] = form.email_address.data
-        return redirect(url_for('instruction_routes.display_task_instructions'))
+        # If user consented, add them to db and route to instructions page
+        if form.create_agree_button.data:
+            new_user = User(user_id=user_id,
+                            study_name=study_name,
+                            study_cohort=cohort,
+                            required_time_on_task_seconds=session['required_time_on_task'],
+                            required_reading_time_seconds=session['required_reading_time']
+                            )
+            db.session.add(new_user)
+            db.session.commit()
 
-@user_routes.route('/edit_user', methods=['GET', 'POST'])
-def edit_user():
+            session['user_id'] = user_id
+            return redirect(url_for('instruction_routes.display_task_instructions'))
+        else:
+            return redirect(url_for('instruction_routes.consent_not_provided'))
 
-    # Query the current user and get their attributes
-    # Then load those attributes as defaults in the edit form
-    form = UserEdit(request.form)
-    current_user = db.session.query(User).filter(User.email==session['email_address']).first()
-    #form.email_address.default = session['email_address']
-    #form.process()  # process choices & default
+# TODO: Assign cohort based on current number of participants
+@user_routes.route('/login_psych', methods=['GET', 'POST'])
+def login_psych():
 
+    experiment = PsychExperiment()
+    if "USER_ID" not in request.args:
+        return "Need to provide valid USER_ID field"
+    elif "COHORT" not in request.args:
+        return "Need to provide valid COHORT field"
+
+    user_id = request.args["USER_ID"]
+    cohort = request.args["COHORT"]
+    cohort_idx = experiment.cohort_names.index(cohort)
+    study_name = 'psych'
+
+    # If we are creating/logging in a new user clear out the session
+    session_keys = list(session.keys())
+    print(session_keys)
+    if '_permanent' in session_keys:
+        session_keys.remove('_permanent')
+    if 'csrf_token' in session_keys:
+        session_keys.remove('csrf_token')
+    for key in session_keys:
+        session.pop(key)
+
+    session['required_time_on_task'] = experiment.task_time
+    session['required_reading_time'] = experiment.reading_time
+    session['reading_link'] = experiment.reading_links[cohort_idx]
+
+    new_user = User(user_id=user_id,
+                    study_name=study_name,
+                    study_cohort=cohort,
+                    required_time_on_task_seconds=session['required_time_on_task'],
+                    required_reading_time_seconds=session['required_reading_time']
+                    )
+    db.session.add(new_user)
+    db.session.commit()
+
+    session['user_id'] = user_id
+    return redirect(url_for('instruction_routes.display_task_instructions'))
+
+
+# TODO: Assign cohort based on current number of participants
+@user_routes.route('/login_test', methods=['GET', 'POST'])
+def login_test():
+
+    experiment = TestExperiment()
+    consent_text = """Before beginning the study, you need to know your rights as a research participant. Please read the following consent form, and indicate whether you consent to participate. Note, you can scroll in the box to view the entire consent form."""
+
+    letters_nums = list(string.ascii_lowercase) + [0,1,2,3,4,5,6,7,8,9]
+    user_id = ''.join(np.random.choice(letters_nums, 10, replace=True).tolist())
+    cohort_idx = 1*(np.random.rand()>0)
+    cohort = experiment.cohort_names[cohort_idx]
+    study_name = 'test'
+
+    # If we are creating/logging in a new user clear out the session
+    session_keys = list(session.keys())
+    print(session_keys)
+    if '_permanent' in session_keys:
+        session_keys.remove('_permanent')
+    if 'csrf_token' in session_keys:
+        session_keys.remove('csrf_token')
+    for key in session_keys:
+        session.pop(key)
+
+    session['required_time_on_task'] = experiment.task_time
+    session['required_reading_time'] = experiment.reading_time
+    session['reading_link'] = experiment.reading_links[cohort_idx]
+
+    form = UserCreation(request.form)
     if not form.validate_on_submit():
-        print("About to render")
-        return render_template('user_edit.html',
-                               main_message = "Edit Profile: {}".format(session['email_address']),
-                               secondary_message = "Make whatever updates you want and click 'Sumbit' to finalize",
+        return render_template('user_create.html',
+                               main_message="Convergence Accelerator Study",
+                               secondary_message=consent_text,
                                form=form)
 
     if request.method == 'POST':
-        # Log whatever edits and then update the session
-        print("contact_consent: ", current_user.contact_consent)
-        setattr(current_user, 'contact_consent', form.agree_to_contact_field.data)
-        setattr(current_user, 'role', form.role_select_field.data)
-        setattr(current_user, 'esl', form.esl_field.data=="True")
-        setattr(current_user, 'role', form.english_years_field.data)
 
-        db.session.commit()
+        # If user consented, add them to db and route to instructions page
+        if form.create_agree_button.data:
+            new_user = User(user_id=user_id,
+                            study_name=study_name,
+                            study_cohort=cohort,
+                            required_time_on_task_seconds=session['required_time_on_task'],
+                            required_reading_time_seconds=session['required_reading_time']
+                            )
+            db.session.add(new_user)
+            db.session.commit()
 
-        return redirect(url_for('wrst_routes.get_new_task'))
+            session['user_id'] = user_id
+            return redirect(url_for('instruction_routes.display_task_instructions'))
+        else:
+            return redirect(url_for('instruction_routes.consent_not_provided'))
 
 
 @user_routes.route('/logout', methods=['GET', 'POST'])
@@ -185,6 +180,6 @@ def logout():
     session.clear()
 
     # Reroute back to the main login page
-    return redirect(url_for('user_routes.login_by_email'))
+    return "You logged out!"
 
 

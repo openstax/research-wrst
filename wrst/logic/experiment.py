@@ -1,26 +1,29 @@
-class Reading(self, content_filter, time_allotted, redirect_link):
-    self.content_filter = content_filter
-    self.time_allotted = time_allotted
-    self.redirect_link = redirect_link
-
-class WRST(self, content_filter, time_alloted, redirect_link):
-    self.content_filter = content_filter
-    self.time_allotted = time_allotted
-    self.redirect_link = redirect_link
-
-class InstructionPage(self, redirect_link):
-    self.redirect_link = redirect_link
-    self.content_filter = None
-    self.time_allotted = None
-
-
-# The Experiment class is the basic setup
-# task_list is a dictionary of lists, one per cohort, with each list consisting of some set of task classes
-# The task classes will be carried out sequentially
-# The key for each dictionary is the cohort name
+# The Experiment class is the basic setup for all experiments (Prolific, Psych pool, etc)
+# reading_links contain the readings that each cohort does, it must have the same length as cohort_names
+# reading_time is the time required to complete a reading
+# task_time is time spent on the actual relationships selection task
 class Experiment():
-    def __init__(self, experiment_name, task_dictionary):
-        self.experiment_name = experiment_name
-        self.num_cohorts = len(task_list.keys())
-        self.task_dictionary = task_dictionary
+    def __init__(self):
+        self.reading_links = ["https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+                              "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"]
+        self.cohort_names = ['a', 'b']
+        self.num_cohorts = len(self.cohort_names)
 
+class ProlificExperiment(Experiment):
+    def __init__(self):
+        Experiment.__init__(self)
+        self.reading_time = 10*60
+        self.task_time = 20*60
+        self.redirect_link = 'https://app.prolific.co/submissions/complete?cc=1778FC3A'
+
+class PsychExperiment(Experiment):
+    def __init__(self):
+        Experiment.__init__(self)
+        self.reading_time = 10*60
+        self.task_time = 20*60
+
+class TestExperiment(Experiment):
+    def __init__(self):
+        Experiment.__init__(self)
+        self.reading_time = 5
+        self.task_time = 5*60

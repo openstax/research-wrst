@@ -302,5 +302,5 @@ class ParticipantForm(FlaskForm):
 class FinalSubmitForm(FlaskForm):
     type = "submit"
     name = "submit"
-    submit = SubmitField(label='Looks good!')
+    submit = SubmitField(label='Submit selection')
     go_back_button = SubmitField(label='I want to redo this')
