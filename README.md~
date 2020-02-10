@@ -19,7 +19,7 @@ postgres (psql)
 Once you have cloned the repository you should create a virtual environment to work in:
 
 ```
-virtualenv env
+virtualenv venv
 source venv/bin/activate
 ```
 
@@ -98,24 +98,6 @@ http://127.0.0.1:5000/login_test/
 ```
 
 which should show the wrst consent form for tesst users.
-
-## Other configurations
-
-The login_test route gives a nice way to test things locally without having to supply user ids and cohorts.
-
-Here are the other two routing possibilities:
-
-```
-http://127.0.0.1:5000/login_psych?USER_ID=<user-id>&COHORT=<a or b>
-```
-
-This will do the psych pool experiment.  It omits the consent form but is otherwise the same.  Both the USER_ID and COHORT params have to be supplied.
-
-```
-http://127.0.0.1:5000/login_prolific?PROLIFIC_PID=<prolific_id>
-```
-
-The prolific flow will include the consent form.  The PROLIFIC_PID variable is passed by prolific but you will need to supply for testing.  The cohort is determined automatically based on how many users have been assigned up to the point where the new prolific user is created.
 
 ## Deployment
 
