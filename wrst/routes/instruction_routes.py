@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, abort, flash, request, Markup, redirect, url_for, request, session
 from wrst.database import db
+from wrst.database.models import User, Relationship
 from wrst.logic.decorators import login_required
 from wrst.forms.instruction_forms import InstructionForm
 
@@ -35,13 +36,75 @@ def consent_not_provided():
     header = "Without providing consent, you will not be eligible to participate in the study. If this was a mistake, hit the back button on your browser to give consent."
     content_items = Markup("<p></p>")
 
+
+    return render_template('instruction_pages.html',
+                            form=form,
+                            instruction_header=header,
+                            content_items=content_items,
+                            obscure_form=True)
+
+
+
+@instruction_routes.route('/instruction_final', methods=['GET', 'POST'])
+@login_required
+def instruction_final():
+
+    # The user has finished the training, so mark training as complete
+    user = db.session.query(User).filter(User.user_id == session['user_id']).first()
+    user.task_complete = True
+    db.session.commit()
+
+    # Get the study name and route accordingly
+    study_name = user.study_name
+    print("Study name: {}".format(study_name))
+
+    if study_name == 'prolific':
+        return redirect(url_for('instruction_routes.prolific_final')
+                        )
+    else:
+        return redirect(url_for('instruction_routes.psych_final')
+                        )
+
+@instruction_routes.route('/prolific_final', methods=['GET', 'POST'])
+@login_required
+def prolific_final():
+
+    form = InstructionForm(request.form)
+    header = "You have finished the task!"
+    content_items = Markup(
+        """
+        <p> Thank you so much for all of your time! Click the 'Next' button to get routed back to Prolific
+        and get your completion logged.</p>
+        """
+    )
     if not form.validate_on_submit():
 
         return render_template('instruction_pages.html',
                                form=form,
                                instruction_header=header,
                                content_items=content_items)
-    if request.method == 'POST':
-        # There is only one submit button so no need to check beyond "POST"
+    else:
 
-        return redirect(url_for('user_routes.create_user'))
+        experiment = ProlificExperiment()
+        prolific_url_final = experiment.redirect_link
+        return redirect(prolific_url_final)
+
+
+@instruction_routes.route('/psych_final', methods=['GET', 'POST'])
+@login_required
+def psych_final():
+
+    form = InstructionForm(request.form)
+    header = "You have finished the task!"
+    content_items = Markup(
+        """
+        <p> Thank you so much for all of your time! Contact the research coordinator for further instructions.</p>
+        """
+    )
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items,
+                               obscure_form=True)

@@ -89,7 +89,7 @@ def get_new_task():
     print(required_time_on_task)
     if required_time_on_task < total_time_on_task:
             print("Here....")
-            return redirect(url_for('training_routes.instruction_final'))
+            return redirect(url_for('instruction_routes.instruction_final'))
     else:
         return redirect(url_for('wrst_routes.do_wrst_family',
                                 paragraph_id=paragraph_id,
