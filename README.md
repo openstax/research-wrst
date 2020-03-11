@@ -94,7 +94,7 @@ python -m wrst.app
 You can then open your browser and type the following URL:
 
 ```
-http://127.0.0.1:5000/login_test/
+http://127.0.0.1:5000/login_test
 ```
 
 which should show the wrst consent form for tesst users.
