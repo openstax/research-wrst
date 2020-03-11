@@ -1,5 +1,4 @@
 # This files contains the code to deal with how to pick the next task for a given user
-# TODO: Right now this is all stupid. Here is what we need to do make un-stupid
 # Content exists in a database, not a local pandas frame
 # We keep track of how many times tasks have been assigned and completed
 # We try to keep a user within a piece of content until they have exhausted it (probably)
@@ -7,6 +6,7 @@
 from flask import session, Markup, request
 from wrst.database import db
 from wrst.database.models import User, Relationship
+from wrst.logic.experiment import Experiment
 from wrst.forms.wrst_forms import (
     FamilyForm,
     AllFamilyForm,
@@ -62,11 +62,27 @@ def get_term_list(text, all_terms):
     final_term_list = [t[0] for t in occ_count if t[1]==1]
     return final_term_list
 
+def extract_rex_ch_sec(rex_link):
+    chsec = rex_link.split('/')[-1][0:3].split('-')
+    chsec = [int(c) for c in chsec]
+    return chsec
+
 # Pre-process all of the term and book data
+# Filter down the dataframe to the exact sections used in the experiments
 df_terms = pd.read_csv('term_list.csv')
-df_book = pd.read_csv('sentences_Biology_2e_parsed.csv')
-df_book = df_book[df_book['chapter']==4]
-df_book = df_book[df_book['section_name']=="Eukaryotic Cells"]
+exp = Experiment()
+readings = exp.reading_links
+readings = [extract_rex_ch_sec(r) for r in readings]
+dfb = pd.read_csv('sentences_Biology_2e_parsed.csv')
+df_book = pd.DataFrame()
+for chsec in readings:
+    ch = chsec[0]
+    sec = chsec[1]
+    tmp = dfb[dfb['chapter']==ch]
+    tmp = tmp[tmp['section']==sec]
+    df_book = df_book.append(tmp)
+#df_book = df_book[df_book['chapter']==4]
+#df_book = df_book[df_book['section_name']=="Eukaryotic Cells"]
 all_terms = set(df_terms['term'].unique().tolist())
 df_book['terms'] = df_book['sentence'].apply(lambda x: get_term_list(x, all_terms))
 df_book['N_terms'] = df_book['terms'].apply(lambda x: len(x))
@@ -75,8 +91,17 @@ df_book['sentence_id'] = list(range(0, len(df_book)))
 df_book.to_csv('output.csv')
 
 def get_text_dynamic():
+
+    # Filter down to the right chapter/section for the current user
+    content_url = session['reading_link']
+    chsec = extract_rex_ch_sec(content_url)
+    print("Task selection")
+    print(chsec)
+    dfb = df_book[df_book['chapter']==chsec[0]]
+    dfb = dfb[dfb['section']==chsec[1]]
+
     # Get a random book sentence
-    sample = df_book.sample(n=1)
+    sample = dfb.sample(n=1)
     text = sample['sentence'].iloc[0]
     terms = sample['terms'].iloc[0]
     content = text
