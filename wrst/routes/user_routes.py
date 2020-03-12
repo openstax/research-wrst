@@ -31,7 +31,7 @@ def login_prolific():
     study_name = 'prolific'
     prolific_cohorts = db.session.query(User.study_cohort).filter(User.study_name=='prolific')
     N_a = len([c for c in prolific_cohorts if c=='a'])
-    N_b = len([c for c in prolific_cohorts if c == 'b'])
+    # N_b = len([c for c in prolific_cohorts if c == 'b'])
     cohort = 'a'
     # if (N_a > N_b):
         # cohort = 'b'
