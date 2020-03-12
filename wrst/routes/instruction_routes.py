@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, abort, flash, request, Markup, red
 from wrst.database import db
 from wrst.database.models import User, Relationship
 from wrst.logic.decorators import login_required
+from wrst.logic.experiment import ProlificExperiment
 from wrst.forms.instruction_forms import InstructionForm
 
 instruction_routes = Blueprint('instruction_routes', __name__)
