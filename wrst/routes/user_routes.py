@@ -14,7 +14,7 @@ def splash_page():
     if session.get('email_address', None):
         return redirect(url_for('wrst_routes.do_wrst_family'))
     else:
-        return redirect(url_for('user_routes.login_prolific')) # redirect(url_for('user_routes.login_test'))    # This will need to be updated for prolific
+        return redirect(url_for('user_routes.login_prolific')) # redirect(url_for('user_routes.login_test')) # This will need to be updated for prolific
 
 
 @user_routes.route('/stupid', methods=['GET', 'POST'])

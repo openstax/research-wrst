@@ -86,7 +86,7 @@ def prolific_final():
     else:
 
         experiment = ProlificExperiment()
-        prolific_url_final = experiment.redirect_link
+        prolific_url_final = experiment.redirect_link        
         return redirect(prolific_url_final)
 
 
