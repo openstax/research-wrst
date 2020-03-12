@@ -14,7 +14,7 @@ def splash_page():
     if session.get('email_address', None):
         return redirect(url_for('wrst_routes.do_wrst_family'))
     else:
-        return redirect(url_for('user_routes.login_test'))
+        return redirect(url_for('user_routes.login_prolific')) # redirect(url_for('user_routes.login_test'))    # This will need to be updated for prolific
 
 
 @user_routes.route('/stupid', methods=['GET', 'POST'])
@@ -33,8 +33,8 @@ def login_prolific():
     N_a = len([c for c in prolific_cohorts if c=='a'])
     N_b = len([c for c in prolific_cohorts if c == 'b'])
     cohort = 'a'
-    if (N_a > N_b):
-        cohort = 'b'
+    # if (N_a > N_b):
+        # cohort = 'b'
 
     consent_text = """Before beginning the study, you need to know your rights as a research participant. Please read the following consent form, and indicate whether you consent to participate. Note, you can scroll in the box to view the entire consent form."""
 

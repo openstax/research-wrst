@@ -1,0 +1,128 @@
+term,type,base_term
+cell,entity,cell
+organisms,entity,organism
+light microscopy,entity,light microscopy
+electron microscopy,entity,electron microscopy
+cell theory,entity,cell theory
+living,event,live
+bacteria,entity,bacterium
+tissue,entity,tissue
+organ,entity,organ
+organ system,entity,organ system
+digestive system,entity,digestive system
+circulatory system,entity,circulatory system
+nervous system,entity,nervous system
+prokaryotic,entity,prokaryotic
+eukaryotic,entity,eukaryotic
+plant cell,entity,plant cell
+eukaryotic cell,entity,eukaryotic cell
+bacterial cell,entity,bacterial cell
+microscope,entity,microscope
+magnification system,entity,magnification system
+light microscope,entity,light microscope
+human red blood cell,entity,human red blood cell
+red blood cell,entity,red blood cell
+living organisms,entity,living organisms
+microscopy,entity,microscopy
+magnification,event,magnification
+resolution,entity,resolution
+electron microscope,entity,electron microscope
+nanometer,entity,nanometer
+electron,entity,electron
+photon,entity,photon
+scanning electron microscope,entity,scanning electron microscope
+transmission electron microscope,entity,transmission electron microscope
+electron beam,entity,electron beam
+scanning electron microscope micrograph,entity,scanning electron microscope micrograph
+human cell,entity,human cell
+lens,entity,lens
+life,entity,life
+theory,entity,theory
+cytotechnologist,entity,cytotechnologist
+uterine cervix,entity,uterine cervix
+microbial infection,entity,microbial infection
+normal cell,entity,normal cell
+infect,event,infect
+human papillomavirus,entity,human papillomavirus
+hpv,entity,hpv
+cell cycle,event,cell cycle
+metaphase,entity,metaphase
+molecule,entity,molecule
+negative regulation,event,negative regulation
+cell turnover,entity,cell turnover
+epithelial cell,entity,epithelial cell
+cardiac muscle cell,entity,cardiac muscle cell
+mitosis,event,mitosis
+cytokinesis,event,cytokinesis
+multinucleate,entity,multinucleate
+cell membrane,entity,cell membrane
+cell division cycle,event,cell division cycle
+vertebrate,entity,vertebrate
+external event,entity,external event
+cell division,event,cell division
+human growth hormone,entity,human growth hormone
+hgh,entity,hgh
+gigantism,entity,gigantism
+interphase,entity,interphase
+cell cycle phase,entity,cell cycle phase
+daughter cell,entity,daughter cell
+parent cell,entity,parent cell
+chromosome,entity,chromosome
+abnormal cell,entity,abnormal cell
+cell-cycle checkpoint,entity,cell-cycle checkpoint
+eukaryotic cell cycle,event,eukaryotic cell cycle
+dna,entity,dna
+chromosome duplication,event,chromosome duplication
+kinetochore,entity,kinetochore
+cell division process,event,cell division process
+growth factor,entity,growth factor
+genomic dna damage,entity,genomic dna damage
+mitotic phase,entity,mitotic phase
+checkpoint mechanism,entity,checkpoint mechanism
+dna replication,event,dna replication
+metaphase stage,entity,metaphase stage
+karyokinesis,event,karyokinesis
+spindle checkpoint,entity,spindle checkpoint
+sister chromatid,entity,sister chromatid
+spindle microtubule,entity,spindle microtubule
+anaphase,entity,anaphase
+regulator molecule,entity,regulator molecule
+intracellular molecule,entity,intracellular molecule
+positive regulation,event,positive regulation
+activity,entity,activity
+regulatory protein,entity,regulatory protein
+protein,entity,protein
+cyclin,entity,cyclin
+cyclin-dependent kinase,entity,cyclin-dependent kinase
+Cdk,entity,Cdk
+positive regulator,entity,positive regulator
+cyclin protein,entity,cyclin protein
+cytoplasmic enzyme,entity,cytoplasmic enzyme
+cyclin accumulation,event,cyclin accumulation
+cyclin complex,entity,cyclin complex
+kinase,entity,kinase
+enzyme,entity,enzyme
+Cdk protein,entity,Cdk protein
+protein kinase,entity,protein kinase
+Cdk complex,entity,Cdk complex
+Cdk inhibitor,entity,Cdk inhibitor
+inhibitor molecule,entity,inhibitor molecule
+inhibitor,entity,inhibitor
+negative regulator,entity,negative regulator
+Retinoblastoma protein,entity,Retinoblastoma protein
+p53,entity,p53
+tumor-suppressor protein,entity,tumor-suppressor protein
+dalton,entity,dalton
+atomic mass unit,entity,atomic mass unit
+proton,entity,proton
+cell-cycle regulation,event,cell-cycle regulation
+multi-functional protein,entity,multi-functional protein
+division,event,division
+apoptosis,event,apoptosis
+cell suicide,entity,cell suicide
+positive regulator protein,entity,positive regulator protein
+transcription factor,entity,transcription factor
+gene,entity,gene
+transition protein,entity,transition protein
+cell growth,entity,cell growth
+tumor suppressor,entity,tumor suppressor

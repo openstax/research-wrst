@@ -63,13 +63,16 @@ def get_term_list(text, all_terms):
     return final_term_list
 
 def extract_rex_ch_sec(rex_link):
-    chsec = rex_link.split('/')[-1][0:3].split('-')
+    pattern = "^\d{,2}\-\d{,2}"
+    tmp = rex_link.split('/')[-1]
+    chsec = ''.join(re.findall(pattern, tmp)).split('-')
+    # chsec = rex_link.split('/')[-1][0:3].split('-')
     chsec = [int(c) for c in chsec]
     return chsec
 
 # Pre-process all of the term and book data
 # Filter down the dataframe to the exact sections used in the experiments
-df_terms = pd.read_csv('term_list.csv')
+df_terms = pd.read_csv('terms_4.2_10.1_validated_existing.csv') # pd.read_csv('term_list.csv')
 exp = Experiment()
 readings = exp.reading_links
 readings = [extract_rex_ch_sec(r) for r in readings]
@@ -105,8 +108,9 @@ def get_text_dynamic():
     text = sample['sentence'].iloc[0]
     terms = sample['terms'].iloc[0]
     content = text
-    #content_url = "https://archive.cnx.org/contents/{}".format(sample['page_id'].iloc[0])
-    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+    # content_url = "https://archive.cnx.org/contents/{}".format(sample['page_id'].iloc[0])
+    # content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+    content_url = "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells"
     family_form_name = 'basic_family'
 
     # Pick two at random terms from the term set, get corresponding locations in the text
