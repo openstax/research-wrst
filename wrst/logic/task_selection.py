@@ -5,7 +5,7 @@
 
 from flask import session, Markup, request
 from wrst.database import db
-from wrst.database.models import User, Relationship
+from wrst.database.models import User, Relationship, Terms
 from wrst.logic.experiment import Experiment
 from wrst.forms.wrst_forms import (
     FamilyForm,
@@ -40,7 +40,9 @@ all_forms = [
     CausalForm,
     ParticipantForm
 ]
-
+## SET FLAG
+USE_DEBSHILA_VERSION = True
+##
 def get_term_list(text, all_terms):
     text_lower = text.lower()
     words = set(text_lower.split())
@@ -66,67 +68,135 @@ def extract_rex_ch_sec(rex_link):
     pattern = "^\d{,2}\-\d{,2}"
     tmp = rex_link.split('/')[-1]
     chsec = ''.join(re.findall(pattern, tmp)).split('-')
-    # chsec = rex_link.split('/')[-1][0:3].split('-')
     chsec = [int(c) for c in chsec]
     return chsec
 
-# Pre-process all of the term and book data
-# Filter down the dataframe to the exact sections used in the experiments
-df_terms = pd.read_csv('terms_4.2_10.1_validated_existing.csv') # pd.read_csv('term_list.csv')
-exp = Experiment()
-readings = exp.reading_links
-readings = [extract_rex_ch_sec(r) for r in readings]
-dfb = pd.read_csv('sentences_Biology_2e_parsed.csv')
-df_book = pd.DataFrame()
-for chsec in readings:
-    ch = chsec[0]
-    sec = chsec[1]
-    tmp = dfb[dfb['chapter']==ch]
-    tmp = tmp[tmp['section']==sec]
-    df_book = df_book.append(tmp)
-#df_book = df_book[df_book['chapter']==4]
-#df_book = df_book[df_book['section_name']=="Eukaryotic Cells"]
-all_terms = set(df_terms['term'].unique().tolist())
-df_book['terms'] = df_book['sentence'].apply(lambda x: get_term_list(x, all_terms))
-df_book['N_terms'] = df_book['terms'].apply(lambda x: len(x))
-df_book = df_book[df_book['N_terms']>=2]
-df_book['sentence_id'] = list(range(0, len(df_book)))
-df_book.to_csv('output.csv')
+# This function adds terms to a db table
+def generate_terms_table(fname = "../sentence_term_pairing_4.2.csv"):
+    df_book = pd.read_csv(fname)
+    # Shuffle table
+    df_book = df_book.sample(frac=1).reset_index(drop=True)
+    user = db.session.query(User).filter(User.user_id == session['user_id']).first()
+    for index, row in df_book.iterrows():
+        # Add table components to db table
+        term_row = Terms(
+            user=user,# session['user_id']
+            paragraph_id=row['paragraph_id'],
+            sentence_id = row['sentence_id'],
+            sentence = row['sentence'],
+            term_1=row['term_1'],
+            term_2=row['term_2'],
+            type_1= row['type_1'],
+            type_2= row['type_2'],
+            N_entity = row['N_entity'],
+            base_term_1 = row['base_term_1'],
+            base_term_2 = row['base_term_2'],
+            done = row['done']
+        )
+        db.session.add(term_row)
+            
+    db.session.commit()
+    
+if USE_DEBSHILA_VERSION:    
+    ## Add terms to db table
+    generate_terms_table(fname = "sentence_term_pairing_4.2.csv")
+else:
+    # Pre-process all of the term and book data
+    # Filter down the dataframe to the exact sections used in the experiments
+    df_terms = pd.read_csv("terms_4.2_validated.csv")# pd.read_csv('terms_4.2_10.1_validated_existing.csv') # pd.read_csv('term_list.csv')
+    exp = Experiment()
+    readings = exp.reading_links
+    readings = [extract_rex_ch_sec(r) for r in readings]
+    dfb = pd.read_csv('sentences_Biology_2e_parsed.csv')
+    df_book = pd.DataFrame()
+    for chsec in readings:
+        ch = chsec[0]
+        sec = chsec[1]
+        tmp = dfb[dfb['chapter']==ch]
+        tmp = tmp[tmp['section']==sec]
+        df_book = df_book.append(tmp)
+    #df_book = df_book[df_book['chapter']==4]
+    #df_book = df_book[df_book['section_name']=="Eukaryotic Cells"]
+    all_terms = set(df_terms['term'].unique().tolist())
+    df_book['terms'] = df_book['sentence'].apply(lambda x: get_term_list(x, all_terms))
+    df_book['N_terms'] = df_book['terms'].apply(lambda x: len(x))
+    df_book = df_book[df_book['N_terms']>=2]
+    df_book['sentence_id'] = list(range(0, len(df_book)))
+    df_book.to_csv('output.csv')
 
+    
 def get_text_dynamic():
-
+    
     # Filter down to the right chapter/section for the current user
     content_url = session['reading_link']
     chsec = extract_rex_ch_sec(content_url)
     print("Task selection")
     print(chsec)
-    dfb = df_book[df_book['chapter']==chsec[0]]
-    dfb = dfb[dfb['section']==chsec[1]]
-
-    # Get a random book sentence
-    sample = dfb.sample(n=1)
-    text = sample['sentence'].iloc[0]
-    terms = sample['terms'].iloc[0]
-    content = text
-    # content_url = "https://archive.cnx.org/contents/{}".format(sample['page_id'].iloc[0])
-    # content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
     content_url = "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells"
     family_form_name = 'basic_family'
+    
+    if USE_DEBSHILA_VERSION:    
+        # Instead of sampling from the dataframe, sample from the db
+        term_row = db.session.query(Terms).filter(Terms.user==session['user_id']).filter_by(done=0).order_by(Terms.id.asc()).first()                
 
-    # Pick two at random terms from the term set, get corresponding locations in the text
-    term_selection = list(np.random.choice(terms, 2, replace=False))
-    for t in term_selection:
-        pattern = re.compile(t, re.IGNORECASE)
-        content = pattern.sub('<span style="background-color: #FFFF00">{}</span>'.format(t), content, 1)
+        term_selection = [term_row.term_1, term_row.term_2]
+        content = term_row.sentence
+        for t in term_selection:
+            pattern = re.compile(t, re.IGNORECASE)
+            content = pattern.sub('<span style="background-color: #FFFF00">{}</span>'.format(t), content, 1)
+                    
+        sentence_id = term_row.sentence_id
+        term_1 = term_row.term_1
+        term_2 = term_row.term_2
+        # Get the types so we can select which form to use
+        type_1 = term_row.type_1
+        type_2 = term_row.type_2
+        types = [type_1, type_2]
+        # N_entity = sum([t=='entity' for t in types])
+        # N_event = sum([t=='event' for t in t])
+        # if N_entity == 2: # entity-entity relationship
+        #     family_form_name = 'entity_entity'
+        # elif N_entity == 2: # entity-event relationship
+        #     family_form_name = 'entity_event'
+        # else: # event-event relationship
+        #     family_form_name = 'event_event'
+        
+        # question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
+        # content = "<h3>{}</h3>".format(content)
+        
+        # Updates value of done on table
+        db.session.query(Terms).filter(Terms.user==session['user_id']).filter_by(sentence_id=term_row.sentence_id).update(dict(done=1))    
 
-    sentence_id = sample['sentence_id'].iloc[0]
-    term_1 = term_selection[0]
-    term_2 = term_selection[1]
+    else:
+        dfb = df_book[df_book['chapter']==chsec[0]]
+        dfb = dfb[dfb['section']==chsec[1]]
 
-    # Get the types so we can select which form to use
-    type_1 = df_terms[df_terms['term']==term_1].iloc[0]['type']
-    type_2 = df_terms[df_terms['term'] == term_2].iloc[0]['type']
-    types = [type_1, type_2]
+        # Get a random book sentence
+        sample = dfb.sample(n=1)
+        text = sample['sentence'].iloc[0]
+        terms = sample['terms'].iloc[0]
+        
+        content = text
+        # content_url = "https://archive.cnx.org/contents/{}".format(sample['page_id'].iloc[0])
+        # content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+        # content_url = "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells"
+        
+
+        # Pick two at random terms from the term set, get corresponding locations in the text
+        term_selection = list(np.random.choice(terms, 2, replace=False))
+        for t in term_selection:
+            pattern = re.compile(t, re.IGNORECASE)
+            content = pattern.sub('<span style="background-color: #FFFF00">{}</span>'.format(t), content, 1)
+
+        sentence_id = sample['sentence_id'].iloc[0]
+        term_1 = term_selection[0]
+        term_2 = term_selection[1]
+
+        # Get the types so we can select which form to use
+        type_1 = df_terms[df_terms['term']==term_1].iloc[0]['type']
+        type_2 = df_terms[df_terms['term'] == term_2].iloc[0]['type']
+        types = [type_1, type_2]
+    
     N_entity = sum([t=='entity' for t in types])
     N_event = sum([t=='event' for t in t])
     if N_entity == 2: # entity-entity relationship

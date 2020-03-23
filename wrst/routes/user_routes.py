@@ -14,7 +14,7 @@ def splash_page():
     if session.get('email_address', None):
         return redirect(url_for('wrst_routes.do_wrst_family'))
     else:
-        return redirect(url_for('user_routes.login_prolific')) # redirect(url_for('user_routes.login_test')) # This will need to be updated for prolific
+        return redirect(url_for('user_routes.login_test')) # This will need to be updated for prolific # redirect(url_for('user_routes.login_prolific'))
 
 
 @user_routes.route('/stupid', methods=['GET', 'POST'])
@@ -31,10 +31,10 @@ def login_prolific():
     study_name = 'prolific'
     prolific_cohorts = db.session.query(User.study_cohort).filter(User.study_name=='prolific')
     N_a = len([c for c in prolific_cohorts if c=='a'])
-    # N_b = len([c for c in prolific_cohorts if c == 'b'])
-    cohort = 'a'
-    # if (N_a > N_b):
-        # cohort = 'b'
+    N_b = len([c for c in prolific_cohorts if c == 'b']) # COMMENT OUT BEFORE PUSHING
+    cohort = 'a' 
+    if (N_a > N_b): # COMMENT OUT BEFORE PUSHING
+        cohort = 'b' # COMMENT OUT BEFORE PUSHING
 
     consent_text = """Before beginning the study, you need to know your rights as a research participant. Please read the following consent form, and indicate whether you consent to participate. Note, you can scroll in the box to view the entire consent form."""
 

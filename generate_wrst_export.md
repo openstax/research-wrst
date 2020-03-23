@@ -18,6 +18,9 @@ To check table schema
 To clear table
 `DELETE FROM table_name;`
 
+To count the number of unique paragraph ids
+`SELECT COUNT(DISTINCT(paragraph_id)) FROM relationships;`
+
 ## Reference:
 https://jamesbedont.com/export-a-heroku-postgres-table-to-a-csv-file
 https://thoughtbot.com/blog/psql-basics

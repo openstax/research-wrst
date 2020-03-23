@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, abort, flash, request, Markup, redirect, url_for, request, session
 from wrst.database import db
-from wrst.database.models import User, Relationship
+from wrst.database.models import User, Relationship, Terms
 import time
 from wrst.forms.wrst_forms import (
     FamilyForm,
