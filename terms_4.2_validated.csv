@@ -1,0 +1,47 @@
+term,type,compound_terms
+prokaryotic cell,entity,TRUE
+section,entity,FALSE
+contrast,entity,FALSE
+organisms bacteria,entity,TRUE
+Archaea,entity,FALSE
+prokaryote,entity,FALSE
+nucleus,entity,FALSE
+protist,entity,FALSE
+eukaryote,entity,FALSE
+plasma membrane,entity,TRUE
+cytoplasm,entity,FALSE
+cytosol,entity,FALSE
+ribosome,entity,FALSE
+eukaryotic cell,entity,TRUE
+organelle,entity,FALSE
+prokaryotic dna,entity,TRUE
+nucleoid,entity,FALSE
+generalize,event,FALSE
+structure,entity,FALSE
+chromosomal dna,entity,TRUE
+cell membrane,entity,TRUE
+peptidoglycan cell wall,entity,TRUE
+polysaccharide capsule,entity,TRUE
+dehydration,event,FALSE
+flagella,entity,FALSE
+fimbriae,entity,FALSE
+locomotion,event,FALSE
+conjugation,event,FALSE
+contact,event,FALSE
+host cell,entity,TRUE
+microscope,entity,FALSE
+sneezer,entity,FALSE
+mucus,entity,FALSE
+body,entity,FALSE
+microorganism,entity,FALSE
+vitamin,entity,FALSE
+microbiologist,entity,FALSE
+development,event,FALSE
+bacterial infection,entity,TRUE
+hazardous element,entity,TRUE
+microbe bioremediation,event,TRUE
+organic molecule,entity,TRUE
+intracellular transport,event,TRUE
+unit,entity,FALSE
+volume,entity,FALSE
+small cell,entity,TRUE
