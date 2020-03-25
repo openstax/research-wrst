@@ -10,23 +10,25 @@
 class Experiment():
     def __init__(self):
         self.reading_links = ["https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
-                              "https://openstax.org/books/biology-2e/pages/10-4-cancer-and-the-cell-cycle"]
+                              "https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells"]#,
+                              #"https://openstax.org/books/biology-2e/pages/10-4-cancer-and-the-cell-cycle"]
 
-        self.cohort_names = ['a'] # ['a', 'b'] ###UPDATE BEFORE PUSHING
+        self.cohort_names = ['a', 'b'] ###UPDATE BEFORE PUSHING
+        # self.cohort_names = ['a'] # ['a', 'b']
         self.num_cohorts = len(self.cohort_names)
 
 class ProlificExperiment(Experiment):
     def __init__(self):
         Experiment.__init__(self)
-        self.reading_time = 5*60 # Change reading time to 5
-        self.task_time = 25*60 # Change task time to 25
+        self.reading_time = 1*60 # Change reading time to 5
+        self.task_time = 3*60 # Change task time to 25
         self.redirect_link = "https://app.prolific.co/submissions/complete?cc=15797BE5" 
 
 class PsychExperiment(Experiment):
     def __init__(self):
         Experiment.__init__(self)
-        self.reading_time = 10*60 #set reading time, currently in seconds
-        self.task_time = 15*60
+        self.reading_time = 1*60 #set reading time, currently in seconds
+        self.task_time = 3*60
 
 class TestExperiment(Experiment):
     def __init__(self):

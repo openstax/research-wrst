@@ -79,12 +79,14 @@ def extract_rex_ch_sec(rex_link):
 # Pre-process all of the term and book data
 # Filter down the dataframe to the exact sections used in the experiments
 df_terms = pd.read_csv(
-    "terms_4.2_10.1_validated_existing.csv"
+    "terms_4.2_validated.csv"
+    # "terms_4.2_10.1_validated_existing.csv"
 )  # pd.read_csv('term_list.csv')
 exp = Experiment()
 readings = exp.reading_links
 readings = [extract_rex_ch_sec(r) for r in readings]
 dfb = pd.read_csv("sentences_Biology_2e_parsed.csv")
+
 df_book = pd.DataFrame()
 for chsec in readings:
     ch = chsec[0]

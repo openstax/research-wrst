@@ -133,6 +133,7 @@ git add .
 git commit -m 'whatever message'
 git push stage master
 git push stage master
+git push heroku dbm-terms-tmp:master #Merge your branch into master
 ```
 
 ## Authors
