@@ -1,5 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
 
+import numpy
+from psycopg2.extensions import register_adapter, AsIs
+
+
+register_adapter(numpy.int64, AsIs)
+register_adapter(numpy.float64, AsIs)
+
 db = SQLAlchemy()
 
 
