@@ -6,6 +6,7 @@
 from flask import session, Markup, request
 from wrst.database import db
 from wrst.database.models import User, Relationship, Terms
+from sqlalchemy import and_, or_
 from wrst.logic.experiment import Experiment
 from wrst.forms.wrst_forms import (
     FamilyForm,
@@ -165,6 +166,12 @@ def get_text_dynamic():
         already_completed = (
             db.session.query(Relationship.id)
             .filter(Relationship.user == session["user_id"])
+            .filter(
+                or_(
+                    and_(Relationship.term_1 == term_1, Relationship.term_2 == term_2),
+                    and_(Relationship.term_1 == term_2, Relationship.term_2 == term_1)
+                )
+            )
             .filter(Relationship.term_1 == term_1)
             .filter(Relationship.term_2 == term_2)
             .filter(Relationship.paragraph_id == sentence_id)
