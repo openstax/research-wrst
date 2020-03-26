@@ -172,8 +172,6 @@ def get_text_dynamic():
                     and_(Relationship.term_1 == term_2, Relationship.term_2 == term_1)
                 )
             )
-            .filter(Relationship.term_1 == term_1)
-            .filter(Relationship.term_2 == term_2)
             .filter(Relationship.paragraph_id == sentence_id)
             .all()
         )
