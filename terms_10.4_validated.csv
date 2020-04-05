@@ -1,0 +1,66 @@
+term,type
+cancer,entity
+cell,entity
+proto-oncogene,entity
+normal cell gene,entity
+tumor suppressor,entity
+mechanism,entity
+cell growth,event
+level,entity
+cell-cycle control,event
+cell-cycle checkpoint surveillance mechanism,entity
+replication,event
+dna,entity
+cell-cycle controls,entity
+mutation,entity
+daughter cell,entity
+gene,entity
+gene mutation,entity
+cell reproduction,event
+protein,entity
+bind,event
+Cdk,entity
+cyclin,entity
+target dna,entity
+parent cell,entity
+dna damage,event
+cell cycle,event
+control,event
+repair mechanism,entity
+growth,entity
+normal cell,entity
+tumor,entity
+oma,entity
+positive cell-cycle regulator,entity
+oncogene,entity
+normal gene,entity
+oncogene gene,entity
+dna sequence,entity
+activity,entity
+positive regulator,entity
+checkpoint,entity
+Cdk gene,entity
+cell-cycle regulatory protein,entity
+cell-cycle checkpoint,entity
+rate,entity
+cell-cycle progression,event
+human tumor cell,entity
+genomic dna,entity
+dna repair enzyme,entity
+program,entity
+cell death,entity
+apoptosis,event
+cancer cell,entity
+normal,entity
+hypoxia,event
+repair,event
+credit,entity
+modification,entity
+human papillomavirus,entity
+virus,entity
+production,entity
+Cdk activation,event
+internal,entity
+external,entity
+tumor-suppressor gene,entity
+tumor growth,entity

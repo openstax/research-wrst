@@ -8,9 +8,10 @@ from wrst.database.models import Tasks
 from wrst.logic.experiment import Experiment
 
 sentences_file = "sentences_Biology_2e_parsed.csv"
-terms_file = "term_list.csv" # 150 tasks
-terms_file = "terms_4.2_10.1_validated_existing.csv" # 10 tasks
+#terms_file = "term_list.csv" # 150 tasks
+#terms_file = "terms_4.2_10.1_validated_existing.csv" # 10 tasks
 #terms_file = "terms_4.2_validated.csv" # 16 tasks
+terms_file = "terms_10.4_validated.csv" # 16 tasks
 
 def extract_rex_ch_sec(rex_link):
     pattern = "^\d{,2}\-\d{,2}"
