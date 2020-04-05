@@ -69,7 +69,9 @@ Note we are using the name wrst here to match the environment variable set above
 CREATE DATABASE wrst
 ```
 
-You will not need to create any tables in the database.  These will be automatyically configured when the app is run
+There are a variety of tables that will be created and populated by the app (users, relationships). You will not need to create these as the app will do this upon launch time.  The one exception to this is the tasks table, which must be generated via a script before running the app.  Not doing this will result in the app not being able to find any relationships selection tasks for the user.
+
+Populating the task table is done by running the create_task_database.py script in the root directory.  This file contains links to a sentence file and term file that can changed for whichever experiment is being run.
 
 ## Running the app locally
 

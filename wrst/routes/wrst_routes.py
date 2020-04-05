@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, abort, flash, request, Markup, redirect, url_for, request, session
 from wrst.database import db
-from wrst.database.models import User, Relationship, Terms
+from wrst.database.models import User, Relationship, Tasks
 import time
 from wrst.forms.wrst_forms import (
     FamilyForm,
@@ -24,6 +24,7 @@ import numpy as np
 wrst_routes = Blueprint('wrst_routes', __name__)
 
 def log_relationship(user,
+                     task_id,
                      paragraph_id,
                      term_1,
                      term_2,
@@ -35,6 +36,7 @@ def log_relationship(user,
                      ):
     new_relationship = Relationship(
         user=user,
+        task_id=task_id,
         paragraph_id=paragraph_id,
         term_1=term_1,
         term_2=term_2,
@@ -65,7 +67,7 @@ def make_time_str(t):
 def get_new_task():
 
     # Get the next task details
-    paragraph_id, term_1, term_2, family_form_name, content, question_text, content_url = get_text_dynamic()
+    current_task_id, paragraph_id, term_1, term_2, family_form_name, content, question_text, content_url = get_text_dynamic()
 
     print("In GNT")
     print(family_form_name)
@@ -73,6 +75,7 @@ def get_new_task():
     # Reset the timing session variables
     session['family_time_on_task'] = 0
     session['relationship_time_on_task'] = 0
+    session['current_task_id'] = current_task_id
 
     # Get the current total time-on-task value for the user
     user = db.session.query(User).filter(User.user_id == session['user_id']).first()
@@ -87,8 +90,12 @@ def get_new_task():
     print("Time comp")
     print(total_time_on_task)
     print(required_time_on_task)
-    if required_time_on_task < total_time_on_task:
-            print("Here....")
+    if (required_time_on_task < total_time_on_task) or (current_task_id==-1):
+            print("We have a stop condition!")
+            if current_task_id==-1:
+                print("End of task")
+            else:
+                print("Timeout")
             return redirect(url_for('instruction_routes.instruction_final'))
     else:
         return redirect(url_for('wrst_routes.do_wrst_family',
@@ -181,6 +188,7 @@ def do_wrst_family():
             # User chose an non-relational option, just log that
             log_relationship(
                 user=session["user_id"],
+                task_id=session["current_task_id"],
                 paragraph_id=paragraph_id,
                 term_1=term_1,
                 term_2=term_2,
@@ -354,6 +362,7 @@ def submission():
             print(session['user_id'])
             log_relationship(
                 user=session["user_id"],
+                task_id=session["current_task_id"],
                 paragraph_id=paragraph_id,
                 term_1=term_1,
                 term_2=term_2,

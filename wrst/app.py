@@ -11,9 +11,8 @@ from wrst.routes.reading_routes import reading_routes
 from wrst.routes.training_routes import training_routes
 from wrst.routes.user_routes import user_routes
 from wrst.routes.admin_routes import admin_routes
-from wrst.database import db
+from wrst.database import db, reset_database
 from flask_bootstrap import Bootstrap
-from wrst.database.models import User, Relationship
 
 def configure_app(flask_app):
     flask_app.config.from_object(os.environ['APP_SETTINGS']) #SESSION_TYPE 'redis' set here
@@ -32,6 +31,8 @@ def initialize_app(flask_app):
     flask_app.register_blueprint(admin_routes)
     db.init_app(flask_app)
     db.create_all(app=flask_app)
+    #create_task_database(sentences_file="sentences_Biology_2e_parsed.csv", terms_file="terms_4.2_validated.csv")
+
 
 def create_app():
     app = Flask(__name__)
@@ -42,7 +43,6 @@ def create_app():
 def main():
     app = create_app()
     app.run()
-
 
 if __name__ == "__main__":
     main()

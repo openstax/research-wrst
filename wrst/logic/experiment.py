@@ -34,4 +34,4 @@ class TestExperiment(Experiment):
     def __init__(self):
         Experiment.__init__(self)
         self.reading_time = 5
-        self.task_time = 30
+        self.task_time = 10*60
