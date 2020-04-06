@@ -44,6 +44,8 @@ class Relationship(db.Model):
     paragraph_id = db.Column(db.Integer)
     term_1 = db.Column(db.String(64))
     term_2 = db.Column(db.String(64))
+    base_term_1 = db.Column(db.String(64))
+    base_term_2 = db.Column(db.String(64))
     family = db.Column(db.String(120))
     relationship = db.Column(db.String(120))
     family_id_time = db.Column(db.Numeric)
@@ -57,6 +59,8 @@ class Relationship(db.Model):
         paragraph_id,
         term_1,
         term_2,
+        base_term_1,
+        base_term_2,
         family,
         relationship,
         family_id_time,
@@ -68,6 +72,8 @@ class Relationship(db.Model):
         self.paragraph_id = paragraph_id
         self.term_1 = term_1
         self.term_2 = term_2
+        self.base_term_1 = base_term_1
+        self.base_term_2 = base_term_2
         self.family = family
         self.relationship = relationship
         self.family_id_time = family_id_time
@@ -83,8 +89,6 @@ class Tasks(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     task_id = db.Column(db.Integer)
-    # order = db.Column(db.Integer)
-    # user = db.Column(db.String(120))
     paragraph_id = db.Column(db.Integer)
     sentence_id = db.Column(db.Integer)
     sentence = db.Column(db.String(1024))
@@ -94,8 +98,6 @@ class Tasks(db.Model):
     type_2 = db.Column(db.String(64))
     base_term_1 = db.Column(db.String(64))
     base_term_2 = db.Column(db.String(64))
-    # done = db.Column(db.Integer)
-    # relationship = db.Column(db.String(120))
 
     def __init__(
         self,
@@ -107,6 +109,8 @@ class Tasks(db.Model):
         term_2,
         type_1,
         type_2,
+        base_term_1=None,
+        base_term_2=None
     ):
         # self.user = user
         self.task_id = task_id
@@ -117,6 +121,8 @@ class Tasks(db.Model):
         self.term_2 = term_2
         self.type_1 = type_1
         self.type_2 = type_2
+        self.base_term_1 = base_term_1
+        self.base_term_2 = base_term_2
 
     def __repr__(self):
         return '<task_id {}>'.format(self.task_id)

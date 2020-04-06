@@ -1,0 +1,1290 @@
+{
+    "cell": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "Cells",
+            "celled",
+            "cells",
+            "cells",
+            "cell",
+            "cell",
+            "cell",
+            "celled",
+            "cell",
+            "cell",
+            "cell",
+            "cell",
+            "cell",
+            "cells",
+            "cell",
+            "cells",
+            "cell",
+            "cell",
+            "cell",
+            "cell",
+            "cell",
+            "cells",
+            "cell",
+            "cell",
+            "cell",
+            "cell",
+            "cell"
+        ],
+        "indices": [
+            [
+                0,
+                1
+            ],
+            [
+                20,
+                21
+            ],
+            [
+                45,
+                46
+            ],
+            [
+                65,
+                66
+            ],
+            [
+                83,
+                84
+            ],
+            [
+                104,
+                105
+            ],
+            [
+                118,
+                119
+            ],
+            [
+                152,
+                153
+            ],
+            [
+                189,
+                190
+            ],
+            [
+                220,
+                221
+            ],
+            [
+                232,
+                233
+            ],
+            [
+                245,
+                246
+            ],
+            [
+                642,
+                643
+            ],
+            [
+                687,
+                688
+            ],
+            [
+                714,
+                715
+            ],
+            [
+                718,
+                719
+            ],
+            [
+                774,
+                775
+            ],
+            [
+                809,
+                810
+            ],
+            [
+                831,
+                832
+            ],
+            [
+                843,
+                844
+            ],
+            [
+                875,
+                876
+            ],
+            [
+                929,
+                930
+            ],
+            [
+                941,
+                942
+            ],
+            [
+                966,
+                967
+            ],
+            [
+                972,
+                973
+            ],
+            [
+                980,
+                981
+            ],
+            [
+                1016,
+                1017
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "VBN",
+            "NNS",
+            "NNS",
+            "NN",
+            "NN",
+            "NN",
+            "VBN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NNS",
+            "NN",
+            "NNS",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NNS",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN"
+        ]
+    },
+    "Prokaryotic": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "prokaryotic",
+            "prokaryotic"
+        ],
+        "indices": [
+            [
+                9,
+                10
+            ],
+            [
+                690,
+                691
+            ]
+        ],
+        "pos": [
+            "JJ",
+            "JJ"
+        ]
+    },
+    "eukaryotic": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "eukaryotic",
+            "eukaryotic"
+        ],
+        "indices": [
+            [
+                11,
+                12
+            ],
+            [
+                692,
+                693
+            ]
+        ],
+        "pos": [
+            "JJ",
+            "JJ"
+        ]
+    },
+    "Archaea": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "Archaea"
+        ],
+        "indices": [
+            [
+                24,
+                25
+            ]
+        ],
+        "pos": [
+            "NNS"
+        ]
+    },
+    "prokaryote": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "prokaryotes",
+            "prokaryotes",
+            "prokaryote",
+            "prokaryotes",
+            "prokaryotes",
+            "prokaryotes"
+        ],
+        "indices": [
+            [
+                26,
+                27
+            ],
+            [
+                134,
+                135
+            ],
+            [
+                144,
+                145
+            ],
+            [
+                202,
+                203
+            ],
+            [
+                255,
+                256
+            ],
+            [
+                622,
+                623
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "NNS",
+            "NN",
+            "NNS",
+            "NNS",
+            "NNS"
+        ]
+    },
+    "nucleus": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "nucleus",
+            "nucleus"
+        ],
+        "indices": [
+            [
+                40,
+                41
+            ],
+            [
+                160,
+                161
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN"
+        ]
+    },
+    "protist": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "protists"
+        ],
+        "indices": [
+            [
+                52,
+                53
+            ]
+        ],
+        "pos": [
+            "NNS"
+        ]
+    },
+    "eukaryote": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "eukaryotes",
+            "eukaryotes"
+        ],
+        "indices": [
+            [
+                55,
+                56
+            ],
+            [
+                182,
+                183
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "NNS"
+        ]
+    },
+    "plasma membrane": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "plasma membrane",
+            "plasma membrane"
+        ],
+        "indices": [
+            [
+                10,
+                12
+            ],
+            [
+                849,
+                851
+            ]
+        ],
+        "pos": [
+            "NN NN",
+            "NN NN"
+        ]
+    },
+    "cytoplasm": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cytoplasm"
+        ],
+        "indices": [
+            [
+                29,
+                30
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "cytosol": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cytosol"
+        ],
+        "indices": [
+            [
+                37,
+                38
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "dna": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "DNA"
+        ],
+        "indices": [
+            [
+                51,
+                52
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "ribosome": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "ribosomes"
+        ],
+        "indices": [
+            [
+                62,
+                63
+            ]
+        ],
+        "pos": [
+            "NNS"
+        ]
+    },
+    "eukaryotic cell": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "eukaryotic cells",
+            "eukaryotic cells",
+            "eukaryotic cells",
+            "eukaryotic cells"
+        ],
+        "indices": [
+            [
+                73,
+                75
+            ],
+            [
+                604,
+                606
+            ],
+            [
+                663,
+                665
+            ],
+            [
+                934,
+                936
+            ]
+        ],
+        "pos": [
+            "JJ NNS",
+            "JJ NNS",
+            "JJ NNS",
+            "JJ NNS"
+        ]
+    },
+    "membrane": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "membrane"
+        ],
+        "indices": [
+            [
+                22,
+                23
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "organelle": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "organelle",
+            "organelles"
+        ],
+        "indices": [
+            [
+                25,
+                26
+            ],
+            [
+                916,
+                917
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NNS"
+        ]
+    },
+    "Prokaryotic dna": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "Prokaryotic DNA"
+        ],
+        "indices": [
+            [
+                41,
+                43
+            ]
+        ],
+        "pos": [
+            "JJ NN"
+        ]
+    },
+    "nucleoid": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "nucleoid"
+        ],
+        "indices": [
+            [
+                52,
+                53
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "peptidoglycan cell": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "peptidoglycan cell"
+        ],
+        "indices": [
+            [
+                4,
+                6
+            ]
+        ],
+        "pos": [
+            "JJ NN"
+        ]
+    },
+    "polysaccharide capsule": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "polysaccharide capsule"
+        ],
+        "indices": [
+            [
+                11,
+                13
+            ]
+        ],
+        "pos": [
+            "JJ NN"
+        ]
+    },
+    "dehydration": {
+        "type": [
+            "event"
+        ],
+        "text": [
+            "dehydration"
+        ],
+        "indices": [
+            [
+                38,
+                39
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "capsule": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "capsule"
+        ],
+        "indices": [
+            [
+                41,
+                42
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "flagella": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "flagella",
+            "Flagella"
+        ],
+        "indices": [
+            [
+                56,
+                57
+            ],
+            [
+                63,
+                64
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "NNS"
+        ]
+    },
+    "fimbriae": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "fimbriae",
+            "fimbriae"
+        ],
+        "indices": [
+            [
+                61,
+                62
+            ],
+            [
+                93,
+                94
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN"
+        ]
+    },
+    "locomotion": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "locomotion"
+        ],
+        "indices": [
+            [
+                67,
+                68
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "conjugation": {
+        "type": [
+            "event"
+        ],
+        "text": [
+            "conjugation"
+        ],
+        "indices": [
+            [
+                74,
+                75
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "contact": {
+        "type": [
+            "event"
+        ],
+        "text": [
+            "contact"
+        ],
+        "indices": [
+            [
+                89,
+                90
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "host cell": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "host cell"
+        ],
+        "indices": [
+            [
+                98,
+                100
+            ]
+        ],
+        "pos": [
+            "NN NN"
+        ]
+    },
+    "contagious": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "contagious"
+        ],
+        "indices": [
+            [
+                12,
+                13
+            ]
+        ],
+        "pos": [
+            "JJ"
+        ]
+    },
+    "microbe": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "microbes",
+            "microbes",
+            "microbes",
+            "microbes",
+            "microbes",
+            "microbes",
+            "microbes"
+        ],
+        "indices": [
+            [
+                25,
+                26
+            ],
+            [
+                77,
+                78
+            ],
+            [
+                104,
+                105
+            ],
+            [
+                421,
+                422
+            ],
+            [
+                437,
+                438
+            ],
+            [
+                461,
+                462
+            ],
+            [
+                532,
+                533
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "NNS",
+            "NNS",
+            "NNS",
+            "NNS",
+            "NNS",
+            "NNS"
+        ]
+    },
+    "microscope": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "microscopes"
+        ],
+        "indices": [
+            [
+                37,
+                38
+            ]
+        ],
+        "pos": [
+            "NNS"
+        ]
+    },
+    "doorknob": {
+        "type": [
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "doorknobs",
+            "doorknob",
+            "doorknob"
+        ],
+        "indices": [
+            [
+                45,
+                46
+            ],
+            [
+                66,
+                67
+            ],
+            [
+                74,
+                75
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "NN",
+            "NN"
+        ]
+    },
+    "sneezer": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "sneezer"
+        ],
+        "indices": [
+            [
+                80,
+                81
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "mucus": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "mucus"
+        ],
+        "indices": [
+            [
+                82,
+                83
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "body": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "body"
+        ],
+        "indices": [
+            [
+                108,
+                109
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "microorganism": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "microorganisms",
+            "microorganisms"
+        ],
+        "indices": [
+            [
+                8,
+                9
+            ],
+            [
+                30,
+                31
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "NNS"
+        ]
+    },
+    "vitamin": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "vitamin"
+        ],
+        "indices": [
+            [
+                26,
+                27
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "microbiologist": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "Microbiologists",
+            "Microbiologists",
+            "microbiologists",
+            "Microbiologists"
+        ],
+        "indices": [
+            [
+                0,
+                1
+            ],
+            [
+                7,
+                8
+            ],
+            [
+                519,
+                520
+            ],
+            [
+                558,
+                559
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "NNS",
+            "NNS",
+            "NNS"
+        ]
+    },
+    "development": {
+        "type": [
+            "event"
+        ],
+        "text": [
+            "development"
+        ],
+        "indices": [
+            [
+                50,
+                51
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "bacterial infection": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "bacterial infections"
+        ],
+        "indices": [
+            [
+                59,
+                61
+            ]
+        ],
+        "pos": [
+            "JJ NNS"
+        ]
+    },
+    "hazardous element": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "hazardous elements"
+        ],
+        "indices": [
+            [
+                26,
+                28
+            ]
+        ],
+        "pos": [
+            "JJ NNS"
+        ]
+    },
+    "microbe bioremediation": {
+        "type": [
+            "event"
+        ],
+        "text": [
+            "microbes bioremediation"
+        ],
+        "indices": [
+            [
+                36,
+                38
+            ]
+        ],
+        "pos": [
+            "NNS NN"
+        ]
+    },
+    "specificity": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "specificity"
+        ],
+        "indices": [
+            [
+                60,
+                61
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "bacterial": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "bacterial"
+        ],
+        "indices": [
+            [
+                69,
+                70
+            ]
+        ],
+        "pos": [
+            "JJ"
+        ]
+    },
+    "Prokaryotic cell": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "prokaryotic cells",
+            "prokaryotic cell"
+        ],
+        "indices": [
+            [
+                8,
+                10
+            ],
+            [
+                61,
+                63
+            ]
+        ],
+        "pos": [
+            "JJ NNS",
+            "JJ NN"
+        ]
+    },
+    "organic molecule": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "organic molecules"
+        ],
+        "indices": [
+            [
+                39,
+                41
+            ]
+        ],
+        "pos": [
+            "JJ NNS"
+        ]
+    },
+    "intracellular transport": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "intracellular transport"
+        ],
+        "indices": [
+            [
+                84,
+                86
+            ]
+        ],
+        "pos": [
+            "JJ NN"
+        ]
+    },
+    "volume": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "volume",
+            "volume",
+            "volume",
+            "volume",
+            "volume",
+            "volume",
+            "volume",
+            "volume",
+            "volume",
+            "volume",
+            "volume"
+        ],
+        "indices": [
+            [
+                33,
+                34
+            ],
+            [
+                83,
+                84
+            ],
+            [
+                114,
+                115
+            ],
+            [
+                143,
+                144
+            ],
+            [
+                190,
+                191
+            ],
+            [
+                953,
+                954
+            ],
+            [
+                969,
+                970
+            ],
+            [
+                986,
+                987
+            ],
+            [
+                1006,
+                1007
+            ],
+            [
+                1022,
+                1023
+            ],
+            [
+                1042,
+                1043
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN"
+        ]
+    },
+    "cell membrane": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cell membrane"
+        ],
+        "indices": [
+            [
+                227,
+                229
+            ]
+        ],
+        "pos": [
+            "NN NN"
+        ]
+    }
+}

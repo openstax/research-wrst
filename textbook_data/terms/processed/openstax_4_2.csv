@@ -1,0 +1,59 @@
+term,type,base_term
+Cells,entity,cell
+celled,entity,cell
+cells,entity,cell
+cell,entity,cell
+prokaryotic,entity,Prokaryotic
+eukaryotic,entity,eukaryotic
+Archaea,entity,Archaea
+prokaryotes,entity,prokaryote
+prokaryote,entity,prokaryote
+nucleus,entity,nucleus
+protists,entity,protist
+eukaryotes,entity,eukaryote
+plasma membrane,entity,plasma membrane
+cytoplasm,entity,cytoplasm
+cytosol,entity,cytosol
+DNA,entity,dna
+ribosomes,entity,ribosome
+eukaryotic cells,entity,eukaryotic cell
+membrane,entity,membrane
+organelle,entity,organelle
+organelles,entity,organelle
+Prokaryotic DNA,entity,Prokaryotic dna
+nucleoid,entity,nucleoid
+peptidoglycan cell,entity,peptidoglycan cell
+polysaccharide capsule,entity,polysaccharide capsule
+dehydration,event,dehydration
+capsule,entity,capsule
+flagella,entity,flagella
+Flagella,entity,flagella
+fimbriae,entity,fimbriae
+locomotion,entity,locomotion
+conjugation,event,conjugation
+contact,event,contact
+host cell,entity,host cell
+contagious,entity,contagious
+microbes,entity,microbe
+microscopes,entity,microscope
+doorknobs,entity,doorknob
+doorknob,entity,doorknob
+sneezer,entity,sneezer
+mucus,entity,mucus
+body,entity,body
+microorganisms,entity,microorganism
+vitamin,entity,vitamin
+Microbiologists,entity,microbiologist
+microbiologists,entity,microbiologist
+development,event,development
+bacterial infections,entity,bacterial infection
+hazardous elements,entity,hazardous element
+microbes bioremediation,event,microbe bioremediation
+specificity,entity,specificity
+bacterial,entity,bacterial
+prokaryotic cells,entity,Prokaryotic cell
+prokaryotic cell,entity,Prokaryotic cell
+organic molecules,entity,organic molecule
+intracellular transport,entity,intracellular transport
+volume,entity,volume
+cell membrane,entity,cell membrane

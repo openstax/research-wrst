@@ -10,10 +10,6 @@ from wrst.database.models import Tasks
 from wrst.logic.experiment import Experiment
 
 sentences_file = "../textbook_data/book/sentences_Biology_2e_parsed.csv"
-#terms_file = "term_list.csv" # 150 tasks
-#terms_file = "terms_4.2_10.1_validated_existing.csv" # 10 tasks
-#terms_file = "terms_4.2_validated.csv" # 16 tasks
-terms_file = "../textbook_data/terms/terms_10.4_validated.csv" # 16 tasks
 
 def extract_rex_ch_sec(rex_link):
     pattern = "^\d{,2}\-\d{,2}"
@@ -74,6 +70,12 @@ def create_book_dataframe(sentences_file, all_terms):
 
     return df_book, df_book_tmp
 
+def get_base_term(term, df_terms):
+    # Find the term in the dataframe, return it's base pair
+    term = term.lower()
+    dft = df_terms[df_terms["term"]==term]
+    return dft["base_term"].iloc[0]
+
 app = create_app()
 app.app_context().push()
 
@@ -85,9 +87,17 @@ db.session.query(Tasks).delete()
 db.session.commit()
 
 # Get the terms dataframe and the set of all terms
+exp = Experiment()
+readings = exp.reading_links
+readings = list(dict.fromkeys(readings))  # Ensures that we drop duplicates reading links (experiment hack)
+readings = [extract_rex_ch_sec(r) for r in readings]
+chapter = readings[0][0]
+section = readings[0][1]
+terms_file = "../textbook_data/terms/processed/openstax_{}_{}.csv".format(readings[0][0], readings[0][1])
 df_terms = pd.read_csv(
     terms_file
 )
+df_terms["term"] = df_terms["term"].apply(lambda x: x.lower())
 all_terms = set(df_terms["term"].unique().tolist())
 
 # Get the book dataframe, filtered down to sentences allowed in the current experiment
@@ -108,10 +118,12 @@ for ii in range(0, df_book.shape[0]):
             term_2=term_combination[1],
             type_1=df_terms[df_terms["term"]==term_combination[0]].iloc[0]["type"],
             type_2=df_terms[df_terms["term"] == term_combination[1]].iloc[0]["type"],
+            base_term_1=get_base_term(term_combination[0], df_terms),
+            base_term_2=get_base_term(term_combination[1], df_terms)
         )
         db.session.add(task)
         task_count += 1
 db.session.commit()
-print("Finished")
+print("Finished doing Ch. {} Sec. {}".format(chapter, section))
 print("I found {} valid sentences having at least two terms".format(df_book.shape[0]))
 print("I found {} total tasks that can be completed".format(task_count))

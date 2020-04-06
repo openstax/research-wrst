@@ -28,6 +28,8 @@ def log_relationship(user,
                      paragraph_id,
                      term_1,
                      term_2,
+                     base_term_1,
+                     base_term_2,
                      family,
                      relationship,
                      family_id_time,
@@ -40,6 +42,8 @@ def log_relationship(user,
         paragraph_id=paragraph_id,
         term_1=term_1,
         term_2=term_2,
+        base_term_1=base_term_1,
+        base_term_2=base_term_2,
         family=family,
         relationship=relationship,
         family_id_time=family_id_time,
@@ -67,7 +71,7 @@ def make_time_str(t):
 def get_new_task():
 
     # Get the next task details
-    current_task_id, paragraph_id, term_1, term_2, family_form_name, content, question_text, content_url = get_text_dynamic()
+    current_task_id, paragraph_id, term_1, term_2, base_term_1, base_term_2, family_form_name, content, question_text, content_url = get_text_dynamic()
 
     print("In GNT")
     print(family_form_name)
@@ -104,6 +108,8 @@ def get_new_task():
                                 question_text=question_text,
                                 term_1=term_1,
                                 term_2=term_2,
+                                base_term_1=base_term_1,
+                                base_term_2=base_term_2,
                                 family_form_name=family_form_name,
                                 user_email=session['user_id'],
                                 content_url=content_url
@@ -118,6 +124,8 @@ def do_wrst_family():
     paragraph_id = request.args["paragraph_id"]
     term_1 = request.args["term_1"]
     term_2 = request.args["term_2"]
+    base_term_1 = request.args["base_term_1"]
+    base_term_2 = request.args["base_term_2"]
     family_form_name = request.args["family_form_name"]
     content = Markup(request.args["content"])
     question_text = request.args["question_text"]
@@ -180,6 +188,8 @@ def do_wrst_family():
                                     question_text=question_text,
                                     term_1=term_1,
                                     term_2=term_2,
+                                    base_term_1=base_term_1,
+                                    base_term_2=base_term_2,
                                     user_email=session['user_id'],
                                     content_url=content_url
                                     )
@@ -192,6 +202,8 @@ def do_wrst_family():
                 paragraph_id=paragraph_id,
                 term_1=term_1,
                 term_2=term_2,
+                base_term_1=base_term_1,
+                base_term_2=base_term_2,
                 family=return_text,
                 relationship="NA",
                 family_id_time=session['family_time_on_task'],
@@ -214,6 +226,8 @@ def do_wrst_relationship():
     question_text = request.args["question_text"]
     term_1 = request.args["term_1"]
     term_2 = request.args["term_2"]
+    base_term_1 = request.args["base_term_1"]
+    base_term_2 = request.args["base_term_2"]
     content_url = request.args["content_url"]
 
     form = get_form_by_name(form_title)
@@ -266,6 +280,8 @@ def do_wrst_relationship():
                                     question_text=question_text,
                                     term_1=term_2,
                                     term_2=term_1,
+                                    base_term_1=base_term_2,
+                                    base_term_2=base_term_1,
                                     user_email=session['user_id'],
                                     content_url=content_url)
                             )
@@ -276,6 +292,8 @@ def do_wrst_relationship():
                                     question_text=question_text,
                                     term_1=term_1,
                                     term_2=term_2,
+                                    base_term_1=base_term_1,
+                                    base_term_2=base_term_2,
                                     family_form_name=family_form_name,
                                     user_email=session['user_id'],
                                     content_url=content_url
@@ -294,6 +312,8 @@ def do_wrst_relationship():
                                     question_text=question_text,
                                     term_1=term_1,
                                     term_2=term_2,
+                                    base_term_1=base_term_1,
+                                    base_term_2=base_term_2,
                                     family_form_name=family_form_name,
                                     family_category=family_category,
                                     relationship=relationship,
@@ -314,6 +334,8 @@ def submission():
     content = Markup(request.args["content"])
     term_1 = request.args["term_1"]
     term_2 = request.args["term_2"]
+    base_term_1 = request.args["base_term_1"]
+    base_term_2 = request.args["base_term_2"]
     family_form_name = request.args["family_form_name"]
     family_category = request.args["family_category"]
     relationship = request.args["relationship"]
@@ -351,6 +373,8 @@ def submission():
                                     question_text=question_text,
                                     term_1=term_1,
                                     term_2=term_2,
+                                    base_term_1=base_term_1,
+                                    base_term_2=base_term_2,
                                     family_form_name=family_form_name,
                                     user_email=session['user_id'],
                                     content_url=content_url
@@ -366,6 +390,8 @@ def submission():
                 paragraph_id=paragraph_id,
                 term_1=term_1,
                 term_2=term_2,
+                base_term_1=base_term_1,
+                base_term_2=base_term_2,
                 family=family_category,
                 relationship=relationship,
                 family_id_time=session['family_time_on_task'],

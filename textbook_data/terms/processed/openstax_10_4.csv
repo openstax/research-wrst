@@ -1,0 +1,89 @@
+term,type,base_term
+Cancer,entity,cancer
+cancers,entity,cancer
+mechanism,entity,mechanism
+cell growth,entity,cell growth
+levels,entity,level
+cell-cycle control,entity,cell-cycle control
+critical processes,event,critical process
+cell-cycle checkpoint surveillance mechanism,entity,cell-cycle checkpoint surveillance mechanism
+replication,event,replication
+DNA,entity,dna
+cell-cycle controls,entity,cell-cycle controls
+mutations,event,mutation
+mutation,event,mutation
+daughter cells,entity,daughter cell
+DNA nucleotide sequence,entity,dna nucleotide sequence
+gene,entity,gene
+genes,entity,gene
+gene mutation,event,gene mutation
+faulty protein,entity,faulty protein
+cell reproduction,entity,cell reproduction
+cell,entity,cell
+cells,entity,cell
+Cells,entity,cell
+protein,entity,protein
+proteins,entity,protein
+Cdk,entity,Cdk
+cyclin,entity,cyclin
+target DNA,entity,target dna
+parent cell,entity,parent cell
+DNA damage,event,dna damage
+cell cycle,event,cell cycle
+control,entity,control
+repair mechanisms,entity,repair mechanism
+growth,entity,growth
+mutated,event,mutate
+Mutated,event,mutate
+normal cells,entity,normal cell
+tumor,entity,tumor
+oma,entity,oma
+positive cell-cycle regulators,entity,positive cell-cycle regulator
+proto-oncogenes,entity,proto-oncogene
+Proto-oncogenes,entity,proto-oncogene
+normal genes,entity,normal gene
+oncogenes—genes,entity,oncogenes—genes
+oncogene,entity,oncogene
+oncogenes,entity,oncogene
+DNA sequence,entity,dna sequence
+damage,event,damage
+damaged,event,damage
+activity,entity,activity
+positive regulator,entity,positive regulator
+checkpoint,entity,checkpoint
+Cdk gene,entity,Cdk gene
+cell-cycle regulatory proteins,entity,cell-cycle regulatory protein
+cycle,event,cycle
+cell-cycle checkpoints,entity,cell-cycle checkpoint
+rate,entity,rate
+cell-cycle progression,event,cell-cycle progression
+negative cell-cycle regulatory proteins,entity,negative cell-cycle regulatory protein
+Tumor suppressor genes,entity,tumor suppressor gene
+negative regulator proteins,entity,negative regulator protein
+regulators,entity,regulator
+function,entity,function
+tumor suppressor gene proteins,entity,tumor suppressor gene protein
+p53,entity,p53
+events,entity,event
+negative regulator,entity,negative regulator
+Tumor suppressors,entity,tumor suppressor
+human tumor cells,entity,human tumor cell
+faulty,entity,faulty
+genomic DNA,entity,genomic dna
+DNA repair enzymes,entity,dna repair enzyme
+programmed,event,program
+cell death,entity,cell death
+apoptosis,event,apoptosis
+cancer cells,entity,cancer cell
+normal p53,entity,normal p53
+hypoxia,entity,hypoxia
+repairs,entity,repair
+repair,entity,repair
+p53 function,entity,p53 function
+production,entity,production
+Cdk activation,event,Cdk activation
+internal,entity,internal
+external,entity,external
+faulty tumor-suppressor gene,entity,faulty tumor-suppressor gene
+tumor-suppressor genes,entity,tumor-suppressor gene
+tumor growth,entity,tumor growth

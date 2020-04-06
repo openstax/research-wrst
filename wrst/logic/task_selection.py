@@ -50,7 +50,7 @@ def get_text_dynamic():
     if num_tasks_completed >= num_tasks_available:
         print("User has finished everything")
         # Do something to signal the calling function that this person is done and route accordingly
-        return (-1, "", "", "", "", "", "", "")
+        return (-1, "", "", "", "", "", "", "", "", "")
     elif num_tasks_completed==0:
         current_task_id = np.random.choice(num_tasks_available)
     else:
@@ -64,6 +64,8 @@ def get_text_dynamic():
     content_url = session["reading_link"]
     term_1 = task.term_1
     term_2 = task.term_2
+    base_term_1 = task.base_term_1
+    base_term_2 = task.base_term_2
     terms = [term_1, term_2]
     content = task.sentence
     for t in terms:
@@ -92,6 +94,8 @@ def get_text_dynamic():
         sentence_id,
         term_1,
         term_2,
+        base_term_1,
+        base_term_2,
         family_form_name,
         content,
         question_text,

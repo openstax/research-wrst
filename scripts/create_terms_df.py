@@ -10,7 +10,7 @@ import os
 
 # Make sure base directory points to the right place . . .
 base_directory = '../textbook_data/terms/raw_json/'
-output_directory = '../textbook_data/terms/tmp/'
+output_directory = '../textbook_data/terms/processed/'
 
 # Get all the files in the raw_json directory
 raw_files = os.listdir(base_directory)

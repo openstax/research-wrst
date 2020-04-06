@@ -1,85 +1,227 @@
 {
-    "cell cycle": {
-        "type": [
-            "event",
-            "event",
-            "event",
-            "event"
-        ],
-        "text": [
-            "cell cycle",
-            "cell cycle",
-            "cell cycle",
-            "cell cycle"
-        ],
-        "indices": [
-            [
-                1,
-                3
-            ],
-            [
-                62,
-                64
-            ],
-            [
-                117,
-                119
-            ],
-            [
-                1687,
-                1689
-            ]
-        ],
-        "pos": [
-            "NN NN",
-            "NN NN",
-            "NN NN",
-            "NN NN"
-        ]
-    },
-    "event": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "events"
-        ],
-        "indices": [
-            [
-                8,
-                9
-            ]
-        ],
-        "pos": [
-            "NNS"
-        ]
-    },
-    "cell growth": {
+    "cancer": {
         "type": [
             "entity",
             "entity"
         ],
         "text": [
-            "cell growth",
+            "Cancer",
+            "cancers"
+        ],
+        "indices": [
+            [
+                0,
+                1
+            ],
+            [
+                113,
+                114
+            ]
+        ],
+        "pos": [
+            "NNP",
+            "NNS"
+        ]
+    },
+    "mechanism": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "mechanism"
+        ],
+        "indices": [
+            [
+                9,
+                10
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "cell growth": {
+        "type": [
+            "entity"
+        ],
+        "text": [
             "cell growth"
         ],
         "indices": [
             [
-                10,
-                12
-            ],
-            [
-                482,
-                484
+                12,
+                14
             ]
         ],
         "pos": [
-            "NN NN",
             "NN NN"
         ]
     },
-    "cell division": {
+    "level": {
         "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "levels",
+            "levels"
+        ],
+        "indices": [
+            [
+                20,
+                21
+            ],
+            [
+                958,
+                959
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "NNS"
+        ]
+    },
+    "cell-cycle control": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cell-cycle control"
+        ],
+        "indices": [
+            [
+                22,
+                26
+            ]
+        ],
+        "pos": [
+            "NN NN NN"
+        ]
+    },
+    "critical process": {
+        "type": [
+            "event"
+        ],
+        "text": [
+            "critical processes"
+        ],
+        "indices": [
+            [
+                34,
+                36
+            ]
+        ],
+        "pos": [
+            "JJ NNS"
+        ]
+    },
+    "cell-cycle checkpoint surveillance mechanism": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cell-cycle checkpoint surveillance mechanism"
+        ],
+        "indices": [
+            [
+                39,
+                45
+            ]
+        ],
+        "pos": [
+            "NN NN NN NN NN"
+        ]
+    },
+    "replication": {
+        "type": [
+            "event",
+            "event"
+        ],
+        "text": [
+            "replication",
+            "replication"
+        ],
+        "indices": [
+            [
+                48,
+                49
+            ],
+            [
+                73,
+                74
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN"
+        ]
+    },
+    "dna": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "DNA",
+            "DNA",
+            "DNA",
+            "DNA",
+            "DNA"
+        ],
+        "indices": [
+            [
+                50,
+                51
+            ],
+            [
+                614,
+                615
+            ],
+            [
+                814,
+                815
+            ],
+            [
+                865,
+                866
+            ],
+            [
+                913,
+                914
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN"
+        ]
+    },
+    "cell-cycle controls": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cell-cycle controls"
+        ],
+        "indices": [
+            [
+                61,
+                65
+            ]
+        ],
+        "pos": [
+            "NN NN NNS"
+        ]
+    },
+    "mutation": {
+        "type": [
+            "event",
+            "event",
             "event",
             "event",
             "event",
@@ -88,46 +230,58 @@
             "event"
         ],
         "text": [
-            "cell division",
-            "cell division",
-            "cell division",
-            "cell division",
-            "cell division",
-            "cell division"
+            "mutations",
+            "mutation",
+            "mutation",
+            "mutation",
+            "mutation",
+            "mutations",
+            "mutations",
+            "mutations"
         ],
         "indices": [
             [
-                13,
-                15
+                76,
+                77
             ],
             [
-                27,
-                29
+                373,
+                374
             ],
             [
-                168,
-                170
+                388,
+                389
             ],
             [
-                409,
-                411
+                421,
+                422
             ],
             [
-                1296,
-                1298
+                465,
+                466
             ],
             [
-                1346,
-                1348
+                502,
+                503
+            ],
+            [
+                794,
+                795
+            ],
+            [
+                1046,
+                1047
             ]
         ],
         "pos": [
-            "NN NN",
-            "NN NN",
-            "NN NN",
-            "NN NN",
-            "NN NN",
-            "NN NN"
+            "NNS",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NNS",
+            "NNS",
+            "NNS"
         ]
     },
     "daughter cell": {
@@ -138,61 +292,195 @@
             "entity",
             "entity",
             "entity",
-            "entity",
             "entity"
         ],
         "text": [
             "daughter cells",
             "daughter cells",
             "daughter cells",
-            "daughter cell",
             "daughter cells",
             "daughter cells",
             "daughter cells",
-            "daughter cell"
+            "daughter cells"
         ],
         "indices": [
             [
-                19,
-                21
+                84,
+                86
             ],
             [
-                534,
-                536
+                204,
+                206
             ],
             [
-                590,
-                592
+                453,
+                455
             ],
             [
-                1255,
-                1257
+                484,
+                486
             ],
             [
-                1310,
-                1312
+                1011,
+                1013
             ],
             [
-                1364,
-                1366
+                1040,
+                1042
             ],
             [
-                1484,
-                1486
-            ],
-            [
-                1640,
-                1642
+                1061,
+                1063
             ]
         ],
         "pos": [
             "NN NNS",
             "NN NNS",
             "NN NNS",
+            "NN NNS",
+            "NN NNS",
+            "NN NNS",
+            "NN NNS"
+        ]
+    },
+    "dna nucleotide sequence": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "DNA nucleotide sequence"
+        ],
+        "indices": [
+            [
+                91,
+                94
+            ]
+        ],
+        "pos": [
+            "NN NN NN"
+        ]
+    },
+    "gene": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "gene",
+            "genes",
+            "genes",
+            "genes",
+            "gene",
+            "genes",
+            "gene"
+        ],
+        "indices": [
+            [
+                101,
+                102
+            ],
+            [
+                270,
+                271
+            ],
+            [
+                508,
+                509
+            ],
+            [
+                527,
+                528
+            ],
+            [
+                568,
+                569
+            ],
+            [
+                725,
+                726
+            ],
+            [
+                1022,
+                1023
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NNS",
+            "NNS",
+            "NNS",
+            "NN",
+            "NNS",
+            "NN"
+        ]
+    },
+    "gene mutation": {
+        "type": [
+            "event",
+            "event",
+            "event"
+        ],
+        "text": [
+            "gene mutation",
+            "gene mutation",
+            "gene mutation"
+        ],
+        "indices": [
+            [
+                108,
+                110
+            ],
+            [
+                117,
+                119
+            ],
+            [
+                403,
+                405
+            ]
+        ],
+        "pos": [
             "NN NN",
-            "NN NNS",
-            "NN NNS",
-            "NN NNS",
+            "NN NN",
+            "NN NN"
+        ]
+    },
+    "faulty protein": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "faulty protein"
+        ],
+        "indices": [
+            [
+                123,
+                125
+            ]
+        ],
+        "pos": [
+            "JJ NN"
+        ]
+    },
+    "cell reproduction": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cell reproduction"
+        ],
+        "indices": [
+            [
+                131,
+                133
+            ]
+        ],
+        "pos": [
             "NN NN"
         ]
     },
@@ -216,28 +504,9 @@
             "entity",
             "entity",
             "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
             "entity"
         ],
         "text": [
-            "Cells",
-            "cells",
-            "cell",
-            "cell",
-            "cell",
-            "cell",
-            "cell",
-            "cell",
             "cell",
             "cells",
             "cell",
@@ -247,159 +516,98 @@
             "cell",
             "cell",
             "cell",
-            "cell",
-            "cell",
-            "cell",
-            "cell",
-            "cell",
-            "cell",
             "cells",
+            "cells",
+            "cell",
+            "cell",
+            "cell",
+            "cell",
+            "cell",
             "Cells",
             "cell",
-            "cells",
-            "cells",
-            "cell",
-            "cells"
+            "Cells"
         ],
         "indices": [
             [
-                22,
-                23
+                4,
+                5
             ],
             [
-                59,
-                60
+                112,
+                113
             ],
             [
-                83,
-                84
+                301,
+                302
             ],
             [
-                159,
-                160
+                316,
+                317
             ],
             [
-                175,
-                176
+                351,
+                352
             ],
             [
-                243,
-                244
+                357,
+                358
             ],
             [
-                253,
-                254
+                382,
+                383
             ],
             [
-                444,
-                445
+                461,
+                462
             ],
             [
-                499,
-                500
+                491,
+                492
             ],
             [
-                671,
-                672
+                497,
+                498
             ],
             [
-                794,
-                795
+                602,
+                603
             ],
             [
-                816,
-                817
+                634,
+                635
             ],
             [
-                1108,
-                1109
+                678,
+                679
             ],
             [
-                1179,
-                1180
+                763,
+                764
             ],
             [
-                1353,
-                1354
+                829,
+                830
             ],
             [
-                1389,
-                1390
+                902,
+                903
             ],
             [
-                1435,
-                1436
+                921,
+                922
             ],
             [
-                1478,
-                1479
+                987,
+                988
             ],
             [
-                1550,
-                1551
-            ],
-            [
-                1575,
-                1576
-            ],
-            [
-                1582,
-                1583
-            ],
-            [
-                1599,
-                1600
-            ],
-            [
-                1617,
-                1618
-            ],
-            [
-                1626,
-                1627
-            ],
-            [
-                1660,
-                1661
-            ],
-            [
-                1672,
-                1673
-            ],
-            [
-                1684,
-                1685
-            ],
-            [
-                1691,
-                1692
-            ],
-            [
-                1712,
-                1713
-            ],
-            [
-                1733,
-                1734
+                1057,
+                1058
             ]
         ],
         "pos": [
-            "NNS",
-            "NNS",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
             "NN",
             "NNS",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
             "NN",
             "NN",
             "NN",
@@ -410,16 +618,17 @@
             "NNS",
             "NNS",
             "NN",
-            "NNS",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
             "NNS",
             "NN",
             "NNS"
         ]
     },
-    "stage": {
+    "protein": {
         "type": [
-            "entity",
-            "entity",
             "entity",
             "entity",
             "entity",
@@ -429,100 +638,136 @@
             "entity"
         ],
         "text": [
-            "stages",
-            "stages",
-            "stage",
-            "stage",
-            "stage",
-            "stages",
-            "stage",
-            "stages",
-            "stage"
+            "protein",
+            "protein",
+            "proteins",
+            "protein",
+            "protein",
+            "protein",
+            "protein"
         ],
         "indices": [
             [
-                39,
-                40
+                10,
+                11
             ],
             [
-                196,
-                197
+                29,
+                30
             ],
             [
-                209,
-                210
+                80,
+                81
             ],
             [
-                240,
-                241
+                343,
+                344
             ],
             [
-                506,
-                507
+                544,
+                545
             ],
             [
-                640,
-                641
+                755,
+                756
             ],
             [
-                1288,
-                1289
-            ],
-            [
-                1369,
-                1370
-            ],
-            [
-                1680,
-                1681
+                908,
+                909
             ]
         ],
         "pos": [
-            "NNS",
-            "NNS",
-            "NN",
             "NN",
             "NN",
             "NNS",
             "NN",
-            "NNS",
+            "NN",
+            "NN",
             "NN"
         ]
     },
-    "growth": {
+    "Cdk": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "Cdk",
+            "Cdk"
+        ],
+        "indices": [
+            [
+                23,
+                24
+            ],
+            [
+                424,
+                425
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NNP"
+        ]
+    },
+    "cyclin": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "cyclin",
+            "cyclin"
+        ],
+        "indices": [
+            [
+                25,
+                26
+            ],
+            [
+                432,
+                433
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN"
+        ]
+    },
+    "target dna": {
         "type": [
             "entity"
         ],
         "text": [
-            "growth"
+            "target DNA"
         ],
         "indices": [
             [
-                41,
-                42
+                34,
+                36
             ]
         ],
         "pos": [
-            "NN"
+            "NN NN"
         ]
     },
-    "dna replication": {
+    "parent cell": {
         "type": [
-            "event",
-            "event"
+            "entity",
+            "entity"
         ],
         "text": [
-            "DNA replication",
-            "DNA replication"
+            "parent cell",
+            "parent cell"
         ],
         "indices": [
             [
-                43,
-                45
+                66,
+                68
             ],
             [
-                304,
-                306
+                1031,
+                1033
             ]
         ],
         "pos": [
@@ -530,405 +775,24 @@
             "NN NN"
         ]
     },
-    "nuclear": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "nuclear"
-        ],
-        "indices": [
-            [
-                47,
-                48
-            ]
-        ],
-        "pos": [
-            "JJ"
-        ]
-    },
-    "cytoplasmic division": {
+    "dna damage": {
         "type": [
             "event"
         ],
         "text": [
-            "cytoplasmic division"
+            "DNA damage"
         ],
         "indices": [
             [
-                49,
-                51
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "phase": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "phases",
-            "phase",
-            "phase",
-            "phase",
-            "phase",
-            "phases",
-            "phase",
-            "phase",
-            "phases",
-            "phase",
-            "phase"
-        ],
-        "indices": [
-            [
-                67,
-                68
-            ],
-            [
-                216,
-                217
-            ],
-            [
-                302,
-                303
-            ],
-            [
-                343,
-                344
-            ],
-            [
-                441,
-                442
-            ],
-            [
-                606,
-                607
-            ],
-            [
-                752,
-                753
-            ],
-            [
-                1328,
-                1329
-            ],
-            [
-                1646,
-                1647
-            ],
-            [
-                1663,
-                1664
-            ],
-            [
-                1717,
-                1718
-            ]
-        ],
-        "pos": [
-            "NNS",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NNS",
-            "NN",
-            "NN",
-            "NNS",
-            "NN",
-            "NN"
-        ]
-    },
-    "interphase": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "interphase",
-            "interphase",
-            "interphase",
-            "interphase",
-            "interphase",
-            "interphase",
-            "interphase",
-            "interphase",
-            "interphase",
-            "interphase"
-        ],
-        "indices": [
-            [
-                69,
-                70
-            ],
-            [
-                80,
-                81
-            ],
-            [
-                129,
-                130
-            ],
-            [
-                156,
-                157
-            ],
-            [
-                179,
-                180
-            ],
-            [
-                198,
-                199
-            ],
-            [
-                211,
-                212
-            ],
-            [
-                286,
-                287
-            ],
-            [
-                1488,
-                1489
-            ],
-            [
-                1648,
-                1649
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN"
-        ]
-    },
-    "mitotic phase": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "mitotic phase",
-            "mitotic phase",
-            "mitotic phase",
-            "mitotic phase",
-            "mitotic phase",
-            "mitotic phase",
-            "mitotic phase",
-            "mitotic phase",
-            "mitotic phase",
-            "mitotic phase"
-        ],
-        "indices": [
-            [
-                72,
-                74
-            ],
-            [
-                92,
-                94
-            ],
-            [
-                182,
-                184
-            ],
-            [
-                475,
-                477
-            ],
-            [
-                492,
-                494
-            ],
-            [
-                511,
-                513
-            ],
-            [
-                542,
-                544
-            ],
-            [
-                563,
-                565
-            ],
-            [
-                1291,
-                1293
-            ],
-            [
-                1654,
-                1656
-            ]
-        ],
-        "pos": [
-            "JJ NN",
-            "JJ NN",
-            "JJ NN",
-            "JJ NN",
-            "JJ NN",
-            "JJ NN",
-            "JJ NN",
-            "JJ NN",
-            "JJ NN",
-            "JJ NN"
-        ]
-    },
-    "dna": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "DNA",
-            "DNA",
-            "DNA"
-        ],
-        "indices": [
-            [
-                86,
-                87
-            ],
-            [
-                97,
-                98
-            ],
-            [
-                681,
-                682
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN",
-            "NN"
-        ]
-    },
-    "cytoplasmic": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "cytoplasmic",
-            "cytoplasmic",
-            "cytoplasmic"
-        ],
-        "indices": [
-            [
-                99,
-                100
-            ],
-            [
-                585,
-                586
-            ],
-            [
-                1306,
-                1307
-            ]
-        ],
-        "pos": [
-            "JJ",
-            "JJ",
-            "JJ"
-        ]
-    },
-    "cell cytoplasm": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "cell cytoplasm"
-        ],
-        "indices": [
-            [
-                106,
-                108
+                83,
+                85
             ]
         ],
         "pos": [
             "NN NN"
         ]
     },
-    "process": {
-        "type": [
-            "event",
-            "event",
-            "event",
-            "event"
-        ],
-        "text": [
-            "process",
-            "process",
-            "processes",
-            "process"
-        ],
-        "indices": [
-            [
-                114,
-                115
-            ],
-            [
-                571,
-                572
-            ],
-            [
-                874,
-                875
-            ],
-            [
-                1379,
-                1380
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN",
-            "NNS",
-            "NN"
-        ]
-    },
-    "cytokinesis": {
+    "cell cycle": {
         "type": [
             "event",
             "event",
@@ -940,227 +804,1060 @@
             "event"
         ],
         "text": [
-            "cytokinesis",
-            "cytokinesis",
-            "Cytokinesis",
-            "cytokinesis",
-            "cytokinesis",
-            "cytokinesis",
-            "cytokinesis",
-            "cytokinesis"
+            "cell cycle",
+            "cell cycle",
+            "cell cycle",
+            "cell cycle",
+            "cell cycle",
+            "cell cycle",
+            "cell cycle",
+            "cell cycle"
         ],
         "indices": [
             [
-                120,
-                121
+                92,
+                94
             ],
             [
-                139,
-                140
+                312,
+                314
             ],
             [
-                1273,
-                1274
+                361,
+                363
             ],
             [
-                1320,
-                1321
+                436,
+                438
             ],
             [
-                1341,
-                1342
+                512,
+                514
             ],
             [
-                1381,
-                1382
+                695,
+                697
             ],
             [
-                1401,
-                1402
+                940,
+                942
             ],
             [
-                1658,
-                1659
+                1007,
+                1009
             ]
         ],
         "pos": [
-            "NN",
-            "NN",
-            "NNP",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN"
+            "NN NN",
+            "NN NN",
+            "NN NN",
+            "NN NN",
+            "NN NN",
+            "NN NN",
+            "NN NN",
+            "NN NN"
         ]
     },
-    "mitosis": {
-        "type": [
-            "event",
-            "event",
-            "event",
-            "event",
-            "event",
-            "event",
-            "event",
-            "event",
-            "event",
-            "event"
-        ],
-        "text": [
-            "mitosis",
-            "mitosis",
-            "mitosis",
-            "mitosis",
-            "mitosis",
-            "mitosis",
-            "mitosis",
-            "mitosis",
-            "mitosis",
-            "mitosis"
-        ],
-        "indices": [
-            [
-                131,
-                132
-            ],
-            [
-                368,
-                369
-            ],
-            [
-                508,
-                509
-            ],
-            [
-                576,
-                577
-            ],
-            [
-                598,
-                599
-            ],
-            [
-                634,
-                635
-            ],
-            [
-                698,
-                699
-            ],
-            [
-                1071,
-                1072
-            ],
-            [
-                1338,
-                1339
-            ],
-            [
-                1371,
-                1372
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN",
-            "NN"
-        ]
-    },
-    "karyokinesis": {
-        "type": [
-            "event",
-            "event",
-            "event",
-            "event"
-        ],
-        "text": [
-            "karyokinesis",
-            "karyokinesis",
-            "Karyokinesis",
-            "Karyokinesis"
-        ],
-        "indices": [
-            [
-                133,
-                134
-            ],
-            [
-                546,
-                547
-            ],
-            [
-                593,
-                594
-            ],
-            [
-                631,
-                632
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN",
-            "NNP",
-            "NN"
-        ]
-    },
-    "case cell": {
+    "control": {
         "type": [
             "entity"
         ],
         "text": [
-            "case cells"
+            "control"
         ],
         "indices": [
             [
-                143,
-                145
+                101,
+                102
             ]
         ],
         "pos": [
+            "NN"
+        ]
+    },
+    "repair mechanism": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "repair mechanisms",
+            "repair mechanisms"
+        ],
+        "indices": [
+            [
+                103,
+                105
+            ],
+            [
+                889,
+                891
+            ]
+        ],
+        "pos": [
+            "NN NNS",
             "NN NNS"
         ]
     },
-    "multinucleate cell": {
+    "growth": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "growth",
+            "growth"
+        ],
+        "indices": [
+            [
+                108,
+                109
+            ],
+            [
+                115,
+                116
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN"
+        ]
+    },
+    "mutate": {
+        "type": [
+            "event",
+            "event",
+            "event",
+            "event",
+            "event",
+            "event"
+        ],
+        "text": [
+            "mutated",
+            "mutated",
+            "mutated",
+            "Mutated",
+            "Mutated",
+            "mutated"
+        ],
+        "indices": [
+            [
+                111,
+                112
+            ],
+            [
+                291,
+                292
+            ],
+            [
+                682,
+                683
+            ],
+            [
+                722,
+                723
+            ],
+            [
+                943,
+                944
+            ],
+            [
+                1019,
+                1020
+            ]
+        ],
+        "pos": [
+            "VBN",
+            "VBN",
+            "VBN",
+            "VBN",
+            "VBN",
+            "VBN"
+        ]
+    },
+    "normal cell": {
         "type": [
             "entity"
         ],
         "text": [
-            "multinucleate cells"
+            "normal cells"
         ],
         "indices": [
             [
-                149,
-                151
+                117,
+                119
             ]
         ],
         "pos": [
             "JJ NNS"
         ]
     },
-    "growth process": {
+    "tumor": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "tumor"
+        ],
+        "indices": [
+            [
+                125,
+                126
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "oma": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "oma"
+        ],
+        "indices": [
+            [
+                129,
+                130
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "positive cell-cycle regulator": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "positive cell-cycle regulators"
+        ],
+        "indices": [
+            [
+                6,
+                11
+            ]
+        ],
+        "pos": [
+            "JJ NN NN NNS"
+        ]
+    },
+    "proto-oncogene": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "proto-oncogenes",
+            "Proto-oncogenes",
+            "proto-oncogenes",
+            "proto-oncogenes"
+        ],
+        "indices": [
+            [
+                13,
+                14
+            ],
+            [
+                15,
+                16
+            ],
+            [
+                531,
+                532
+            ],
+            [
+                588,
+                589
+            ]
+        ],
+        "pos": [
+            "JJ",
+            "NNS",
+            "JJ",
+            "NNS"
+        ]
+    },
+    "normal gene": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "normal genes"
+        ],
+        "indices": [
+            [
+                17,
+                19
+            ]
+        ],
+        "pos": [
+            "JJ NNS"
+        ]
+    },
+    "oncogenes\u2014genes": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "oncogenes\u2014genes"
+        ],
+        "indices": [
+            [
+                28,
+                29
+            ]
+        ],
+        "pos": [
+            "NNS"
+        ]
+    },
+    "oncogene": {
+        "type": [
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "oncogene",
+            "oncogene",
+            "oncogenes"
+        ],
+        "indices": [
+            [
+                52,
+                53
+            ],
+            [
+                565,
+                566
+            ],
+            [
+                1066,
+                1067
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN",
+            "NNS"
+        ]
+    },
+    "dna sequence": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "DNA sequence"
+        ],
+        "indices": [
+            [
+                62,
+                64
+            ]
+        ],
+        "pos": [
+            "NN NN"
+        ]
+    },
+    "damage": {
+        "type": [
+            "event",
+            "event",
+            "event",
+            "event",
+            "event",
+            "event"
+        ],
+        "text": [
+            "damage",
+            "damaged",
+            "damaged",
+            "damaged",
+            "damage",
+            "damaged"
+        ],
+        "indices": [
+            [
+                125,
+                126
+            ],
+            [
+                188,
+                189
+            ],
+            [
+                813,
+                814
+            ],
+            [
+                841,
+                842
+            ],
+            [
+                883,
+                884
+            ],
+            [
+                912,
+                913
+            ]
+        ],
+        "pos": [
+            "NN",
+            "VBN",
+            "VBN",
+            "VBN",
+            "NN",
+            "VBN"
+        ]
+    },
+    "activity": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "activity"
+        ],
+        "indices": [
+            [
+                142,
+                143
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "positive regulator": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "positive regulator"
+        ],
+        "indices": [
+            [
+                145,
+                147
+            ]
+        ],
+        "pos": [
+            "JJ NN"
+        ]
+    },
+    "checkpoint": {
+        "type": [
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "checkpoint",
+            "checkpoint",
+            "checkpoint"
+        ],
+        "indices": [
+            [
+                171,
+                172
+            ],
+            [
+                760,
+                761
+            ],
+            [
+                981,
+                982
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN",
+            "NN"
+        ]
+    },
+    "Cdk gene": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "Cdk gene"
+        ],
+        "indices": [
+            [
+                1,
+                3
+            ]
+        ],
+        "pos": [
+            "NN NN"
+        ]
+    },
+    "cell-cycle regulatory protein": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cell-cycle regulatory proteins"
+        ],
+        "indices": [
+            [
+                22,
+                27
+            ]
+        ],
+        "pos": [
+            "NN NN JJ NNS"
+        ]
+    },
+    "cycle": {
         "type": [
             "event"
         ],
         "text": [
-            "growth processes"
+            "cycle"
         ],
         "indices": [
             [
-                7,
-                9
+                33,
+                34
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "cell-cycle checkpoint": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cell-cycle checkpoints"
+        ],
+        "indices": [
+            [
+                44,
+                48
+            ]
+        ],
+        "pos": [
+            "NN NN NNS"
+        ]
+    },
+    "rate": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "rate"
+        ],
+        "indices": [
+            [
+                65,
+                66
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "cell-cycle progression": {
+        "type": [
+            "event",
+            "event"
+        ],
+        "text": [
+            "cell-cycle progression",
+            "cell-cycle progression"
+        ],
+        "indices": [
+            [
+                67,
+                71
+            ],
+            [
+                667,
+                671
+            ]
+        ],
+        "pos": [
+            "NN NN NN",
+            "NN NN NN"
+        ]
+    },
+    "negative cell-cycle regulatory protein": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "negative cell-cycle regulatory proteins"
+        ],
+        "indices": [
+            [
+                6,
+                12
+            ]
+        ],
+        "pos": [
+            "JJ NN NN JJ NNS"
+        ]
+    },
+    "tumor suppressor gene": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "Tumor suppressor genes"
+        ],
+        "indices": [
+            [
+                21,
+                24
+            ]
+        ],
+        "pos": [
+            "NN NN NNS"
+        ]
+    },
+    "negative regulator protein": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "negative regulator proteins"
+        ],
+        "indices": [
+            [
+                31,
+                34
+            ]
+        ],
+        "pos": [
+            "JJ NN NNS"
+        ]
+    },
+    "regulator": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "regulators"
+        ],
+        "indices": [
+            [
+                38,
+                39
+            ]
+        ],
+        "pos": [
+            "NNS"
+        ]
+    },
+    "function": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "function"
+        ],
+        "indices": [
+            [
+                55,
+                56
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "tumor suppressor gene protein": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "tumor suppressor gene proteins"
+        ],
+        "indices": [
+            [
+                61,
+                65
+            ]
+        ],
+        "pos": [
+            "NN NN NN NNS"
+        ]
+    },
+    "p53": {
+        "type": [
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "p53",
+            "p53",
+            "p53",
+            "p53",
+            "p53",
+            "p53"
+        ],
+        "indices": [
+            [
+                68,
+                69
+            ],
+            [
+                825,
+                826
+            ],
+            [
+                844,
+                845
+            ],
+            [
+                887,
+                888
+            ],
+            [
+                897,
+                898
+            ],
+            [
+                977,
+                978
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN",
+            "NN"
+        ]
+    },
+    "event": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "events"
+        ],
+        "indices": [
+            [
+                86,
+                87
+            ]
+        ],
+        "pos": [
+            "NNS"
+        ]
+    },
+    "negative regulator": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "negative regulator"
+        ],
+        "indices": [
+            [
+                99,
+                101
+            ]
+        ],
+        "pos": [
+            "JJ NN"
+        ]
+    },
+    "tumor suppressor": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "Tumor suppressors"
+        ],
+        "indices": [
+            [
+                116,
+                118
             ]
         ],
         "pos": [
             "NN NNS"
+        ]
+    },
+    "human tumor cell": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "human tumor cells"
+        ],
+        "indices": [
+            [
+                14,
+                17
+            ]
+        ],
+        "pos": [
+            "JJ NN NNS"
+        ]
+    },
+    "faulty": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "faulty"
+        ],
+        "indices": [
+            [
+                44,
+                45
+            ]
+        ],
+        "pos": [
+            "JJ"
+        ]
+    },
+    "genomic dna": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "genomic DNA"
+        ],
+        "indices": [
+            [
+                55,
+                57
+            ]
+        ],
+        "pos": [
+            "JJ NN"
+        ]
+    },
+    "dna repair enzyme": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "DNA repair enzymes"
+        ],
+        "indices": [
+            [
+                84,
+                87
+            ]
+        ],
+        "pos": [
+            "NN NN NNS"
+        ]
+    },
+    "program": {
+        "type": [
+            "event"
+        ],
+        "text": [
+            "programmed"
+        ],
+        "indices": [
+            [
+                111,
+                112
+            ]
+        ],
+        "pos": [
+            "VBN"
+        ]
+    },
+    "cell death": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cell death"
+        ],
+        "indices": [
+            [
+                112,
+                114
+            ]
+        ],
+        "pos": [
+            "NN NN"
+        ]
+    },
+    "apoptosis": {
+        "type": [
+            "event",
+            "event",
+            "event",
+            "event"
+        ],
+        "text": [
+            "apoptosis",
+            "apoptosis",
+            "apoptosis",
+            "apoptosis"
+        ],
+        "indices": [
+            [
+                115,
+                116
+            ],
+            [
+                133,
+                134
+            ],
+            [
+                899,
+                900
+            ],
+            [
+                919,
+                920
+            ]
+        ],
+        "pos": [
+            "NN",
+            "NN",
+            "NN",
+            "NN"
+        ]
+    },
+    "cancer cell": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "cancer cells"
+        ],
+        "indices": [
+            [
+                125,
+                127
+            ]
+        ],
+        "pos": [
+            "NN NNS"
+        ]
+    },
+    "normal p53": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "normal p53"
+        ],
+        "indices": [
+            [
+                3,
+                5
+            ]
+        ],
+        "pos": [
+            "JJ NN"
+        ]
+    },
+    "hypoxia": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "hypoxia"
+        ],
+        "indices": [
+            [
+                15,
+                16
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "repair": {
+        "type": [
+            "entity",
+            "entity"
+        ],
+        "text": [
+            "repairs",
+            "repair"
+        ],
+        "indices": [
+            [
+                36,
+                37
+            ],
+            [
+                54,
+                55
+            ]
+        ],
+        "pos": [
+            "NNS",
+            "VB"
+        ]
+    },
+    "p53 function": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "p53 function"
+        ],
+        "indices": [
+            [
+                3,
+                5
+            ]
+        ],
+        "pos": [
+            "NN NN"
+        ]
+    },
+    "production": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "production"
+        ],
+        "indices": [
+            [
+                24,
+                25
+            ]
+        ],
+        "pos": [
+            "NN"
+        ]
+    },
+    "Cdk activation": {
+        "type": [
+            "event"
+        ],
+        "text": [
+            "Cdk activation"
+        ],
+        "indices": [
+            [
+                38,
+                40
+            ]
+        ],
+        "pos": [
+            "NN NN"
         ]
     },
     "internal": {
@@ -1172,8 +1869,8 @@
         ],
         "indices": [
             [
-                31,
-                32
+                66,
+                67
             ]
         ],
         "pos": [
@@ -1189,2379 +1886,63 @@
         ],
         "indices": [
             [
-                33,
-                34
-            ]
-        ],
-        "pos": [
-            "JJ"
-        ]
-    },
-    "change": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "change"
-        ],
-        "indices": [
-            [
-                24,
-                25
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "chromosomal dna": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "chromosomal DNA"
-        ],
-        "indices": [
-            [
-                53,
-                55
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "associate": {
-        "type": [
-            "event",
-            "event"
-        ],
-        "text": [
-            "associated",
-            "associated"
-        ],
-        "indices": [
-            [
-                57,
-                58
-            ],
-            [
-                385,
-                386
-            ]
-        ],
-        "pos": [
-            "VBN",
-            "VBN"
-        ]
-    },
-    "protein": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "proteins",
-            "proteins",
-            "proteins"
-        ],
-        "indices": [
-            [
-                58,
-                59
-            ],
-            [
-                451,
-                452
-            ],
-            [
-                942,
-                943
-            ]
-        ],
-        "pos": [
-            "NNS",
-            "NNS",
-            "NNS"
-        ]
-    },
-    "energy reserve": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "energy reserves"
-        ],
-        "indices": [
-            [
-                64,
-                66
-            ]
-        ],
-        "pos": [
-            "NN NNS"
-        ]
-    },
-    "chromosome": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "chromosome",
-            "chromosomes",
-            "chromosome",
-            "chromosomes",
-            "chromosomes",
-            "Chromosomes",
-            "chromosome",
-            "chromosome",
-            "chromosomes",
-            "chromosomes",
-            "chromosomes",
-            "chromosome",
-            "chromosomes",
-            "chromosomes"
-        ],
-        "indices": [
-            [
-                73,
-                74
-            ],
-            [
-                366,
-                367
-            ],
-            [
-                454,
-                455
-            ],
-            [
-                521,
-                522
-            ],
-            [
-                683,
-                684
-            ],
-            [
-                914,
-                915
-            ],
-            [
-                986,
-                987
-            ],
-            [
-                989,
-                990
-            ],
-            [
-                1029,
-                1030
-            ],
-            [
-                1084,
-                1085
-            ],
-            [
-                1129,
-                1130
-            ],
-            [
-                1163,
-                1164
-            ],
-            [
-                1213,
-                1214
-            ],
-            [
-                1263,
-                1264
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NNS",
-            "NN",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NN",
-            "NN",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NN",
-            "NNS",
-            "NNS"
-        ]
-    },
-    "nucleus": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "nucleus"
-        ],
-        "indices": [
-            [
-                76,
-                77
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "nuclear dna": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "nuclear DNA"
-        ],
-        "indices": [
-            [
-                3,
-                5
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "chromatin configuration": {
-        "type": [
-            "event",
-            "event"
-        ],
-        "text": [
-            "chromatin configuration",
-            "chromatin configuration"
-        ],
-        "indices": [
-            [
-                11,
-                13
-            ],
-            [
-                1234,
-                1236
-            ]
-        ],
-        "pos": [
-            "NN NN",
-            "NN NN"
-        ]
-    },
-    "dna molecule": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "DNA molecules"
-        ],
-        "indices": [
-            [
-                35,
-                37
-            ]
-        ],
-        "pos": [
-            "NN NNS"
-        ]
-    },
-    "sister chromatid": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "sister chromatids",
-            "sister chromatids",
-            "sister chromatid",
-            "sister chromatids",
-            "sister chromatids",
-            "sister chromatids",
-            "sister chromatids"
-        ],
-        "indices": [
-            [
-                38,
-                40
-            ],
-            [
-                841,
-                843
-            ],
-            [
-                923,
-                925
-            ],
-            [
-                997,
-                999
-            ],
-            [
-                1008,
-                1010
-            ],
-            [
-                1111,
-                1113
-            ],
-            [
-                1149,
-                1151
-            ]
-        ],
-        "pos": [
-            "NN NNS",
-            "NN NNS",
-            "NN NN",
-            "NN NNS",
-            "NN NNS",
-            "NN NNS",
-            "NN NNS"
-        ]
-    },
-    "centromeric region": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "centromeric region",
-            "centromeric region"
-        ],
-        "indices": [
-            [
-                47,
-                49
-            ],
-            [
-                934,
-                936
-            ]
-        ],
-        "pos": [
-            "JJ NN",
-            "JJ NN"
-        ]
-    },
-    "centrosome": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "centrosome",
-            "centrosomes",
-            "centrosomes",
-            "centrosomes",
-            "centrosomes",
-            "centrosomes",
-            "centrosomes",
-            "centrosome"
-        ],
-        "indices": [
-            [
-                51,
-                52
-            ],
-            [
-                62,
-                63
-            ],
-            [
-                98,
-                99
-            ],
-            [
-                140,
-                141
-            ],
-            [
-                807,
-                808
-            ],
-            [
-                828,
-                829
-            ],
-            [
-                962,
-                963
-            ],
-            [
-                1170,
-                1171
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NN"
-        ]
-    },
-    "homologous chromosome": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "homologous chromosomes"
-        ],
-        "indices": [
-            [
-                64,
-                66
-            ]
-        ],
-        "pos": [
-            "JJ NNS"
-        ]
-    },
-    "mitotic spindle": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "mitotic spindle",
-            "mitotic spindle",
-            "mitotic spindle",
-            "mitotic spindles"
-        ],
-        "indices": [
-            [
-                71,
-                73
-            ],
-            [
-                823,
-                825
-            ],
-            [
-                894,
-                896
-            ],
-            [
-                1238,
-                1240
-            ]
-        ],
-        "pos": [
-            "JJ NN",
-            "JJ NN",
-            "JJ NN",
-            "JJ NNS"
-        ]
-    },
-    "apparatus": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "apparatus"
-        ],
-        "indices": [
-            [
-                75,
-                76
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "animal cell": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "animal cell",
-            "animal cells"
-        ],
-        "indices": [
-            [
-                94,
-                96
-            ],
-            [
-                1398,
-                1400
-            ]
-        ],
-        "pos": [
-            "NN NN",
-            "NN NNS"
-        ]
-    },
-    "centriole": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "centrioles",
-            "Centrioles",
-            "centrioles"
-        ],
-        "indices": [
-            [
-                109,
-                110
-            ],
-            [
-                121,
-                122
-            ],
-            [
-                134,
-                135
-            ]
-        ],
-        "pos": [
-            "NNS",
-            "NNS",
-            "NNS"
-        ]
-    },
-    "eukaryotic": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "eukaryotic"
-        ],
-        "indices": [
-            [
-                143,
-                144
-            ]
-        ],
-        "pos": [
-            "JJ"
-        ]
-    },
-    "plant": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "plants"
-        ],
-        "indices": [
-            [
-                148,
-                149
-            ]
-        ],
-        "pos": [
-            "NNS"
-        ]
-    },
-    "energy store": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "energy stores"
-        ],
-        "indices": [
-            [
-                9,
-                11
-            ]
-        ],
-        "pos": [
-            "NN NNS"
-        ]
-    },
-    "cell organelle": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "cell organelles"
-        ],
-        "indices": [
-            [
-                22,
-                24
-            ]
-        ],
-        "pos": [
-            "NN NNS"
-        ]
-    },
-    "cytoskeleton": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "cytoskeleton"
-        ],
-        "indices": [
-            [
-                29,
-                30
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "multistep process": {
-        "type": [
-            "event"
-        ],
-        "text": [
-            "multistep process"
-        ],
-        "indices": [
-            [
-                5,
-                7
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "nuclear division": {
-        "type": [
-            "event"
-        ],
-        "text": [
-            "nuclear division"
-        ],
-        "indices": [
-            [
-                39,
-                41
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "cytokinesis\u2014the": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "cytokinesis\u2014the"
-        ],
-        "indices": [
-            [
-                70,
-                71
-            ]
-        ],
-        "pos": [
-            "JJ"
-        ]
-    },
-    "divide": {
-        "type": [
-            "event",
-            "event",
-            "event",
-            "event"
-        ],
-        "text": [
-            "divided",
-            "divided",
-            "divide",
-            "divide"
-        ],
-        "indices": [
-            [
-                8,
-                9
-            ],
-            [
-                637,
-                638
-            ],
-            [
-                1669,
-                1670
-            ],
-            [
-                1738,
-                1739
-            ]
-        ],
-        "pos": [
-            "VBN",
-            "VBN",
-            "VB",
-            "VBP"
-        ]
-    },
-    "prometaphase": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "prometaphase",
-            "prometaphase",
-            "Prometaphase"
-        ],
-        "indices": [
-            [
-                17,
-                18
-            ],
-            [
-                644,
-                645
-            ],
-            [
-                863,
-                864
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN",
-            "NNP"
-        ]
-    },
-    "metaphase": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "metaphase",
-            "metaphase",
-            "Metaphase"
-        ],
-        "indices": [
-            [
-                19,
-                20
-            ],
-            [
-                646,
-                647
-            ],
-            [
-                1073,
-                1074
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN",
-            "NN"
-        ]
-    },
-    "anaphase": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "anaphase",
-            "anaphase",
-            "Anaphase",
-            "anaphase"
-        ],
-        "indices": [
-            [
-                21,
-                22
-            ],
-            [
-                648,
-                649
-            ],
-            [
-                1134,
-                1135
-            ],
-            [
-                1406,
-                1407
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN",
-            "NNP",
-            "NN"
-        ]
-    },
-    "telophase\u2014that": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "telophase\u2014that"
-        ],
-        "indices": [
-            [
-                24,
-                25
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "division": {
-        "type": [
-            "event"
-        ],
-        "text": [
-            "division"
-        ],
-        "indices": [
-            [
-                28,
-                29
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "cell nucleus": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "cell nucleus"
-        ],
-        "indices": [
-            [
-                31,
-                33
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "telophase": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "telophase",
-            "Telophase",
-            "telophase"
-        ],
-        "indices": [
-            [
-                20,
-                21
-            ],
-            [
-                1203,
-                1204
-            ],
-            [
-                1515,
-                1516
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NNP",
-            "NN"
-        ]
-    },
-    "fluorescence": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "fluorescence",
-            "fluorescence",
-            "fluorescence"
-        ],
-        "indices": [
-            [
-                30,
-                31
-            ],
-            [
-                48,
-                49
-            ],
-            [
-                56,
-                57
-            ]
-        ],
-        "pos": [
-            "JJ",
-            "NN",
-            "NN"
-        ]
-    },
-    "fluorescent": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "fluorescent"
-        ],
-        "indices": [
-            [
-                44,
-                45
-            ]
-        ],
-        "pos": [
-            "JJ"
-        ]
-    },
-    "microtubule": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "microtubules",
-            "Microtubules",
-            "microtubules",
-            "microtubules",
-            "microtubules",
-            "microtubules",
-            "microtubules",
-            "microtubule",
-            "microtubules"
-        ],
-        "indices": [
-            [
-                58,
-                59
-            ],
-            [
-                818,
-                819
-            ],
-            [
-                901,
-                902
-            ],
-            [
-                967,
-                968
-            ],
-            [
-                1017,
-                1018
-            ],
-            [
-                1036,
-                1037
-            ],
-            [
-                1052,
-                1053
-            ],
-            [
-                1174,
-                1175
-            ],
-            [
-                1523,
-                1524
-            ]
-        ],
-        "pos": [
-            "NNS",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NNS",
-            "NN",
-            "NNS"
-        ]
-    },
-    "spindle apparatus": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "spindle apparatus"
-        ],
-        "indices": [
-            [
-                60,
-                62
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "credit": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "credit",
-            "credit",
-            "credit"
-        ],
-        "indices": [
-            [
-                65,
-                66
-            ],
-            [
-                79,
-                80
-            ],
-            [
-                92,
-                93
-            ]
-        ],
-        "pos": [
-            "VB",
-            "NN",
-            "NN"
-        ]
-    },
-    "micrograph": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "micrographs"
-        ],
-        "indices": [
-            [
-                81,
-                82
-            ]
-        ],
-        "pos": [
-            "NNS"
-        ]
-    },
-    "van": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "van"
-        ],
-        "indices": [
-            [
-                89,
-                90
-            ]
-        ],
-        "pos": [
-            "NNP"
-        ]
-    },
-    "cytokinesis micrograph": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "cytokinesis micrograph"
-        ],
-        "indices": [
-            [
-                94,
-                96
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "bar": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "bar"
-        ],
-        "indices": [
-            [
-                110,
-                111
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "nuclear envelope": {
-        "type": [
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "nuclear envelope",
-            "nuclear envelope",
-            "Nuclear envelopes"
-        ],
-        "indices": [
-            [
-                10,
-                12
-            ],
-            [
-                887,
-                889
-            ],
-            [
-                1258,
-                1260
-            ]
-        ],
-        "pos": [
-            "JJ NN",
-            "JJ NN",
-            "JJ NNS"
-        ]
-    },
-    "vesicle": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "vesicles",
-            "vesicles",
-            "vesicles",
-            "vesicles"
-        ],
-        "indices": [
-            [
-                17,
-                18
-            ],
-            [
-                1506,
-                1507
-            ],
-            [
-                1541,
-                1542
-            ],
-            [
-                1563,
-                1564
-            ]
-        ],
-        "pos": [
-            "NNS",
-            "NNS",
-            "NNS",
-            "NNS"
-        ]
-    },
-    "membranous organelle": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "membranous organelles"
-        ],
-        "indices": [
-            [
-                21,
-                23
-            ]
-        ],
-        "pos": [
-            "JJ NNS"
-        ]
-    },
-    "Golgi complex": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "Golgi complex"
-        ],
-        "indices": [
-            [
-                27,
-                29
-            ]
-        ],
-        "pos": [
-            "NNP NN"
-        ]
-    },
-    "Golgi apparatus": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "Golgi apparatus",
-            "Golgi apparatus"
-        ],
-        "indices": [
-            [
-                30,
-                32
-            ],
-            [
-                1491,
-                1493
-            ]
-        ],
-        "pos": [
-            "NN NN",
-            "NNP NN"
-        ]
-    },
-    "endoplasmic reticulum": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "endoplasmic reticulum"
-        ],
-        "indices": [
-            [
-                35,
-                37
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "periphery": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "periphery",
-            "periphery"
-        ],
-        "indices": [
-            [
-                44,
-                45
-            ],
-            [
-                1579,
-                1580
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN"
-        ]
-    },
-    "nucleolus": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "nucleolus"
-        ],
-        "indices": [
-            [
-                50,
-                51
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "microtubule fiber": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "microtubule fibers"
-        ],
-        "indices": [
-            [
-                89,
-                91
-            ]
-        ],
-        "pos": [
-            "NN NNS"
-        ]
-    },
-    "condensin protein": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "condensin proteins"
-        ],
-        "indices": [
-            [
-                105,
-                107
-            ]
-        ],
-        "pos": [
-            "JJ NNS"
-        ]
-    },
-    "light microscope": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "light microscope"
-        ],
-        "indices": [
-            [
-                113,
-                115
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "change phase": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "change phase",
-            "change phase"
-        ],
-        "indices": [
-            [
-                5,
-                7
-            ],
-            [
-                1077,
-                1079
-            ]
-        ],
-        "pos": [
-            "NN NN",
-            "NN NN"
-        ]
-    },
-    "length": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "length"
-        ],
-        "indices": [
-            [
-                44,
-                45
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "nuclear area": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "nuclear area",
-            "nuclear area"
-        ],
-        "indices": [
-            [
-                48,
-                50
-            ],
-            [
-                1270,
-                1272
-            ]
-        ],
-        "pos": [
-            "JJ NN",
-            "JJ NN"
-        ]
-    },
-    "protein structure": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "protein structure"
-        ],
-        "indices": [
-            [
-                64,
-                66
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "kinetochore": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "kinetochore",
-            "kinetochore",
-            "kinetochores",
-            "kinetochores",
-            "kinetochores"
-        ],
-        "indices": [
-            [
                 68,
                 69
-            ],
-            [
-                82,
-                83
-            ],
-            [
-                114,
-                115
-            ],
-            [
-                132,
-                133
-            ],
-            [
-                152,
-                153
             ]
         ],
         "pos": [
-            "NN",
-            "NN",
-            "NNS",
-            "NNS",
-            "NNS"
+            "JJ"
         ]
     },
-    "mitotic spindle microtubule": {
+    "faulty tumor-suppressor gene": {
         "type": [
             "entity"
         ],
         "text": [
-            "mitotic spindle microtubules"
-        ],
-        "indices": [
-            [
-                88,
-                91
-            ]
-        ],
-        "pos": [
-            "JJ NN NNS"
-        ]
-    },
-    "spindle microtubule": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "spindle microtubules",
-            "Spindle microtubules"
-        ],
-        "indices": [
-            [
-                94,
-                96
-            ],
-            [
-                159,
-                161
-            ]
-        ],
-        "pos": [
-            "NN NNS",
-            "NN NNS"
-        ]
-    },
-    "contact": {
-        "type": [
-            "event"
-        ],
-        "text": [
-            "contact"
-        ],
-        "indices": [
-            [
-                107,
-                108
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "mitotic fiber": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "mitotic fiber"
-        ],
-        "indices": [
-            [
-                118,
-                120
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "polar microtubule": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "polar microtubules",
-            "polar microtubules"
-        ],
-        "indices": [
-            [
-                169,
-                171
-            ],
-            [
-                1189,
-                1191
-            ]
-        ],
-        "pos": [
-            "JJ NNS",
-            "JJ NNS"
-        ]
-    },
-    "cell elongation": {
-        "type": [
-            "event"
-        ],
-        "text": [
-            "cell elongation"
-        ],
-        "indices": [
-            [
-                185,
-                187
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "spindle": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "spindle"
-        ],
-        "indices": [
-            [
-                198,
-                199
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "plane": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "plane"
-        ],
-        "indices": [
-            [
-                16,
-                17
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "metaphase plate": {
-        "type": [
-            "entity",
-            "entity",
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "metaphase plate",
-            "metaphase plate",
-            "metaphase plate",
-            "metaphase plate"
-        ],
-        "indices": [
-            [
-                19,
-                21
-            ],
-            [
-                1197,
-                1199
-            ],
-            [
-                1424,
-                1426
-            ],
-            [
-                1535,
-                1537
-            ]
-        ],
-        "pos": [
-            "NN NN",
-            "NN NN",
-            "NN NN",
-            "NN NN"
-        ]
-    },
-    "equatorial plane": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "equatorial plane"
-        ],
-        "indices": [
-            [
-                24,
-                26
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "cohesin protein": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "cohesin proteins",
-            "cohesin proteins"
-        ],
-        "indices": [
-            [
-                48,
-                50
-            ],
-            [
-                1143,
-                1145
-            ]
-        ],
-        "pos": [
-            "JJ NNS",
-            "NN NNS"
-        ]
-    },
-    "upward phase": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "upward phase"
-        ],
-        "indices": [
-            [
-                3,
-                5
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "centromere": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "centromere"
-        ],
-        "indices": [
-            [
-                20,
-                21
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "chromatid": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "chromatid"
-        ],
-        "indices": [
-            [
-                23,
-                24
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "distance phase": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "distance phase"
-        ],
-        "indices": [
-            [
-                4,
-                6
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "tubulin monomer": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "tubulin monomers"
-        ],
-        "indices": [
-            [
-                40,
-                42
-            ]
-        ],
-        "pos": [
-            "NN NNS"
-        ]
-    },
-    "nucleosome": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "nucleosomes"
-        ],
-        "indices": [
-            [
-                63,
-                64
-            ]
-        ],
-        "pos": [
-            "NNS"
-        ]
-    },
-    "cell motion": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "cell motion"
-        ],
-        "indices": [
-            [
-                4,
-                6
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "eukaryote": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "eukaryotes",
-            "eukaryotes"
-        ],
-        "indices": [
-            [
-                103,
-                104
-            ],
-            [
-                113,
-                114
-            ]
-        ],
-        "pos": [
-            "NNS",
-            "NNS"
-        ]
-    },
-    "plant cell": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "plant cells",
-            "plant cells"
+            "faulty tumor-suppressor gene"
         ],
         "indices": [
             [
                 121,
-                123
-            ],
-            [
-                1473,
-                1475
+                126
             ]
         ],
         "pos": [
-            "NN NNS",
-            "NN NNS"
+            "JJ NN NN NN"
         ]
     },
-    "contractile ring": {
+    "tumor-suppressor gene": {
         "type": [
-            "event"
+            "entity"
         ],
         "text": [
-            "contractile ring"
+            "tumor-suppressor genes"
         ],
         "indices": [
             [
-                12,
-                14
+                139,
+                143
+            ]
+        ],
+        "pos": [
+            "NN NN NNS"
+        ]
+    },
+    "tumor growth": {
+        "type": [
+            "entity"
+        ],
+        "text": [
+            "tumor growth"
+        ],
+        "indices": [
+            [
+                149,
+                151
             ]
         ],
         "pos": [
             "JJ NN"
-        ]
-    },
-    "actin filament": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "actin filaments",
-            "actin filaments"
-        ],
-        "indices": [
-            [
-                16,
-                18
-            ],
-            [
-                31,
-                33
-            ]
-        ],
-        "pos": [
-            "NN NNS",
-            "NN NNS"
-        ]
-    },
-    "plasma membrane": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "plasma membrane",
-            "plasma membrane"
-        ],
-        "indices": [
-            [
-                22,
-                24
-            ],
-            [
-                1609,
-                1611
-            ]
-        ],
-        "pos": [
-            "NN NN",
-            "NN NN"
-        ]
-    },
-    "fissure": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "fissure",
-            "fissure"
-        ],
-        "indices": [
-            [
-                43,
-                44
-            ],
-            [
-                46,
-                47
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN"
-        ]
-    },
-    "cleavage furrow": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "cleavage furrow"
-        ],
-        "indices": [
-            [
-                50,
-                52
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "furrow": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "furrow"
-        ],
-        "indices": [
-            [
-                54,
-                55
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "actin ring": {
-        "type": [
-            "event"
-        ],
-        "text": [
-            "actin ring"
-        ],
-        "indices": [
-            [
-                58,
-                60
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "membrane": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "membrane",
-            "membrane"
-        ],
-        "indices": [
-            [
-                65,
-                66
-            ],
-            [
-                1593,
-                1594
-            ]
-        ],
-        "pos": [
-            "NN",
-            "NN"
-        ]
-    },
-    "structural protein": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "structural proteins"
-        ],
-        "indices": [
-            [
-                24,
-                26
-            ]
-        ],
-        "pos": [
-            "JJ NNS"
-        ]
-    },
-    "glucose molecule": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "glucose molecules"
-        ],
-        "indices": [
-            [
-                28,
-                30
-            ]
-        ],
-        "pos": [
-            "NN NNS"
-        ]
-    },
-    "divide cell": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "dividing cell"
-        ],
-        "indices": [
-            [
-                39,
-                41
-            ]
-        ],
-        "pos": [
-            "NN NN"
-        ]
-    },
-    "Golgi vesicle": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "Golgi vesicles"
-        ],
-        "indices": [
-            [
-                46,
-                48
-            ]
-        ],
-        "pos": [
-            "NNP NNS"
-        ]
-    },
-    "phragmoplast": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "phragmoplast"
-        ],
-        "indices": [
-            [
-                55,
-                56
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "vesicular structure": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "vesicular structure"
-        ],
-        "indices": [
-            [
-                58,
-                60
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "fuse": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "fuse",
-            "fuse"
-        ],
-        "indices": [
-            [
-                70,
-                71
-            ],
-            [
-                92,
-                93
-            ]
-        ],
-        "pos": [
-            "VBP",
-            "VBP"
-        ]
-    },
-    "structure": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "structure"
-        ],
-        "indices": [
-            [
-                82,
-                83
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "cell plate": {
-        "type": [
-            "entity",
-            "entity"
-        ],
-        "text": [
-            "cell plate",
-            "cell plate"
-        ],
-        "indices": [
-            [
-                86,
-                88
-            ],
-            [
-                95,
-                97
-            ]
-        ],
-        "pos": [
-            "NN NN",
-            "NN NN"
-        ]
-    },
-    "glucose": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "glucose"
-        ],
-        "indices": [
-            [
-                115,
-                116
-            ]
-        ],
-        "pos": [
-            "NN"
-        ]
-    },
-    "Golgi membrane": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "Golgi membranes"
-        ],
-        "indices": [
-            [
-                131,
-                133
-            ]
-        ],
-        "pos": [
-            "NNP NNS"
-        ]
-    },
-    "classic cell-cycle": {
-        "type": [
-            "event"
-        ],
-        "text": [
-            "classic cell-cycle"
-        ],
-        "indices": [
-            [
-                6,
-                10
-            ]
-        ],
-        "pos": [
-            "JJ NN NN"
-        ]
-    },
-    "growth factor": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "growth factors"
-        ],
-        "indices": [
-            [
-                84,
-                86
-            ]
-        ],
-        "pos": [
-            "NN NNS"
-        ]
-    },
-    "external signal": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "external signal"
-        ],
-        "indices": [
-            [
-                100,
-                102
-            ]
-        ],
-        "pos": [
-            "JJ NN"
-        ]
-    },
-    "mature cardiac muscle": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "mature cardiac muscle"
-        ],
-        "indices": [
-            [
-                118,
-                121
-            ]
-        ],
-        "pos": [
-            "JJ JJ NN"
-        ]
-    },
-    "nerve cell": {
-        "type": [
-            "entity"
-        ],
-        "text": [
-            "nerve cells"
-        ],
-        "indices": [
-            [
-                122,
-                124
-            ]
-        ],
-        "pos": [
-            "NN NNS"
         ]
     }
 }
