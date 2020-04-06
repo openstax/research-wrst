@@ -54,7 +54,8 @@ def get_text_dynamic():
     elif num_tasks_completed==0:
         current_task_id = np.random.choice(num_tasks_available)
     else:
-        last_task_id = db.session.query(func.max(Relationship.task_id)).filter(Relationship.user==session["user_id"]).first()[0]
+        last_id = db.session.query(func.max(Relationship.id)).filter(Relationship.user==session["user_id"]).first()[0]
+        last_task_id = db.session.query(Relationship.task_id).filter(Relationship.id==last_id).first()[0]
         current_task_id = (last_task_id + 1) % num_tasks_available
 
     print("Current task id: {}".format(current_task_id))
