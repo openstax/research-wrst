@@ -1,0 +1,155 @@
+term,type,base_term
+cell cycle,event,cell cycle
+events,entity,event
+cell growth,entity,cell growth
+cell division,event,cell division
+daughter cells,entity,daughter cell
+daughter cell,entity,daughter cell
+Cells,entity,cell
+cells,entity,cell
+cell,entity,cell
+stages,entity,stage
+stage,entity,stage
+growth,entity,growth
+DNA replication,event,dna replication
+nuclear,entity,nuclear
+cytoplasmic division,event,cytoplasmic division
+phases,entity,phase
+phase,entity,phase
+interphase,entity,interphase
+mitotic phase,entity,mitotic phase
+DNA,entity,dna
+cytoplasmic,entity,cytoplasmic
+cell cytoplasm,entity,cell cytoplasm
+process,event,process
+processes,event,process
+cytokinesis,event,cytokinesis
+Cytokinesis,event,cytokinesis
+mitosis,event,mitosis
+karyokinesis,event,karyokinesis
+Karyokinesis,event,karyokinesis
+case cells,entity,case cell
+multinucleate cells,entity,multinucleate cell
+growth processes,event,growth process
+internal,entity,internal
+external,entity,external
+change,entity,change
+chromosomal DNA,entity,chromosomal dna
+associated,event,associate
+proteins,entity,protein
+energy reserves,entity,energy reserve
+chromosome,entity,chromosome
+chromosomes,entity,chromosome
+Chromosomes,entity,chromosome
+nucleus,entity,nucleus
+nuclear DNA,entity,nuclear dna
+chromatin configuration,event,chromatin configuration
+DNA molecules,entity,dna molecule
+sister chromatids,entity,sister chromatid
+sister chromatid,entity,sister chromatid
+centromeric region,entity,centromeric region
+centrosome,entity,centrosome
+centrosomes,entity,centrosome
+homologous chromosomes,entity,homologous chromosome
+mitotic spindle,entity,mitotic spindle
+mitotic spindles,entity,mitotic spindle
+apparatus,entity,apparatus
+animal cell,entity,animal cell
+animal cells,entity,animal cell
+centrioles,entity,centriole
+Centrioles,entity,centriole
+eukaryotic,entity,eukaryotic
+plants,entity,plant
+energy stores,entity,energy store
+cell organelles,entity,cell organelle
+cytoskeleton,entity,cytoskeleton
+multistep process,event,multistep process
+nuclear division,event,nuclear division
+cytokinesis—the,entity,cytokinesis—the
+divided,event,divide
+divide,event,divide
+prometaphase,entity,prometaphase
+Prometaphase,entity,prometaphase
+metaphase,entity,metaphase
+Metaphase,entity,metaphase
+anaphase,entity,anaphase
+Anaphase,entity,anaphase
+telophase—that,entity,telophase—that
+division,event,division
+cell nucleus,entity,cell nucleus
+telophase,entity,telophase
+Telophase,entity,telophase
+fluorescence,entity,fluorescence
+fluorescent,entity,fluorescent
+microtubules,entity,microtubule
+Microtubules,entity,microtubule
+microtubule,entity,microtubule
+spindle apparatus,entity,spindle apparatus
+credit,entity,credit
+micrographs,entity,micrograph
+van,entity,van
+cytokinesis micrograph,entity,cytokinesis micrograph
+bar,entity,bar
+nuclear envelope,entity,nuclear envelope
+Nuclear envelopes,entity,nuclear envelope
+vesicles,entity,vesicle
+membranous organelles,entity,membranous organelle
+Golgi complex,entity,Golgi complex
+Golgi apparatus,entity,Golgi apparatus
+endoplasmic reticulum,entity,endoplasmic reticulum
+periphery,entity,periphery
+nucleolus,entity,nucleolus
+microtubule fibers,entity,microtubule fiber
+condensin proteins,entity,condensin protein
+light microscope,entity,light microscope
+change phase,entity,change phase
+length,entity,length
+nuclear area,entity,nuclear area
+protein structure,entity,protein structure
+kinetochore,entity,kinetochore
+kinetochores,entity,kinetochore
+mitotic spindle microtubules,entity,mitotic spindle microtubule
+spindle microtubules,entity,spindle microtubule
+Spindle microtubules,entity,spindle microtubule
+contact,event,contact
+mitotic fiber,entity,mitotic fiber
+polar microtubules,entity,polar microtubule
+cell elongation,event,cell elongation
+spindle,entity,spindle
+plane,entity,plane
+metaphase plate,entity,metaphase plate
+equatorial plane,entity,equatorial plane
+cohesin proteins,entity,cohesin protein
+upward phase,entity,upward phase
+centromere,entity,centromere
+chromatid,entity,chromatid
+distance phase,entity,distance phase
+tubulin monomers,entity,tubulin monomer
+nucleosomes,entity,nucleosome
+cell motion,entity,cell motion
+eukaryotes,entity,eukaryote
+plant cells,entity,plant cell
+contractile ring,event,contractile ring
+actin filaments,entity,actin filament
+plasma membrane,entity,plasma membrane
+fissure,entity,fissure
+cleavage furrow,entity,cleavage furrow
+furrow,entity,furrow
+actin ring,event,actin ring
+membrane,entity,membrane
+structural proteins,entity,structural protein
+glucose molecules,entity,glucose molecule
+dividing cell,entity,divide cell
+Golgi vesicles,entity,Golgi vesicle
+phragmoplast,entity,phragmoplast
+vesicular structure,entity,vesicular structure
+fuse,entity,fuse
+structure,entity,structure
+cell plate,entity,cell plate
+glucose,entity,glucose
+Golgi membranes,entity,Golgi membrane
+classic cell-cycle,event,classic cell-cycle
+growth factors,entity,growth factor
+external signal,entity,external signal
+mature cardiac muscle,entity,mature cardiac muscle
+nerve cells,entity,nerve cell

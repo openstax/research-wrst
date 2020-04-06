@@ -9,9 +9,9 @@
 
 class Experiment():
     def __init__(self):
-        self.reading_links = ["https://openstax.org/books/biology-2e/pages/10-2-the-cell-cycle",
-                              "https://openstax.org/books/biology-2e/pages/10-2-the-cell-cycle"]#,
-                              #"https://openstax.org/books/biology-2e/pages/10-4-cancer-and-the-cell-cycle"]
+        self.reading_links = ["https://openstax.org/books/biology-2e/pages/10-4-cancer-and-the-cell-cycle",
+                              "https://openstax.org/books/biology-2e/pages/10-4-cancer-and-the-cell-cycle"]#,
+                              #"https://openstax.org/books/biology-2e/pages/10-2-the-cell-cycle"]
 
         self.cohort_names = ['a', 'b'] ###UPDATE BEFORE PUSHING
         # self.cohort_names = ['a'] # ['a', 'b']
