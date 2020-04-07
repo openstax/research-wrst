@@ -105,8 +105,7 @@ df_book, df_book_full = create_book_dataframe(sentences_file, all_terms)
 
 # Now go through each sentence and assemble a task for each pairwise combination of terms found therein
 task_count = 0
-#for ii in range(0, df_book.shape[0]):
-for ii in range(0, 1):
+for ii in range(0, df_book.shape[0]):
     sentence = df_book.iloc[ii]
     terms = sentence["terms"]
     for term_combination in itertools.combinations(terms, 2):

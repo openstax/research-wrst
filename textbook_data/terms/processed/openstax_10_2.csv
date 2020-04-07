@@ -1,155 +1,118 @@
 term,type,base_term
-cell cycle,event,cell cycle
-events,entity,event
-cell growth,entity,cell growth
-cell division,event,cell division
-daughter cells,entity,daughter cell
-daughter cell,entity,daughter cell
-Cells,entity,cell
-cells,entity,cell
+actin filaments,entity,actin filament
+actin filaments,entity,actin filament
+actin ring,event,actin ring
+anaphase,entity,anaphase
+animal cell,entity,animal cell
 cell,entity,cell
-stages,entity,stage
-stage,entity,stage
-growth,entity,growth
-DNA replication,event,dna replication
-nuclear,entity,nuclear
-cytoplasmic division,event,cytoplasmic division
-phases,entity,phase
-phase,entity,phase
-interphase,entity,interphase
-mitotic phase,entity,mitotic phase
-DNA,entity,dna
-cytoplasmic,entity,cytoplasmic
+cell cycle,event,cell cycle
 cell cytoplasm,entity,cell cytoplasm
-process,event,process
-processes,event,process
-cytokinesis,event,cytokinesis
-Cytokinesis,event,cytokinesis
-mitosis,event,mitosis
-karyokinesis,event,karyokinesis
-Karyokinesis,event,karyokinesis
-case cells,entity,case cell
-multinucleate cells,entity,multinucleate cell
-growth processes,event,growth process
-internal,entity,internal
-external,entity,external
-change,entity,change
-chromosomal DNA,entity,chromosomal dna
-associated,event,associate
-proteins,entity,protein
-energy reserves,entity,energy reserve
-chromosome,entity,chromosome
-chromosomes,entity,chromosome
-Chromosomes,entity,chromosome
-nucleus,entity,nucleus
-nuclear DNA,entity,nuclear dna
-chromatin configuration,event,chromatin configuration
-DNA molecules,entity,dna molecule
-sister chromatids,entity,sister chromatid
-sister chromatid,entity,sister chromatid
+cell division,event,cell division
+cell elongation,event,cell elongation
+cell growth,entity,cell growth
+cell motion,entity,cell motion
+cell nucleus,entity,cell nucleus
+cell organelles,entity,cell organelle
+cell plate,entity,cell plate
+centrioles,entity,centriole
+centromere,entity,centromere
 centromeric region,entity,centromeric region
 centrosome,entity,centrosome
-centrosomes,entity,centrosome
-homologous chromosomes,entity,homologous chromosome
-mitotic spindle,entity,mitotic spindle
-mitotic spindles,entity,mitotic spindle
-apparatus,entity,apparatus
-animal cell,entity,animal cell
-animal cells,entity,animal cell
-centrioles,entity,centriole
-Centrioles,entity,centriole
-eukaryotic,entity,eukaryotic
-plants,entity,plant
-energy stores,entity,energy store
-cell organelles,entity,cell organelle
+change phase,entity,change phase
+chromatid,entity,chromatid
+chromatin configuration,event,chromatin configuration
+chromosomal DNA,entity,chromosomal dna
+chromosome,entity,chromosome
+cleavage furrow,entity,cleavage furrow
+cohesin proteins,entity,cohesin protein
+condensin proteins,entity,condensin protein
+contact,event,contact
+contractile ring,event,contractile ring
+cytokinesis,event,cytokinesis
+cytokinesis micrograph,entity,cytokinesis micrograph
+cytoplasmic,entity,cytoplasmic
+cytoplasmic division,event,cytoplasmic division
 cytoskeleton,entity,cytoskeleton
-multistep process,event,multistep process
-nuclear division,event,nuclear division
-cytokinesis—the,entity,cytokinesis—the
-divided,event,divide
+daughter cell,entity,daughter cell
+daughter cells,entity,daughter cell
+distance phase,entity,distance phase
 divide,event,divide
-prometaphase,entity,prometaphase
-Prometaphase,entity,prometaphase
-metaphase,entity,metaphase
-Metaphase,entity,metaphase
-anaphase,entity,anaphase
-Anaphase,entity,anaphase
-telophase—that,entity,telophase—that
-division,event,division
-cell nucleus,entity,cell nucleus
-telophase,entity,telophase
-Telophase,entity,telophase
+dividing cell,entity,divide cell
+DNA,entity,dna
+DNA molecules,entity,dna molecule
+DNA replication,event,dna replication
+endoplasmic reticulum,entity,endoplasmic reticulum
+energy reserves,entity,energy reserve
+energy stores,entity,energy store
+equatorial plane,entity,equatorial plane
+eukaryotes,entity,eukaryote
+eukaryotic,entity,eukaryotic
+external,entity,external
+external signal,entity,external signal
+fissure,entity,fissure
 fluorescence,entity,fluorescence
 fluorescent,entity,fluorescent
-microtubules,entity,microtubule
-Microtubules,entity,microtubule
-microtubule,entity,microtubule
-spindle apparatus,entity,spindle apparatus
-credit,entity,credit
-micrographs,entity,micrograph
-van,entity,van
-cytokinesis micrograph,entity,cytokinesis micrograph
-bar,entity,bar
-nuclear envelope,entity,nuclear envelope
-Nuclear envelopes,entity,nuclear envelope
-vesicles,entity,vesicle
-membranous organelles,entity,membranous organelle
-Golgi complex,entity,Golgi complex
+furrow,entity,furrow
+glucose,entity,glucose
+glucose molecules,entity,glucose molecule
 Golgi apparatus,entity,Golgi apparatus
-endoplasmic reticulum,entity,endoplasmic reticulum
-periphery,entity,periphery
-nucleolus,entity,nucleolus
-microtubule fibers,entity,microtubule fiber
-condensin proteins,entity,condensin protein
-light microscope,entity,light microscope
-change phase,entity,change phase
-length,entity,length
-nuclear area,entity,nuclear area
-protein structure,entity,protein structure
+Golgi complex,entity,Golgi complex
+Golgi membranes,entity,Golgi membrane
+Golgi vesicles,entity,Golgi vesicle
+growth,entity,growth
+growth factors,entity,growth factor
+homologous chromosomes,entity,homologous chromosome
+internal,entity,internal
+interphase,entity,interphase
+Karyokinesis,event,karyokinesis
 kinetochore,entity,kinetochore
 kinetochores,entity,kinetochore
-mitotic spindle microtubules,entity,mitotic spindle microtubule
-spindle microtubules,entity,spindle microtubule
-Spindle microtubules,entity,spindle microtubule
-contact,event,contact
-mitotic fiber,entity,mitotic fiber
-polar microtubules,entity,polar microtubule
-cell elongation,event,cell elongation
-spindle,entity,spindle
-plane,entity,plane
-metaphase plate,entity,metaphase plate
-equatorial plane,entity,equatorial plane
-cohesin proteins,entity,cohesin protein
-upward phase,entity,upward phase
-centromere,entity,centromere
-chromatid,entity,chromatid
-distance phase,entity,distance phase
-tubulin monomers,entity,tubulin monomer
-nucleosomes,entity,nucleosome
-cell motion,entity,cell motion
-eukaryotes,entity,eukaryote
-plant cells,entity,plant cell
-contractile ring,event,contractile ring
-actin filaments,entity,actin filament
-plasma membrane,entity,plasma membrane
-fissure,entity,fissure
-cleavage furrow,entity,cleavage furrow
-furrow,entity,furrow
-actin ring,event,actin ring
-membrane,entity,membrane
-structural proteins,entity,structural protein
-glucose molecules,entity,glucose molecule
-dividing cell,entity,divide cell
-Golgi vesicles,entity,Golgi vesicle
-phragmoplast,entity,phragmoplast
-vesicular structure,entity,vesicular structure
-fuse,entity,fuse
-structure,entity,structure
-cell plate,entity,cell plate
-glucose,entity,glucose
-Golgi membranes,entity,Golgi membrane
-classic cell-cycle,event,classic cell-cycle
-growth factors,entity,growth factor
-external signal,entity,external signal
+light microscope,entity,light microscope
 mature cardiac muscle,entity,mature cardiac muscle
+membrane,entity,membrane
+membranous organelles,entity,membranous organelle
+membranous organelles,entity,membranous organelle
+metaphase,entity,metaphase
+metaphase plate,entity,metaphase plate
+micrographs,entity,micrograph
+microtubule,entity,microtubule
+microtubule fibers,entity,microtubule fiber
+microtubules,entity,microtubule
+mitosis,event,mitosis
+mitotic fiber,entity,mitotic fiber
+mitotic phase,entity,mitotic phase
+mitotic spindle,entity,mitotic spindle
+mitotic spindle microtubules,entity,mitotic spindle microtubule
+multinucleate cells,entity,multinucleate cell
+multistep process,event,multistep process
 nerve cells,entity,nerve cell
+nuclear,entity,nuclear
+nuclear area,entity,nuclear area
+nuclear division,event,nuclear division
+nuclear DNA,entity,nuclear dna
+nuclear envelope,entity,nuclear envelope
+nucleolus,entity,nucleolus
+nucleosomes,entity,nucleosome
+nucleus,entity,nucleus
+periphery,entity,periphery
+phragmoplast,entity,phragmoplast
+plane,entity,plane
+plant cells,entity,plant cell
+plants,entity,plant
+plasma membrane,entity,plasma membrane
+polar microtubules,entity,polar microtubule
+prometaphase,entity,prometaphase
+protein structure,entity,protein structure
+proteins,entity,protein
+sister chromatid,entity,sister chromatid
+spindle,entity,spindle
+spindle apparatus,entity,spindle apparatus
+spindle microtubules,entity,spindle microtubule
+structural proteins,entity,structural protein
+structure,entity,structure
+telophase,entity,telophase
+tubulin monomers,entity,tubulin monomer
+upward phase,entity,upward phase
+van,entity,van
+vesicles,entity,vesicle
+vesicular structure,entity,vesicular structure
