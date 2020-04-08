@@ -1,9 +1,9 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, TextField, TextAreaField, SubmitField, SelectField, IntegerField, BooleanField
+from wtforms import StringField, TextAreaField, SubmitField, SelectField, IntegerField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, Required, EqualTo
 
-NONE_OF_THE_ABOVE_TEXT = "None of the above"
-NONE_OF_THE_ABOVE_HOVERTEXT = "Manually type in the relationship"
+NONE_OF_THE_ABOVE_TEXT = "Define a new relationship"
+NONE_OF_THE_ABOVE_HOVERTEXT = "Use this when none of the other relationships apply"
 
 # Form ORMs
 class FamilyForm(FlaskForm):
@@ -310,6 +310,34 @@ class CausalForm(FlaskForm):
 class ParticipantForm(FlaskForm):
     type = "relationship"
     name = "participant"
+    button_dict = {'submit0': 'participant',
+                   'submit1': 'instrument',
+                   'submit2': 'raw material',
+                   'submit3': 'result',
+                   'submit4': 'site',
+                   'submit5': 'I am not sure',
+                   'submit6': NONE_OF_THE_ABOVE_TEXT}
+    button_keys = list(button_dict.keys())
+    hovertext = ["Ex: The virus enters a cell",
+                 "Ex: The cell propels itself using a flagellum",
+                 "Ex: Mitochondria uses sunlight to produce sugar",
+                 "Ex: The result of mitosis are two new cells",
+                 "Ex: The virus enters the cell through the cell wall",
+                 "Use this if you are unsure and would like to ask for another exercise",
+                 NONE_OF_THE_ABOVE_HOVERTEXT]
+    submit0 = SubmitField(label=button_dict['submit0'])
+    submit1 = SubmitField(label=button_dict['submit1'])
+    submit2 = SubmitField(label=button_dict['submit2'])
+    submit3 = SubmitField(label=button_dict['submit3'])
+    submit4 = SubmitField(label=button_dict['submit4'])
+    submit5 = SubmitField(label=button_dict['submit5'])
+    submit6 = SubmitField(label=button_dict['submit6'])
+    flip_relationship = SubmitField(label='Flip Term Order')
+    go_back_button = SubmitField(label='Redo Family Selection')
+
+class ParticipantFormDeprecated(FlaskForm):
+    type = "relationship"
+    name = "participant"
     button_dict = {'submit0': 'agent',
                    'submit1': 'object',
                    'submit2': 'instrument',
@@ -338,6 +366,7 @@ class ParticipantForm(FlaskForm):
     flip_relationship = SubmitField(label='Flip Term Order')
     go_back_button = SubmitField(label='Redo Family Selection')
 
+
 class FinalSubmitForm(FlaskForm):
     type = "submit"
     name = "submit"
@@ -347,6 +376,6 @@ class FinalSubmitForm(FlaskForm):
 class TextInputForm(FlaskForm):
     type="text_input"
     name="text_input"
-    text = TextAreaField('Text', render_kw={"rows": 5, "cols": 60})
+    text = StringField('Relationship (30 characters or less)', validators=[Length(max=30)])
     submit = SubmitField(label='Submit response')
     go_back_button = SubmitField(label='I want to redo this')

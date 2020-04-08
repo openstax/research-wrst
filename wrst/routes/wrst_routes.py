@@ -24,6 +24,8 @@ import numpy as np
 
 wrst_routes = Blueprint('wrst_routes', __name__)
 
+MAX_RELATIONSHIP_LENGTH = 30
+
 def log_relationship(user,
                      task_id,
                      paragraph_id,
@@ -448,6 +450,8 @@ def do_text_submission():
 
 
         relationship = request.form.get('text')
+        if (len(relationship) > MAX_RELATIONSHIP_LENGTH):
+            relationship = relationship[0:MAX_RELATIONSHIP_LENGTH]
 
         # Check to see if we have pressed either the flip or back buttons
         if form.go_back_button.data:

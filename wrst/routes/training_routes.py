@@ -233,12 +233,12 @@ def training_participant():
     form = InstructionForm(request.form)
     header = "Participant Relationships (Entity to Event)"
     content_items = Markup(
-        """<p>These relationships describe how to entities participate in events.<br><br>
+        """<p>These relationships describe how entities participate in events.<br><br>
         The cat pushed the vase with it's paw. The vase broke on the ground into many pieces.<br></p>
         """)
 
     images = [
-        ['cat_push_vase.png', 'The cat pushed the vase (agent)'],
+        ['cat_push_vase.png', 'The cat pushed the vase (participants)'],
         ['cat_uses_paw.png', "The cat used it's paw (instrument)"],
         ['vase_ground.png', 'The vase landed on the ground (site)'],
         ['broken_vase.png', 'The vase broke into many pieces (result)']
