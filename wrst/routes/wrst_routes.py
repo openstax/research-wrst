@@ -15,7 +15,8 @@ from wrst.forms.wrst_forms import (
     CausalForm,
     ParticipantForm,
     EventStructureForm,
-    FinalSubmitForm
+    FinalSubmitForm,
+    TextInputForm
 )
 from wrst.logic.decorators import login_required
 from wrst.logic.task_selection import get_text_dynamic, get_next_form_by_ref, get_form_by_name
@@ -158,34 +159,34 @@ def do_wrst_family():
         return_text = get_next_form_by_ref(form)
         print("OUTPUT: {}".format(return_text))
 
-        # if form.submit0.data:
-#        if getattr(form, 'submit0').data:
-#            return_text = "Taxonomic"
-#        elif form.submit1.data:
-#            return_text = "Component"
-#        elif form.submit2.data:
-#            return_text = "Spatial"
-#        elif form.submit3.data:
-#            return_text = "Functional"
-#        elif form.submit4.data:
-#            return_text = "No direct relationship"
-#        elif form.submit5.data:
-#            return_text = "I don't know"
-#        else:
-#            return_text = "We should never see this!"
-
         # Update the family selection time-on-task
         session["family_time_on_task"] += (time.time() - session["last_family_start_time"])
         print(session["family_time_on_task"])
 
         # Route to the relationship selection task if a suitable option was chosen
-        if return_text not in ["no_relationship", "dont_know"]:
+        if return_text not in ["no_relationship", "dont_know", "text_input"]:
             return redirect(url_for('wrst_routes.do_wrst_relationship',
                                     form_title=return_text,
                                     family_form_name=family_form_name,
                                     paragraph_id=paragraph_id,
                                     content=content,
                                     question_text=question_text,
+                                    term_1=term_1,
+                                    term_2=term_2,
+                                    base_term_1=base_term_1,
+                                    base_term_2=base_term_2,
+                                    user_email=session['user_id'],
+                                    content_url=content_url
+                                    )
+                            )
+        elif 'text_input' in return_text:
+            return redirect(url_for('wrst_routes.do_text_submission',
+                                    form_title=return_text,
+                                    family_form_name=family_form_name,
+                                    paragraph_id=paragraph_id,
+                                    content=content,
+                                    question_text=question_text,
+                                    family_category="NA",
                                     term_1=term_1,
                                     term_2=term_2,
                                     base_term_1=base_term_1,
@@ -231,16 +232,6 @@ def do_wrst_relationship():
     content_url = request.args["content_url"]
 
     form = get_form_by_name(form_title)
-    #if form_title == "Taxonomic":
-    #    form = TaxonomyForm(request.form)
-    #elif form_title == "Component":
-    #    form = ComponentForm(request.form)
-    #elif form_title == "Spatial":
-    #    form = SpatialForm(request.form)
-    #elif form_title == "Functional":
-    #    form = FunctionalForm(request.form)
-    #else:
-    #    return "Rut roh . . ."
 
     # Calculate the padding on the terms
     # Number of (buttons + 2) x some height
@@ -306,24 +297,38 @@ def do_wrst_relationship():
                 if form[key].data:
                     relationship = form.button_dict[key]
 
-            return redirect(url_for('wrst_routes.submission',
-                                    paragraph_id=paragraph_id,
-                                    content=content,
-                                    question_text=question_text,
-                                    term_1=term_1,
-                                    term_2=term_2,
-                                    base_term_1=base_term_1,
-                                    base_term_2=base_term_2,
-                                    family_form_name=family_form_name,
-                                    family_category=family_category,
-                                    relationship=relationship,
-                                    user_email=session['user_id'],
-                                    content_url=content_url
-                                    )
-                            )
-
-
-
+            if relationship != 'None of the above':
+                return redirect(url_for('wrst_routes.submission',
+                                        paragraph_id=paragraph_id,
+                                        content=content,
+                                        question_text=question_text,
+                                        term_1=term_1,
+                                        term_2=term_2,
+                                        base_term_1=base_term_1,
+                                        base_term_2=base_term_2,
+                                        family_form_name=family_form_name,
+                                        family_category=family_category,
+                                        relationship=relationship,
+                                        user_email=session['user_id'],
+                                        content_url=content_url
+                                        )
+                                )
+            else:
+                return redirect(url_for('wrst_routes.do_text_submission',
+                                        form_title=return_text,
+                                        family_form_name=family_form_name,
+                                        paragraph_id=paragraph_id,
+                                        content=content,
+                                        question_text=question_text,
+                                        family_category=family_category,
+                                        term_1=term_1,
+                                        term_2=term_2,
+                                        base_term_1=base_term_1,
+                                        base_term_2=base_term_2,
+                                        user_email=session['user_id'],
+                                        content_url=content_url
+                                        )
+                                )
 
 @wrst_routes.route('/submission', methods=['GET', 'POST'])
 @login_required
@@ -383,6 +388,85 @@ def submission():
         else:
             # The user has selected a relationship
             # So we need to get which one they selected and route to final submission page
+            print(session['user_id'])
+            log_relationship(
+                user=session["user_id"],
+                task_id=session["current_task_id"],
+                paragraph_id=paragraph_id,
+                term_1=term_1,
+                term_2=term_2,
+                base_term_1=base_term_1,
+                base_term_2=base_term_2,
+                family=family_category,
+                relationship=relationship,
+                family_id_time=session['family_time_on_task'],
+                relationship_id_time=session["relationship_time_on_task"],
+                total_time=session['family_time_on_task'] + session["relationship_time_on_task"],
+            )
+
+            # Route back to get_new_task
+            return redirect(url_for('wrst_routes.get_new_task'))
+
+@wrst_routes.route('/do_text_submission', methods=['GET', 'POST'])
+@login_required
+def do_text_submission():
+
+    print("Made it here to text submit!")
+    # Unpack the data from the relationship form
+    paragraph_id = request.args["paragraph_id"]
+    content = Markup(request.args["content"])
+    term_1 = request.args["term_1"]
+    term_2 = request.args["term_2"]
+    base_term_1 = request.args["base_term_1"]
+    base_term_2 = request.args["base_term_2"]
+    family_form_name = request.args["family_form_name"]
+    question_text = request.args["question_text"]
+    content_url = request.args["content_url"]
+    family_category = request.args["family_category"]
+
+
+    form = TextInputForm(request.form)
+    # Render form if we need to
+    if not form.validate_on_submit():
+        # Set a new session start time
+        session["last_relationship_start_time"] = time.time()
+
+        return render_template('wrst_pages.html',
+                               form=form,
+                               textbook_content=content,
+                               question_text="Type in the relationship that you think applies",
+                               term_1="",
+                               term_2="",
+                               user_email=session['user_id'],
+                               time_on_task_str=session['total_time_on_task'],
+                               content_url=content_url)
+
+    if request.method == 'POST':
+        # Update the family selection time-on-task
+        session["relationship_time_on_task"] += (time.time() - session["last_relationship_start_time"])
+
+
+        relationship = request.form.get('text')
+
+        # Check to see if we have pressed either the flip or back buttons
+        if form.go_back_button.data:
+            return redirect(url_for('wrst_routes.do_wrst_family',
+                                    paragraph_id=paragraph_id,
+                                    content=content,
+                                    question_text=question_text,
+                                    term_1=term_1,
+                                    term_2=term_2,
+                                    base_term_1=base_term_1,
+                                    base_term_2=base_term_2,
+                                    family_form_name=family_form_name,
+                                    user_email=session['user_id'],
+                                    content_url=content_url
+                                    )
+                            )
+        else:
+            # The user has submitted things
+            # Get the text from the textbox
+            # That will be the "relationship"
             print(session['user_id'])
             log_relationship(
                 user=session["user_id"],

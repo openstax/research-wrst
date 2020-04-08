@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fae2908-6271-4cce-bd82-7b1ce50d8949" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/create_task_database.py" afterPath="$PROJECT_DIR$/scripts/create_task_database.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrst/forms/wrst_forms.py" afterPath="$PROJECT_DIR$/wrst/forms/wrst_forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrst/routes/wrst_routes.py" afterPath="$PROJECT_DIR$/wrst/routes/wrst_routes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrst/templates/wrst_pages.html" afterPath="$PROJECT_DIR$/wrst/templates/wrst_pages.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="experiment.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="experiment.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrst/logic/experiment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="94" lean-forward="false" selection-start-line="12" selection-start-column="94" selection-end-line="12" selection-end-column="94" />
+            <state relative-caret-position="300">
+              <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -50,8 +52,8 @@
       <file leaf-file-name="wrst_forms.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wrst/forms/wrst_forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="304" column="48" lean-forward="false" selection-start-line="304" selection-start-column="48" selection-end-line="304" selection-end-column="48" />
+            <state relative-caret-position="75">
+              <caret line="5" column="64" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="64" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -59,14 +61,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decorators.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wrst/logic/decorators.py">
+      <file leaf-file-name="wrst_pages.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wrst/templates/wrst_pages.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-10">
+              <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -81,12 +81,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wrst_routes.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="wrst_routes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wrst/routes/wrst_routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-              <folding />
+            <state relative-caret-position="396">
+              <caret line="319" column="61" lean-forward="false" selection-start-line="319" selection-start-column="61" selection-end-line="319" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#112#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,11 +148,13 @@
         <option value="$PROJECT_DIR$/create_task_database.py" />
         <option value="$PROJECT_DIR$/textbook_data/terms/raw_json/openstax_10_4.json" />
         <option value="$PROJECT_DIR$/scripts/create_terms_df.py" />
-        <option value="$PROJECT_DIR$/wrst/routes/wrst_routes.py" />
         <option value="$PROJECT_DIR$/wrst/database/models.py" />
         <option value="$PROJECT_DIR$/wrst/logic/task_selection.py" />
         <option value="$PROJECT_DIR$/scripts/create_task_database.py" />
         <option value="$PROJECT_DIR$/wrst/logic/experiment.py" />
+        <option value="$PROJECT_DIR$/wrst/templates/wrst_pages.html" />
+        <option value="$PROJECT_DIR$/wrst/forms/wrst_forms.py" />
+        <option value="$PROJECT_DIR$/wrst/routes/wrst_routes.py" />
       </list>
     </option>
   </component>
@@ -217,6 +221,12 @@
               <item name="wrst-stage" type="462c0819:PsiDirectoryNode" />
               <item name="wrst" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wrst-stage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wrst-stage" type="462c0819:PsiDirectoryNode" />
+              <item name="wrst" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -364,7 +374,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
           <caret line="91" column="32" lean-forward="true" selection-start-line="91" selection-start-column="32" selection-end-line="91" selection-end-column="32" />
-          <folding />
+          <folding>
+            <element signature="e#0#112#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -505,7 +517,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -526,38 +538,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wrst/routes/wrst_routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wrst/database/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
           <caret line="43" column="39" lean-forward="false" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wrst/logic/task_selection_old.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wrst/forms/wrst_forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="304" column="48" lean-forward="false" selection-start-line="304" selection-start-column="48" selection-end-line="304" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -592,9 +578,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wrst/logic/experiment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="94" lean-forward="false" selection-start-line="12" selection-start-column="94" selection-end-line="12" selection-end-column="94" />
+        <state relative-caret-position="300">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrst/logic/task_selection_old.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrst/forms/wrst_forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="64" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrst/templates/wrst_pages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrst/routes/wrst_routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="319" column="61" lean-forward="false" selection-start-line="319" selection-start-column="61" selection-end-line="319" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#112#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -100,13 +100,19 @@
                 <br>
               {% endif %}
 
+              {% if form.type=="text_input" %}
+                {{ wtf.form_field(form.text)}}
+                <br>
+                {{ wtf.form_field(form.submit, data_toggle="tooltip", class='btn btn-success btn-block') }}
+              {% endif %}
+
               {% if form.type=="submit" %}
                 {{ wtf.form_field(form.submit, data_toggle="tooltip", class='btn btn-success btn-block') }}
                 <br>
               {% endif %}
 
 
-              {% if form.type!="submit" %}
+              {% if ((form.type!="submit") and (form.type!="text_input")) %}
                 {#% for key in button_keys %#}
                 {% for ii in range(button_keys|length) %}
                 {{ wtf.form_field(form[button_keys[ii]], data_toggle="tooltip", title=hovertext[ii], data_placement="right", class='btn btn-primary btn-block') }}
