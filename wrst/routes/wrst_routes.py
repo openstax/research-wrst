@@ -315,7 +315,7 @@ def do_wrst_relationship():
                                 )
             else:
                 return redirect(url_for('wrst_routes.do_text_submission',
-                                        form_title=return_text,
+                                        form_title=relationship,
                                         family_form_name=family_form_name,
                                         paragraph_id=paragraph_id,
                                         content=content,
@@ -423,6 +423,7 @@ def do_text_submission():
     question_text = request.args["question_text"]
     content_url = request.args["content_url"]
     family_category = request.args["family_category"]
+    print("Family category: {}".format(family_category))
 
 
     form = TextInputForm(request.form)

@@ -347,6 +347,6 @@ class FinalSubmitForm(FlaskForm):
 class TextInputForm(FlaskForm):
     type="text_input"
     name="text_input"
-    text = TextAreaField('Text', render_kw={"rows": 5, "cols": 20})
+    text = TextAreaField('Text', render_kw={"rows": 5, "cols": 60})
     submit = SubmitField(label='Submit response')
     go_back_button = SubmitField(label='I want to redo this')
