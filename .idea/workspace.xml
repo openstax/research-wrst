@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0fae2908-6271-4cce-bd82-7b1ce50d8949" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/create_task_database.py" afterPath="$PROJECT_DIR$/scripts/create_task_database.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/textbook_data/terms/processed/openstax_10_2.csv" afterPath="$PROJECT_DIR$/textbook_data/terms/processed/openstax_10_2.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wrst/routes/training_routes.py" afterPath="$PROJECT_DIR$/wrst/routes/training_routes.py" />
-    </list>
+    <list default="true" id="0fae2908-6271-4cce-bd82-7b1ce50d8949" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
