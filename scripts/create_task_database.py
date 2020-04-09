@@ -20,7 +20,7 @@ def extract_rex_ch_sec(rex_link):
     return chsec
 
 def get_term_list(text, all_terms):
-    text_lower = text.lower()
+    text_lower = text.lower().replace('.', '').replace(',', '').replace('-', '').replace('?', '')
     words = set(text_lower.split())
     term_list = set(all_terms)
     compound_terms = set([t for t in term_list if " " in t])

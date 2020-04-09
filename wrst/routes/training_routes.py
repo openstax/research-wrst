@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, abort, flash, request, Markup, red
 from wrst.database import db
 from wrst.database.models import User, Relationship
 import time
-from wrst.forms.wrst_forms import EntityEntityForm, TaxonomyForm, ComponentForm, SpatialForm, FunctionalForm, FinalSubmitForm
+from wrst.forms.wrst_forms import EntityEntityForm, TaxonomyForm, ComponentForm, SpatialForm, FunctionalForm, FinalSubmitForm, TextInputForm
 from wrst.forms.instruction_forms import InstructionForm
 from wrst.logic.decorators import login_required
 from wrst.logic.experiment import ProlificExperiment
@@ -722,14 +722,156 @@ def training_18():
                                time_on_task_str="0 sec",
                                content_url=content_url,
                                next_arrow=True,
-                               next_link=url_for('training_routes.training_19')
+                               next_link=url_for('training_routes.training_text_submission_1', flash_message="There is one last relationship option that we want to discuss: creating your own relationships!")
                                )
 
 
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes.training_19'))
+        return redirect(url_for('training_routes.training_text_submission_1', flash_message="There is one last relationship option that we want tp discuss: creating your own relationships!"))
+
+
+@training_routes.route('/training_text_submission_1', methods=['GET', 'POST'])
+@login_required
+def training_text_submission_1():
+    flash_message = request.args["flash_message"]
+    form = EntityEntityForm(request.form)
+    term_1 = "eukaryotic cells"
+    term_2 = "protein"
+    question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
+    content = '<h3>Like prokaryotes, <span style="background-color: #FFFF00">eukaryotic cells</span> have a plasma membrane, a phospholipid bilayer with embedded <span style="background-color: #FFFF00">proteins</span> that separates the internal contents of the cell from its surrounding environment.</h3>'
+    content = Markup(content)
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+
+    if not form.validate_on_submit():
+        flash(flash_message)
+        return render_template('wrst_pages.html',
+                               form=form,
+                               textbook_content=content,
+                               question_text=question_text,
+                               term_1="",
+                               term_2="",
+                               button_keys=form.button_keys,
+                               hovertext=form.hovertext,
+                               user_email=session['user_id'],
+                               time_on_task_str="0 sec",
+                               content_url=content_url,
+                               next_arrow=True,
+                               next_link=url_for('training_routes.training_text_submission_2', flash_message="If two terms are related, but none of the relationship buttons seem quite right, you can enter your own.")
+                               )
+
+
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+
+        return redirect(url_for('training_routes.training_text_submission_2', flash_message="If two terms are related, but none of the relationship buttons seem quite right, you can enter your own."))
+
+@training_routes.route('/training_text_submission_2', methods=['GET', 'POST'])
+@login_required
+def training_text_submission_2():
+    flash_message = request.args["flash_message"]
+    form = EntityEntityForm(request.form)
+    term_1 = "eukaryotic cells"
+    term_2 = "protein"
+    question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
+    content = '<h3>Like prokaryotes, <span style="background-color: #FFFF00">eukaryotic cells</span> have a plasma membrane, a phospholipid bilayer with embedded <span style="background-color: #FFFF00">proteins</span> that separates the internal contents of the cell from its surrounding environment.</h3>'
+    content = Markup(content)
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+
+    if not form.validate_on_submit():
+        flash(flash_message)
+        return render_template('wrst_pages.html',
+                               form=form,
+                               textbook_content=content,
+                               question_text=question_text,
+                               term_1="",
+                               term_2="",
+                               button_keys=form.button_keys,
+                               hovertext=form.hovertext,
+                               user_email=session['user_id'],
+                               time_on_task_str="0 sec",
+                               content_url=content_url,
+                               next_arrow=True,
+                               next_link=url_for('training_routes.training_text_submission_3',
+                                                 flash_message="Try clicking on the 'Define new relationship button'")
+                               )
+
+
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+
+        return redirect(url_for('training_routes.training_text_submission_3', flash_message="Try clicking on the 'Define new relationship button'"))
+
+@training_routes.route('/training_text_submission_3', methods=['GET', 'POST'])
+@login_required
+def training_text_submission_3():
+    flash_message = request.args["flash_message"]
+    form = EntityEntityForm(request.form)
+    term_1 = "eukaryotic cells"
+    term_2 = "protein"
+    question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
+    content = '<h3>Like prokaryotes, <span style="background-color: #FFFF00">eukaryotic cells</span> have a plasma membrane, a phospholipid bilayer with embedded <span style="background-color: #FFFF00">proteins</span> that separates the internal contents of the cell from its surrounding environment.</h3>'
+    content = Markup(content)
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+
+    if not form.validate_on_submit():
+        flash(flash_message)
+        return render_template('wrst_pages.html',
+                               form=form,
+                               textbook_content=content,
+                               question_text=question_text,
+                               term_1="",
+                               term_2="",
+                               button_keys=form.button_keys,
+                               hovertext=form.hovertext,
+                               user_email=session['user_id'],
+                               time_on_task_str="0 sec",
+                               content_url=content_url
+                               )
+
+
+    if request.method == 'POST':
+        # Make sure they hit the right button
+            if form.submit5.data:  # 'Define' is submit4 on entity-entity
+                return redirect(url_for('training_routes.training_text_submission_4',
+                                        flash_message="Now you have a text box on the right. Type in some text and click 'Submit'")
+                                )
+            else:
+                return redirect(url_for('training_routes.training_text_submission_3',
+                                        flash_message="Click on the 'Define a new relationship' button to move on"))
+
+@training_routes.route('/training_text_submission_4', methods=['GET', 'POST'])
+@login_required
+def training_text_submission_4():
+    flash_message = request.args["flash_message"]
+    form = TextInputForm(request.form)
+    term_1 = "eukaryotic cells"
+    term_2 = "protein"
+    question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
+    content = '<h3>Like prokaryotes, <span style="background-color: #FFFF00">eukaryotic cells</span> have a plasma membrane, a phospholipid bilayer with embedded <span style="background-color: #FFFF00">proteins</span> that separates the internal contents of the cell from its surrounding environment.</h3>'
+    content = Markup(content)
+    content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
+
+    if not form.validate_on_submit():
+        flash(flash_message)
+        return render_template('wrst_pages.html',
+                               form=form,
+                               textbook_content=content,
+                               question_text="Type in the relationship that you think applies",
+                               term_1="",
+                               term_2="",
+                               user_email=session['user_id'],
+                               time_on_task_str="0 sec",
+                               content_url=content_url)
+
+    if request.method == 'POST':
+        # Make sure they hit the right button
+            if form.submit.data:  # 'Define' is submit4 on entity-event
+                return redirect(url_for('training_routes.training_19'))
+            else:
+                return redirect(url_for('training_routes.training_text_submission_4',
+                                        flash_message="Type some text and click on the 'Submit' button to move on"))
 
 @training_routes.route('/training_19', methods=['GET', 'POST'])
 @login_required
