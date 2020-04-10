@@ -59,6 +59,9 @@ def create_book_dataframe(sentences_file, all_terms):
         sec = chsec[1]
         tmp = dfb[dfb["chapter"] == ch]
         tmp = tmp[tmp["section"] == sec]
+        if ((ch==10) and (sec==2)): #TODO BAD HACK BRO
+            tmp = tmp[tmp['sentence_id']<=122]
+
         df_book = df_book.append(tmp)
 
     # Do term extraction, etc
