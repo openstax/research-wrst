@@ -70,12 +70,15 @@ def get_text_dynamic():
     terms = [term_1, term_2]
     content = task.sentence
     for t in terms:
+        t = t.replace('(', '\(').replace(')', '\)')
         pattern = re.compile(t, re.IGNORECASE)
         content = pattern.sub(
             '<span style="background-color: #FFFF00">{}</span>'.format(t),
             content,
             1,
         )
+        print(content)
+        content = content.replace('\(', '(').replace('\)', ')')
     content = "<h3>{}</h3>".format(content)
     question_text = "What type of relationship exists between {} and {}?".format(
         term_1, term_2

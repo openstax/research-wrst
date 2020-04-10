@@ -451,7 +451,7 @@ def training_11():
 
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
-        if form.submit2.data:  # 'is inside of' is submit2 for the spatial form
+        if form.submit1.data:  # 'is inside of' is submit1 for the spatial form
             return redirect(url_for('training_routes.training_12', flash_message="Now we are at the final submission page.  We get to review the relationship we have chosen and make changes if we need to.  We are looking good so click that option!")
                         )
         else:

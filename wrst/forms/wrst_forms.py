@@ -219,14 +219,14 @@ class SpatialForm(FlaskForm):
     type = "relationship"
     name = "spatial"
     button_dict = {'submit0': 'is located at',
-                   'submit1': 'is outside of',
-                   'submit2': 'is inside of',
-                   'submit3': 'resides against',
-                   'submit4': 'I am not sure',
-                   'submit5': NONE_OF_THE_ABOVE_TEXT}
+                   #'submit1': 'is outside of',
+                   'submit1': 'is inside of',
+                   'submit2': 'resides against',
+                   'submit3': 'I am not sure',
+                   'submit4': NONE_OF_THE_ABOVE_TEXT}
     button_keys = list(button_dict.keys())
     hovertext = ["Ex: 'Cat' is at the 'box'",
-                 "Ex: 'Cat' is outside the 'box'",
+                 #"Ex: 'Cat' is outside the 'box'",
                  "Ex: 'Cat' is inside the 'box'",
                  "Ex: 'Cat' is against the 'box'",
                  "Use this if you are unsure and would like to ask for another exercise",
@@ -236,7 +236,7 @@ class SpatialForm(FlaskForm):
     submit2 = SubmitField(label=button_dict['submit2'])
     submit3 = SubmitField(label=button_dict['submit3'])
     submit4 = SubmitField(label=button_dict['submit4'])
-    submit5 = SubmitField(label=button_dict['submit5'])
+    #submit5 = SubmitField(label=button_dict['submit5'])
     flip_relationship = SubmitField(label='Flip Term Order')
     go_back_button = SubmitField(label='Redo Family Selection')
 
