@@ -21,7 +21,7 @@ from wrst.forms.wrst_forms import (
 from wrst.logic.decorators import login_required
 from wrst.logic.task_selection import get_text_dynamic, get_next_form_by_ref, get_form_by_name
 import numpy as np
-
+from wrst.forms.wrst_forms import NONE_OF_THE_ABOVE_TEXT
 wrst_routes = Blueprint('wrst_routes', __name__)
 
 MAX_RELATIONSHIP_LENGTH = 30
@@ -299,7 +299,7 @@ def do_wrst_relationship():
                 if form[key].data:
                     relationship = form.button_dict[key]
 
-            if relationship != 'None of the above':
+            if relationship != NONE_OF_THE_ABOVE_TEXT:
                 return redirect(url_for('wrst_routes.submission',
                                         paragraph_id=paragraph_id,
                                         content=content,
