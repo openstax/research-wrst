@@ -2,7 +2,6 @@
 # Final structure is "term", "type", "base_term"
 # where term is the form in the text, type \in {entity, event}, and base_term is lemmatized form
 # Ex: cells, entity, cell
-# NOTE: WE DON'T WANT TO RUN THIS RIGHT NOW SINCE WE HAVE CUSTOM TERM FILES
 
 import pandas as pd
 import json
