@@ -13,7 +13,7 @@ def display_task_instructions():
     # Load the form
     form = InstructionForm(request.form)
     header = "Convergence Accelerator Study"
-    content_items = Markup("""<p>In this study, you first read a section from an introductory Biology textbook for 10 minutes. <br><br>
+    content_items = Markup("""<p>In this study, you first read a section from an introductory Biology textbook for 5 minutes. <br><br>
                     After reading the text, you will step through a training activity. The training activity will teach you how to label the relationships between the biology concepts you just read about. The training will last approximately 5 minutes. <br><br>
                     After the training exercise, you will then label the relationships between biology terms. The relationship task will last 25 minutes. <br><br>
                     When you are ready to begin, press next.<br></p>
