@@ -413,7 +413,7 @@ def training_10():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
         if form.submit2.data:  # Spatial relationship is submit2
-            return redirect(url_for('training_routes.training_11', flash_message="Good job! Now we need to select the correct relationship from the list. Note the order of the terms -- we want to select 'is inside of' since cytoplasm comes first")
+            return redirect(url_for('training_routes.training_11', flash_message="Good job! Now we need to select the correct subclass relationship from the new list. Here we would choose 'is inside of' on the right.")
                         )
         else:
             return redirect(url_for('training_routes.training_10', flash_message="This is a spatial relationship so click on that button to continue on.")
