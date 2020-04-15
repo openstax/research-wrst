@@ -5,6 +5,7 @@ from wrst.logic.experiment import ProlificExperiment, PsychExperiment, TestExper
 from wrst.forms.user_forms import UserLogin, UserCreation, UserEdit
 import string
 import numpy as np
+import datetime
 
 user_routes = Blueprint('user_routes', __name__)
 
@@ -70,7 +71,8 @@ def login_prolific():
                             study_name=study_name,
                             study_cohort=cohort,
                             required_time_on_task_seconds=session['required_time_on_task'],
-                            required_reading_time_seconds=session['required_reading_time']
+                            required_reading_time_seconds=session['required_reading_time'],
+                            user_creation_time=datetime.datetime.now()
                             )
             db.session.add(new_user)
             db.session.commit()
@@ -113,7 +115,8 @@ def login_psych():
                     study_name=study_name,
                     study_cohort=cohort,
                     required_time_on_task_seconds=session['required_time_on_task'],
-                    required_reading_time_seconds=session['required_reading_time']
+                    required_reading_time_seconds=session['required_reading_time'],
+                    user_creation_time=datetime.datetime.now()
                     )
     db.session.add(new_user)
     db.session.commit()
@@ -164,7 +167,8 @@ def login_test():
                             study_name=study_name,
                             study_cohort=cohort,
                             required_time_on_task_seconds=session['required_time_on_task'],
-                            required_reading_time_seconds=session['required_reading_time']
+                            required_reading_time_seconds=session['required_reading_time'],
+                            user_creation_time=datetime.datetime.now()
                             )
             db.session.add(new_user)
             db.session.commit()

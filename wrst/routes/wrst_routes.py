@@ -23,6 +23,7 @@ from wrst.logic.task_selection import get_text_dynamic, get_next_form_by_ref, ge
 import numpy as np
 from wrst.forms.wrst_forms import NONE_OF_THE_ABOVE_TEXT
 wrst_routes = Blueprint('wrst_routes', __name__)
+import datetime
 
 MAX_RELATIONSHIP_LENGTH = 30
 
@@ -51,7 +52,8 @@ def log_relationship(user,
         relationship=relationship,
         family_id_time=family_id_time,
         relationship_id_time=relationship_id_time,
-        total_time=total_time
+        total_time=total_time,
+        task_completion_time=datetime.datetime.now()
     )
     db.session.add(new_relationship)
     db.session.commit()

@@ -13,6 +13,7 @@ class User(db.Model):
     required_reading_time_seconds = db.Column(db.Integer)
     required_time_on_task_seconds = db.Column(db.Integer)
     task_complete = db.Column(db.Boolean)
+    user_creation_time = db.Column(db.DateTime)
 
     def __init__(
         self,
@@ -20,8 +21,8 @@ class User(db.Model):
         study_name,
         study_cohort,
         required_time_on_task_seconds,
-        required_reading_time_seconds
-
+        required_reading_time_seconds,
+        user_creation_time=None
     ):
 
         self.user_id = user_id
@@ -31,6 +32,7 @@ class User(db.Model):
         self.required_time_on_task_seconds = required_time_on_task_seconds
         self.required_reading_time_seconds = required_reading_time_seconds
         self.task_complete = False
+        self.user_creation_time = user_creation_time
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
@@ -52,6 +54,7 @@ class Relationship(db.Model):
     relationship_id_time = db.Column(db.Numeric)
     total_time = db.Column(db.Numeric)
     task_id = db.Column(db.Integer)
+    task_completion_time = db.Column(db.DateTime)
 
     def __init__(
         self,
@@ -66,7 +69,8 @@ class Relationship(db.Model):
         family_id_time,
         relationship_id_time,
         total_time,
-        task_id=0
+        task_id=0,
+        task_completion_time=None
     ):
         self.user = user
         self.paragraph_id = paragraph_id
@@ -80,6 +84,7 @@ class Relationship(db.Model):
         self.relationship_id_time = relationship_id_time
         self.total_time = total_time
         self.task_id=task_id
+        self.task_completion_time = task_completion_time
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
