@@ -10,6 +10,7 @@ from wrst.database.models import Tasks
 from wrst.logic.experiment import Experiment
 
 sentences_file = "../textbook_data/book/sentences_Biology_2e_parsed.csv"
+task_limit = 30
 
 def extract_rex_ch_sec(rex_link):
     pattern = "^\d{,2}\-\d{,2}"
@@ -109,6 +110,7 @@ df_book, df_book_full = create_book_dataframe(sentences_file, all_terms)
 
 # Now go through each sentence and assemble a task for each pairwise combination of terms found therein
 task_count = 0
+task_list = []
 for ii in range(0, df_book.shape[0]):
     sentence = df_book.iloc[ii]
     terms = sentence["terms"]
@@ -125,9 +127,17 @@ for ii in range(0, df_book.shape[0]):
             base_term_1=get_base_term(term_combination[0], df_terms),
             base_term_2=get_base_term(term_combination[1], df_terms)
         )
-        db.session.add(task)
+        task_list.append(task)
         task_count += 1
+task_list = np.random.choice(task_list, task_limit, replace=False)
+
+# Redo the task list to number from 0 to N
+for num, task in enumerate(task_list):
+    task.task_id = num
+
+db.session.bulk_save_objects(task_list)
 db.session.commit()
 print("Finished doing Ch. {} Sec. {}".format(chapter, section))
 print("I found {} valid sentences having at least two terms".format(df_book.shape[0]))
 print("I found {} total tasks that can be completed".format(task_count))
+print("I wrote {} tasks to the db".format(len(task_list)))
