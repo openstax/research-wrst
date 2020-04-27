@@ -11,6 +11,6 @@ db = SQLAlchemy()
 
 
 def reset_database():
-    from wrst.database.models import User, Relationship
+    from wrst.database.models import User, Relationship, MyTableClass
     db.drop_all()
     db.create_all()
