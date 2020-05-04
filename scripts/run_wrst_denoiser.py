@@ -4,11 +4,12 @@ import pandas as pd
 from scipy.stats import mode
 
 # Load up the data and filter to users who completed the task
-df = pd.read_csv('~/Desktop/wrst_data/relationship_final.csv')
+df = pd.read_csv('~/Desktop/wrst_data/relationships_proc.csv')
 df_users = pd.read_csv('~/Desktop/wrst_data/user_final.csv')
 df_users = df_users[df_users['task_complete']=='t']
 df_tasks = pd.read_csv('~/Desktop/wrst_data/tasks.csv')
 df = df[df['user'].isin(df_users['user_id'].unique())]
+df = df.drop_duplicates(['user', 'task_id'])
 
 # Process the relationship data to remove idk and manual stuff -- then pivot into the right data format for MCMC
 # This format is a numpy array of size num participants x num tasks with values in 0....K (K is num relationships)

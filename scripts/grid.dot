@@ -1,5 +1,0 @@
-digraph  G {
-billy -> 3;
-1 -> 2 [label="fuckballs", len=2];
-1 -> 3;
-}
