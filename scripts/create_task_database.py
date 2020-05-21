@@ -10,6 +10,7 @@ from wrst.database.models import Tasks
 from wrst.logic.experiment import Experiment
 
 sentences_file = "../textbook_data/book/sentences_Biology_2e_parsed.csv"
+task_limit = 30
 
 def extract_rex_ch_sec(rex_link):
     pattern = "^\d{,2}\-\d{,2}"
@@ -20,7 +21,7 @@ def extract_rex_ch_sec(rex_link):
     return chsec
 
 def get_term_list(text, all_terms):
-    text_lower = text.lower().replace('.', '').replace(',', '').replace('-', '').replace('?', '')
+    text_lower = text.lower().replace('.', '').replace(',', '').replace('?', '').replace(';', '').replace('(', '').replace(')', '')
     words = set(text_lower.split())
     term_list = set(all_terms)
     compound_terms = set([t for t in term_list if " " in t])
@@ -128,6 +129,11 @@ for ii in range(0, df_book.shape[0]):
         )
         task_list.append(task)
         task_count += 1
+task_list = np.random.choice(task_list, task_limit, replace=False)
+
+# Redo the task list to number from 0 to N
+for num, task in enumerate(task_list):
+    task.task_id = num
 
 db.session.bulk_save_objects(task_list)
 db.session.commit()

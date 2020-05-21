@@ -1,16 +1,17 @@
 term,type,base_term
-Cells,entity,cell
 celled,entity,cell
 cells,entity,cell
 cell,entity,cell
-prokaryotic,entity,Prokaryotic
-eukaryotic,entity,eukaryotic
 Archaea,entity,Archaea
 prokaryotes,entity,prokaryote
+prokaryotic,entity,prokaryotic cell
+eukaryotic,entity,eukaryotic cell
 prokaryote,entity,prokaryote
 nucleus,entity,nucleus
 protists,entity,protist
 eukaryotes,entity,eukaryote
+eukaryote,entity,eukaryote
+pili,entity,pili
 plasma membrane,entity,plasma membrane
 cytoplasm,entity,cytoplasm
 cytosol,entity,cytosol
@@ -20,14 +21,13 @@ eukaryotic cells,entity,eukaryotic cell
 membrane,entity,membrane
 organelle,entity,organelle
 organelles,entity,organelle
-Prokaryotic DNA,entity,Prokaryotic dna
+Prokaryotic DNA,entity,prokaryotic dna
 nucleoid,entity,nucleoid
-peptidoglycan cell,entity,peptidoglycan cell
+peptidoglycan cell wall,entity,peptidoglycan cell wall
 polysaccharide capsule,entity,polysaccharide capsule
 dehydration,event,dehydration
 capsule,entity,capsule
 flagella,entity,flagella
-Flagella,entity,flagella
 fimbriae,entity,fimbriae
 locomotion,entity,locomotion
 conjugation,event,conjugation
@@ -36,24 +36,88 @@ host cell,entity,host cell
 contagious,entity,contagious
 microbes,entity,microbe
 microscopes,entity,microscope
-doorknobs,entity,doorknob
-doorknob,entity,doorknob
-sneezer,entity,sneezer
 mucus,entity,mucus
 body,entity,body
 microorganisms,entity,microorganism
-vitamin,entity,vitamin
-Microbiologists,entity,microbiologist
+microogranism,entity,microorganism
+vitamin k,entity,vitamin k
 microbiologists,entity,microbiologist
 development,event,development
 bacterial infections,entity,bacterial infection
 hazardous elements,entity,hazardous element
-microbes bioremediation,event,microbe bioremediation
+microbes,event,microbe
 specificity,entity,specificity
 bacterial,entity,bacterial
 prokaryotic cells,entity,Prokaryotic cell
 prokaryotic cell,entity,Prokaryotic cell
 organic molecules,entity,organic molecule
 intracellular transport,entity,intracellular transport
-volume,entity,volume
 cell membrane,entity,cell membrane
+bacteria,entity,bacterium
+organisms,entity,organism
+organism,entity,organism
+logarithmic,entity,logarithmic
+unit,entity,unit
+ions,entity,ion
+ion,entity,ion
+diffuse,event,diffuse
+wastes,entity,waste
+waste,entity,waste
+divide,event,divide
+task,entity,task
+tasks,entity,task
+animal cells,entity,animal cell
+animal cell,entity,animal cell
+plants,entity,plant
+plants,entity,plant
+fungi,entity,fungus
+fungus,entity,fungus
+environment,entity,environment
+genetic material,entity,genetic material
+protein,entity,protein
+synthesis,event,synthesis
+unicellular organism,entity,unicellular organism
+membrane bound organelle,entity,membrane bound organelle
+cell wall,entity,cell wall
+prevent dehydration,event,prevent dehydration
+maintain shape,event,maintain shape
+bacterium,entity,bacterium
+transfer,entity,transfer
+contagious illness,entity,contagious illness
+microscope,entity,microscope
+gut,entity,gut
+disease,entity,disease
+scientist,entity,scientist
+career,entity,career
+careers,entity,careers
+food industry,entity,food industry
+veterinary and medical fields,entity,veterinary and medical fields
+pharmaceutical sector,entity,pharmaceutical sector
+antibiotic source,entity,antibiotic source
+treat,event,treat
+environmental microbiologist,entity,environmental microbiologist
+genetically engineered microbe,entity,genetically engineered microbe
+pollutant,entity,pollutant
+soil,entity,soil
+groundwater,entity,groundwater
+contaminated site,entity,contaminated site
+bioremediation technologies,entity,bioremediation technologies
+bacterial epidemics,entity,bacterial epidemics
+bioinformatics,entity,bioinformatics
+structural adaptation,entity,structural adaptation
+adaptations,event,adaptation
+microbiologist,entity,microbiologist
+single-celled organism,entity,single-celled organism
+single-celled organisms,entity,single-celled organism
+synthesize,event,synthesis
+surrounding environment,entity,surrounding environment
+cellular component,entity,cellular component
+cell interior,entity,cell interior
+unicellular organism,entity,single-celled organism
+membrane-bound organelle,entity,membrane-bound organelle
+maintain its shape,entity,maintain shape
+prevents dehydration,entity,prevent dehydration
+attach,event,attach
+transfers,event,transfer
+efficient,entity,efficient
+adaptation,entity,adaptation
