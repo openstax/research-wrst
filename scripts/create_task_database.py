@@ -129,11 +129,6 @@ for ii in range(0, df_book.shape[0]):
         )
         task_list.append(task)
         task_count += 1
-task_list = np.random.choice(task_list, task_limit, replace=False)
-
-# Redo the task list to number from 0 to N
-for num, task in enumerate(task_list):
-    task.task_id = num
 
 db.session.bulk_save_objects(task_list)
 db.session.commit()
