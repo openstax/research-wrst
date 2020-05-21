@@ -22,8 +22,8 @@ class Experiment():
 class ProlificExperiment(Experiment):
     def __init__(self):
         Experiment.__init__(self)
-        self.reading_time = 3 # Change reading time to 5
-        self.task_time = 30*60 # Change task time to 25
+        self.reading_time = 10 # Change reading time to 5
+        self.task_time = 5*60 # Change task time to 25
         self.redirect_link = "https://app.prolific.co/submissions/complete?cc=15797BE5" 
 
 class PsychExperiment(Experiment):
