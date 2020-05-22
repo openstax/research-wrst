@@ -29,7 +29,7 @@ dehydration,event,dehydration
 capsule,entity,capsule
 flagella,entity,flagella
 fimbriae,entity,fimbriae
-locomotion,entity,locomotion
+locomotion,event,locomotion
 conjugation,event,conjugation
 contact,event,contact
 host cell,entity,host cell
