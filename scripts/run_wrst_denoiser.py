@@ -4,10 +4,11 @@ import pandas as pd
 from scipy.stats import mode
 
 # Load up the data and filter to users who completed the task
-df = pd.read_csv('~/Desktop/wrst_data/relationships_proc.csv')
-df_users = pd.read_csv('~/Desktop/wrst_data/user_final.csv')
+output_file_name = 'Biology_42_mcmc_task_output.csv'
+df = pd.read_csv('~/Desktop/wrst_data/OS_Biology_4_2/relationships_42_processed.csv')
+df_users = pd.read_csv('~/Desktop/wrst_data/OS_Biology_4_2/users_42.csv')
 df_users = df_users[df_users['task_complete']=='t']
-df_tasks = pd.read_csv('~/Desktop/wrst_data/tasks.csv')
+df_tasks = pd.read_csv('~/Desktop/wrst_data/OS_Biology_4_2/tasks_42.csv')
 df = df[df['user'].isin(df_users['user_id'].unique())]
 df = df.drop_duplicates(['user', 'task_id'])
 
@@ -53,4 +54,4 @@ modes = modes.drop(columns='family_idx_out')
 df_tasks = df_tasks[['task_id', 'sentence', 'term_1', 'term_2']]
 modes = modes.merge(df_tasks, how='left')
 modes = modes[['task_id', 'sentence', 'term_1', 'term_2', 'family_mode', 'family_out', 'difficulty']]
-modes.to_csv('mcmc_task_output_lax_gamma.csv', index=None)
+modes.to_csv(output_file_name, index=None)

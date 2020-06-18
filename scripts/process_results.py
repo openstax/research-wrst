@@ -17,7 +17,7 @@ family_name_map = {
 }
 
 # Get the master data frame
-df = pd.read_csv('/Users/drew/Desktop/wrst_data/relationship_final.csv')
+df = pd.read_csv('/Users/drew/Desktop/wrst_data/OS_Biology_4_2/relationships_42_processed.csv')
 df['family'] = df['family'].fillna('manual')
 df['family_name_short'] = df['family'].map(family_name_map)
 
@@ -87,7 +87,7 @@ rater_mat = dft[["task_id", "user", "family"]].pivot('task_id', 'user', 'family'
 rater_mat.to_csv('~/Desktop/rater_mat.csv')
 
 #Task table -- for merging
-df_tasks = pd.read_csv('~/Desktop/tasks.csv')
+df_tasks = pd.read_csv('~/Desktop/wrst_data/OS_Biology_4_2/tasks_42.csv')
 
 # Compute relationship mode for each task -- s.t. family is consistent with mode
 df_filt = df_filt[df_filt['mode_match']]
@@ -98,4 +98,4 @@ modes = modes.merge(relationships_mode, how='left')
 df_tasks = df_tasks.drop(columns='id').merge(modes)
 family_inv = {family_name_map[k]: k for k in family_name_map.keys()}
 df_tasks['family_mode'] = df_tasks['family_mode'].map(family_inv)
-df_tasks.to_csv('~/Desktop/tasks_mode.csv', index=None)
+df_tasks.to_csv('~/Desktop/wrst_data/OS_Biology_4_2/tasks_mode.csv', index=None)

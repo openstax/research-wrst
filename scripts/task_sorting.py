@@ -18,8 +18,8 @@ def make_type_tuple(term_1, term_2, df_terms):
         return (type_2, type_1)
 
 # Load the task and relationship data
-df_relationships = pd.read_csv('~/Desktop/wrst_data/relationship_final.csv')
-df_tasks = pd.read_csv('~/Desktop/wrst_data/tasks.csv')
+df_relationships = pd.read_csv('~/Desktop/wrst_data/OS_Biology_4_2/relationships_42.csv')
+df_tasks = pd.read_csv('~/Desktop/wrst_data/OS_Biology_4_2/tasks_42.csv')
 
 # Make a entity/event map for all terms
 df_terms = df_tasks[['term_1', 'type_1']].append(df_tasks[['term_2', 'type_2']].rename(columns={'term_2': 'term_1', 'type_2': 'type_1'})).drop_duplicates()
