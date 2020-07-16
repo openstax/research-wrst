@@ -1,0 +1,119 @@
+body {
+    background-color: lightblue;
+    font-size: 1.2em;
+}
+
+strong {
+    font-weight: 900;
+}
+
+#remember-me {
+    float: left;
+}
+
+.textbook-text {
+    font-size: 1.2em;
+    line-height: 1.2;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    color: #424242;
+    max-width: 34em;
+    margin: auto;
+    padding: 0 1em;
+}
+
+.clock {
+    float: right;
+}
+
+.exercise-text {
+    font-size: 1.4em;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    color: #424242;
+    max-width: 34em;
+    margin: auto;
+    padding: 0 1em;
+}
+
+.introduction-text {
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    color: #424242;
+    max-width: 40em;
+    margin: auto;
+    padding: 0 1em;
+}
+
+.has-error {
+    border: solid 1px;
+    color: lightcoral;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.form-wrapper {
+    display: inline-block;
+}
+
+/*.reading-wrapper.loading {*/
+    /*display: none;*/
+/*}*/
+
+/*.exercise-wrapper.loading {*/
+    /*display: none;*/
+/*}*/
+
+.loading {
+    display: none;
+}
+
+.input-field label {
+    font-size: 1.2rem;
+    color: #424242;
+}
+
+li.exercise-choice.incorrect .choice-matter {
+    background-color: rgba(255, 0, 0, 0.1);
+    width: 600px;
+}
+
+li.exercise-choice.correct .choice-matter {
+    background-color: rgba(0, 255, 0, 0.1);
+    width: 600px;
+}
+
+.results {
+    font-size: 2rem;
+}
+
+.exercise-choice label.choice-matter {
+    /* color: aliceblue; */
+    font-size: 1.2rem;
+}
+
+.correct-answer {
+    color: rgba(19, 88, 19, 0.81);
+    border-bottom: 1px solid;
+    text-align: center;
+}
+
+.incorrect-answer {
+    color: rgba(171, 26, 26, 0.81);
+    border-bottom: 1px solid;
+    text-align: center;
+}
+
+section.exercise {
+    margin: 12px 0;
+    padding: 10px 20px;
+    background-color: #fafafa;
+}
+
+h3.exercise {
+    font-size: 1.2em;
+}
+
+img.responsive-img {
+    max-width: 70%;
+    height: auto;
+}

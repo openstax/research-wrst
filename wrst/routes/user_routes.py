@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, abort, flash, request, Markup, redirect, url_for, request, session
 from wrst.database import db
 from wrst.database.models import User
-from wrst.logic.experiment import ProlificExperiment, PsychExperiment, TestExperiment
+from wrst.logic.experiment import ProlificExperiment, PsychExperiment, TestExperiment, task_queue
 from wrst.forms.user_forms import UserLogin, UserCreation, UserEdit
 import string
 import numpy as np
@@ -18,11 +18,6 @@ def splash_page():
         return redirect(url_for('user_routes.login_prolific')) 
     # This will need to be updated for prolific 
     #    return redirect(url_for('user_routes.login_test'))
-
-
-@user_routes.route('/stupid', methods=['GET', 'POST'])
-def stupid():
-    return "stupid"
 
 
 # TODO: Assign cohort based on current number of participants
@@ -78,7 +73,7 @@ def login_prolific():
             db.session.commit()
 
             session['user_id'] = user_id
-            return redirect(url_for('instruction_routes.display_task_instructions'))
+            return redirect(url_for('instruction_routes.generic_reroute'))
         else:
             return redirect(url_for('instruction_routes.consent_not_provided'))
 
@@ -99,7 +94,6 @@ def login_psych():
 
     # If we are creating/logging in a new user clear out the session
     session_keys = list(session.keys())
-    print(session_keys)
     if '_permanent' in session_keys:
         session_keys.remove('_permanent')
     if 'csrf_token' in session_keys:
@@ -122,7 +116,7 @@ def login_psych():
     db.session.commit()
 
     session['user_id'] = user_id
-    return redirect(url_for('instruction_routes.display_task_instructions'))
+    return redirect(url_for('instruction_routes.generic_reroute'))
 
 
 # TODO: Assign cohort based on current number of participants
@@ -140,7 +134,6 @@ def login_test():
 
     # If we are creating/logging in a new user clear out the session
     session_keys = list(session.keys())
-    print(session_keys)
     if '_permanent' in session_keys:
         session_keys.remove('_permanent')
     if 'csrf_token' in session_keys:
@@ -174,7 +167,8 @@ def login_test():
             db.session.commit()
 
             session['user_id'] = user_id
-            return redirect(url_for('instruction_routes.display_task_instructions'))
+            # TODO: Put this back test dear god don't forget this
+            return redirect(url_for('instruction_routes.generic_reroute'))
         else:
             return redirect(url_for('instruction_routes.consent_not_provided'))
 

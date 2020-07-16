@@ -3,6 +3,7 @@ from wrst.database import db
 from wrst.logic.decorators import login_required
 from wrst.forms.reading_forms import ReadingForm
 import time
+from wrst.logic.experiment import task_queue
 
 reading_routes = Blueprint('reading_routes', __name__)
 
@@ -44,8 +45,7 @@ def display_reading_instructions():
         # If so, they can pass on
         current_time_reading = time.time() - session['reading_start_time']
         if (current_time_reading>=total_reading_time):
-            return redirect(url_for('training_routes.training_1')
-                            )
+            return redirect(url_for('instruction_routes.generic_reroute'))
         else:
             flash("You need to spend at least ten minutes reading before moving on to the next activity!")
             return redirect(url_for('reading_routes.display_reading_instructions')

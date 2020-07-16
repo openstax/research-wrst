@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, abort, flash, request, Markup, red
 from wrst.database import db
 from wrst.database.models import User, Relationship
 from wrst.logic.decorators import login_required
-from wrst.logic.experiment import ProlificExperiment
+from wrst.logic.experiment import ProlificExperiment, task_queue
 from wrst.forms.instruction_forms import InstructionForm
 
 instruction_routes = Blueprint('instruction_routes', __name__)
@@ -27,10 +27,9 @@ def display_task_instructions():
                                content_items=content_items)
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
+        return redirect(url_for('instruction_routes.generic_reroute'))
+        # return redirect(url_for('reading_routes.display_reading_instructions'))
 
-        return redirect(url_for('reading_routes.display_reading_instructions')
-
-                        )
 @instruction_routes.route('/consent_not_provided', methods=['GET', 'POST'])
 def consent_not_provided():
     form = InstructionForm(request.form)
@@ -109,3 +108,12 @@ def psych_final():
                                instruction_header=header,
                                content_items=content_items,
                                obscure_form=True)
+
+
+@instruction_routes.route('/generic_reroute', methods=['GET', 'POST'])
+@login_required
+def generic_reroute():
+    if 'distractor_seconds' in session:
+        session.pop('distractor_seconds')
+    route = task_queue.get_next_task()
+    return redirect(route)

@@ -1,0 +1,158 @@
+{% extends 'layouts/base.html' %}
+
+{% set distractor_seconds = session.distractor_seconds %}
+
+{% block head %}
+
+    <meta charset="utf-8">
+    <title>2048</title>
+    <link href="{{ url_for('static', filename='css/2048.css') }}"
+          rel="stylesheet" type="text/css">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+
+{% endblock %}
+
+{% block content %}
+    <body>
+    <div class="container">
+        <div class="heading">
+            <h1 class="title">2048</h1>
+            <div class="scores-container">
+                <div class="score-container">0</div>
+                <div class="best-container">0</div>
+            </div>
+        </div>
+
+        <div class="above-game">
+            <p class="game-intro">Join the numbers and get to the <strong>2048
+                tile!</strong></p>
+            <a class="restart-button">New Game</a>
+
+
+        </div>
+        <div class="timer">
+            <span id="clock">00:00</span>
+        </div>
+        <p class="game-explanation">
+            <strong class="important">How to play:</strong> Use your <strong>arrow
+            keys</strong> to move the tiles. When two tiles with the same number
+            touch, they <strong>merge into one!</strong>
+        </p>
+        <hr>
+        <p>
+
+            <div class="game-container">
+                <div class="game-message">
+        <p></p>
+        <div class="lower">
+            <a class="keep-playing-button">Keep going</a>
+            <a class="retry-button">Try again</a>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-row">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+        <div class="grid-row">
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+            <div class="grid-cell"></div>
+        </div>
+    </div>
+
+    <div class="tile-container">
+
+    </div>
+    </div>
+
+    <form class="hidden-form" action="" method="POST">
+        <button type="submit" class="btn btn-lg btn-primary pull-right">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+    </form>
+
+    </div>
+    </body>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/2048/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/tock.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/bind_polyfill.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/classlist_polyfill.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/animframe_polyfill.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/keyboard_input_manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/html_actuator.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/grid.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/tile.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/local_storage_manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/game_manager.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/2048/application.js') }}"></script>
+    <script>
+    window.fakeStorage.clear()
+    </script>
+
+    <script>
+      var seconds_expired = {{ distractor_seconds|default(session.distractor_seconds|default(0)) }}
+      var total_seconds = {{ session.distractor_timeout | default(300) }};
+
+      var update_clock = function () {
+        var expired = timer.msToTime(timer.lap());
+        expired = expired.split('.')[0];
+        $('#clock').text(expired);
+      };
+
+      var timer = new Tock({
+          countdown: true,
+          interval: 1000,
+          callback: function () {
+            update_clock()
+          },
+
+          complete: function () {
+            window.location.replace("{{ url_for('instruction_routes.generic_reroute') }}");
+          }
+        })
+        ;
+
+      $(function () {
+        timer.start((total_seconds - seconds_expired) * 1000);
+        update_clock();
+      })
+
+
+    </script>
+    <script>
+      $('.hidden-form')
+        .css({
+          visibility: 'hidden'
+        })
+    </script>
+
+{#      {% include '_includes/onunload.html' %}#}
+
+{% endblock %}
+
+

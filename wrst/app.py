@@ -11,6 +11,7 @@ from wrst.routes.reading_routes import reading_routes
 from wrst.routes.training_routes import training_routes
 from wrst.routes.user_routes import user_routes
 from wrst.routes.admin_routes import admin_routes
+from wrst.routes.distractor_routes import distractor_routes
 from wrst.database import db, reset_database
 from flask_bootstrap import Bootstrap
 
@@ -29,10 +30,9 @@ def initialize_app(flask_app):
     flask_app.register_blueprint(training_routes)
     flask_app.register_blueprint(user_routes)
     flask_app.register_blueprint(admin_routes)
+    flask_app.register_blueprint(distractor_routes)
     db.init_app(flask_app)
     db.create_all(app=flask_app)
-    #create_task_database(sentences_file="sentences_Biology_2e_parsed.csv", terms_file="terms_4.2_validated.csv")
-
 
 def create_app():
     app = Flask(__name__)

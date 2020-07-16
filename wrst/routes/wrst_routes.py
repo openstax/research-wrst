@@ -24,6 +24,7 @@ import numpy as np
 from wrst.forms.wrst_forms import NONE_OF_THE_ABOVE_TEXT
 wrst_routes = Blueprint('wrst_routes', __name__)
 import datetime
+from wrst.logic.experiment import task_queue
 
 MAX_RELATIONSHIP_LENGTH = 30
 
@@ -95,17 +96,18 @@ def get_new_task():
 
     # Check if user has completed the required amount of time
     # If so, send to completion page
-    required_time_on_task = user.required_time_on_task_seconds
+    required_time_on_task = session['required_time_on_task']
     print("Time comp")
     print(total_time_on_task)
     print(required_time_on_task)
     if (required_time_on_task < total_time_on_task) or (current_task_id==-1):
-            print("We have a stop condition!")
-            if current_task_id==-1:
-                print("End of task")
-            else:
-                print("Timeout")
-            return redirect(url_for('instruction_routes.instruction_final'))
+        print("We have a stop condition!")
+        if current_task_id==-1:
+            print("End of task")
+        else:
+            print("Timeout")
+        return redirect(url_for('instruction_routes.generic_reroute'))
+            # return redirect(url_for('instruction_routes.instruction_final'))
     else:
         return redirect(url_for('wrst_routes.do_wrst_family',
                                 paragraph_id=paragraph_id,

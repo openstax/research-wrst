@@ -905,5 +905,4 @@ def training_19():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('wrst_routes.get_new_task')
-                        )
+        return redirect(url_for('instruction_routes.generic_reroute'))
