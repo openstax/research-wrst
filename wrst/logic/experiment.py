@@ -14,19 +14,15 @@ instruction_task = TaskBlock(task_name='instruction',
 reading_task = ReadingTask(task_name='reading',
                            task_starting_route='reading_routes.display_reading_instructions',
                            reading_link="https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
-                           reading_time=10
+                           reading_time=5
                            )
 training_task = TaskBlock(task_name='training',
                           task_starting_route='training_routes.training_1')
 
 wrst_task = WRSTTask(task_name='wrst',
                      task_starting_route='wrst_routes.get_new_task',
-                     task_time=5)
+                     task_time=20)
 
-
-wrst_task2 = WRSTTask(task_name='wrst2',
-                     task_starting_route='wrst_routes.get_new_task',
-                     task_time=5)
 
 distractor_task1 = DistractorTask(task_name='2048',
                                  task_starting_route='distractor_routes.distractor_task',
@@ -40,15 +36,13 @@ qualtrics_task = QualtricsTask(task_name='qualtrics_2_question',
                                task_starting_route='https://riceuniversity.co1.qualtrics.com/jfe/form/SV_81ynJttKNymIieV')
 
 end_task = TaskBlock(task_name='final',
-                     task_starting_route='instruction_routes.psych_final')
+                     task_starting_route='instruction_routes.prolific_final')
 
 task_queue = TaskQueue(task_block_list=[instruction_task,
                                         reading_task,
                                         distractor_task1,
                                         wrst_task,
-                                        wrst_task2,
                                         qualtrics_task,
-                                        distractor_task2,
                                         end_task]
                        )
 
