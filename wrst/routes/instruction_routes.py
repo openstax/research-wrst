@@ -120,5 +120,6 @@ def psych_final():
 def generic_reroute():
     if 'distractor_seconds' in session:
         session.pop('distractor_seconds')
+    print(f"Back in generic reroute with user {session['user_id']}")
     route = task_queue.get_next_task()
     return redirect(route)
