@@ -120,21 +120,5 @@ def psych_final():
 def generic_reroute():
     if 'distractor_seconds' in session:
         session.pop('distractor_seconds')
-    print(f"Back in generic reroute with user {session['user_id']}")
-    route = task_queue.get_next_task()
-    return redirect(route)
-
-@instruction_routes.route('/external_reroute', methods=['GET', 'POST'])
-def external_reroute():
-    print("In external reroute")
-    pid = request.args.get('PROLIFIC_PID')
-    task_name = request.args.get('current_task_name')
-    print(f"pid is {pid}")
-    session['user_id'] = pid
-    session['current_task_name'] = task_name
-    if 'distractor_seconds' in session:
-        session.pop('distractor_seconds')
-    print(f"Back in generic reroute with user {session['user_id']}")
-    print(f"Back in generic reroute with task {session['current_task_name']}")
     route = task_queue.get_next_task()
     return redirect(route)
