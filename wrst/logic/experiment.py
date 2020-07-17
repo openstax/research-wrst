@@ -21,12 +21,12 @@ training_task = TaskBlock(task_name='training',
 
 wrst_task = WRSTTask(task_name='wrst',
                      task_starting_route='wrst_routes.get_new_task',
-                     task_time=20)
+                     task_time=60)
 
 
 distractor_task1 = DistractorTask(task_name='2048',
                                  task_starting_route='distractor_routes.distractor_task',
-                                 task_time=10)
+                                 task_time=60)
 
 distractor_task2 = DistractorTask(task_name='2048_2',
                                  task_starting_route='distractor_routes.distractor_task',
@@ -41,6 +41,7 @@ end_task = TaskBlock(task_name='final',
 task_queue = TaskQueue(task_block_list=[instruction_task,
                                         reading_task,
                                         distractor_task1,
+                                        training_task,
                                         wrst_task,
                                         qualtrics_task,
                                         end_task]

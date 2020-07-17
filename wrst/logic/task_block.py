@@ -22,6 +22,16 @@ class QualtricsTask(TaskBlock):
         url += session['user_id']
         return url
 
+class ProlificReroute(TaskBlock):
+    def __init__(self, task_name, task_starting_route, variable_dictionary=None):
+        super().__init__(task_name, task_starting_route, variable_dictionary)
+
+    def get_starting_route(self):
+        url = self.task_starting_route
+        url += "?PROLIFIC_PID="
+        url += session['user_id']
+        return url
+
 
 class ReadingTask(TaskBlock):
     def __init__(self, task_name, task_starting_route, reading_link, reading_time=600, variable_dictionary=None):
