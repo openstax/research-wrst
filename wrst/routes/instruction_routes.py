@@ -69,6 +69,7 @@ def instruction_final():
 @login_required
 def prolific_final():
 
+    print(f"At the end with user {session['user_id']}")
     user = db.session.query(User).filter(User.user_id == session['user_id']).first()
     user.task_complete = True
     db.session.commit()
