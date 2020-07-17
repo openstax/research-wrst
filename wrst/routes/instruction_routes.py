@@ -69,6 +69,10 @@ def instruction_final():
 @login_required
 def prolific_final():
 
+    user = db.session.query(User).filter(User.user_id == session['user_id']).first()
+    user.task_complete = True
+    db.session.commit()
+
     form = InstructionForm(request.form)
     header = "You have finished the task!"
     content_items = Markup(
