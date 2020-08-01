@@ -9,7 +9,8 @@ from wrst.database import db
 from wrst.database.models import Tasks
 from wrst.logic.experiment import Experiment
 
-sentences_file = "../textbook_data/book/sentences_Biology_2e_parsed.csv"
+sentences_file = "../textbook_data/book/psychology_14_1_final.csv"
+terms_file = "../textbook_data/terms/processed/term_psychology_14_1.csv"
 
 def extract_rex_ch_sec(rex_link):
     pattern = "^\d{,2}\-\d{,2}"
@@ -45,24 +46,7 @@ def get_term_list(text, all_terms):
     return final_term_list
 
 def create_book_dataframe(sentences_file, all_terms):
-    dfb = pd.read_csv(sentences_file)
-
-    exp = Experiment()
-    readings = exp.reading_links
-    readings = list(dict.fromkeys(readings)) # Ensures that we drop duplicates reading links (experiment hack)
-    readings = [extract_rex_ch_sec(r) for r in readings]
-
-    # Construct the needed portion of the book from the experiment parameters
-    df_book = pd.DataFrame()
-    for chsec in readings:
-        ch = chsec[0]
-        sec = chsec[1]
-        tmp = dfb[dfb["chapter"] == ch]
-        tmp = tmp[tmp["section"] == sec]
-        if ((ch==10) and (sec==2)): #TODO BAD HACK BRO
-            tmp = tmp[tmp['sentence_id']<=122]
-
-        df_book = df_book.append(tmp)
+    df_book = pd.read_csv(sentences_file)
 
     # Do term extraction, etc
     df_book["terms"] = df_book["sentence"].apply(lambda x: get_term_list(x, all_terms))
@@ -90,13 +74,6 @@ db.session.query(Tasks).delete()
 db.session.commit()
 
 # Get the terms dataframe and the set of all terms
-exp = Experiment()
-readings = exp.reading_links
-readings = list(dict.fromkeys(readings))  # Ensures that we drop duplicates reading links (experiment hack)
-readings = [extract_rex_ch_sec(r) for r in readings]
-chapter = readings[0][0]
-section = readings[0][1]
-terms_file = "../textbook_data/terms/processed/openstax_{}_{}.csv".format(readings[0][0], readings[0][1])
 df_terms = pd.read_csv(
     terms_file
 )
@@ -116,7 +93,7 @@ for ii in range(0, df_book.shape[0]):
     for term_combination in itertools.combinations(terms, 2):
         task = Tasks(
             task_id=task_count,
-            paragraph_id=sentence["paragraph_id"],
+            paragraph_id=sentence["paragraph_idx"],
             sentence_id=sentence["sentence_id"],
             sentence=sentence["sentence"],
             term_1=term_combination[0],
@@ -131,7 +108,7 @@ for ii in range(0, df_book.shape[0]):
 
 db.session.bulk_save_objects(task_list)
 db.session.commit()
-print("Finished doing Ch. {} Sec. {}".format(chapter, section))
+# print("Finished doing Ch. {} Sec. {}".format(chapter, section))
 print("I found {} valid sentences having at least two terms".format(df_book.shape[0]))
 print("I found {} total tasks that can be completed".format(task_count))
 print("I wrote {} tasks to the db".format(len(task_list)))

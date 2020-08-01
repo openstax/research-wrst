@@ -13,15 +13,15 @@ instruction_task = TaskBlock(task_name='instruction',
                              task_starting_route='instruction_routes.display_task_instructions')
 reading_task = ReadingTask(task_name='reading',
                            task_starting_route='reading_routes.display_reading_instructions',
-                           reading_link="https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
-                           reading_time=5
+                           reading_link="https://openstax.org/books/psychology-2e/pages/14-1-what-is-stress",
+                           reading_time=10
                            )
 training_task = TaskBlock(task_name='training',
                           task_starting_route='training_routes.training_1')
 
 wrst_task = WRSTTask(task_name='wrst',
                      task_starting_route='wrst_routes.get_new_task',
-                     task_time=60)
+                     task_time=60*10)
 
 
 distractor_task1 = DistractorTask(task_name='2048',
@@ -40,10 +40,10 @@ end_task = TaskBlock(task_name='final',
 
 task_queue = TaskQueue(task_block_list=[instruction_task,
                                         reading_task,
-                                        distractor_task1,
+                                        #distractor_task1,
                                         training_task,
                                         wrst_task,
-                                        qualtrics_task,
+                                        #qualtrics_task,
                                         end_task]
                        )
 

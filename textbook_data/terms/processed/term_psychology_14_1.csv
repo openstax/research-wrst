@@ -1,0 +1,105 @@
+term,base_term,selected_term,type
+adaptation,adaptation,1,event
+adrenal glands,adrenal gland,1,entity
+adrenaline,adrenaline,1,entity
+anxiety,anxiety,1,entity
+arousal,arousal,1,event
+awareness,awareness,1,entity
+behavior,behavior,1,entity
+belief,belief,1,entity
+chronic stress,chronic stress,1,event
+cognitive appraisals,cognitive appraisal,1,event
+concentrating,concentrate,1,event
+concept,concept,1,entity
+connotation,connotation,1,event
+coping,cope,1,event
+demographic groups,demographic group,1,entity
+depletion,depletion,1,event
+development,development,1,event
+dilate,dilate,1,event
+disease,disease,1,entity
+disorder,disorder,1,event
+distress,distress,1,event
+efficiency,efficiency,1,event
+emotions,emotion,1,event
+endocrine system,endocrine system,1,entity
+energized,energize,1,event
+environment,environment,1,entity
+epinephrine,epinephrine,1,entity
+eustress,eustress,1,event
+exhaustion,exhaustion,1,entity
+exposure,exposure,1,event
+fatigue,fatigue,1,event
+fight-or-flight responses,fight or flight response,1,event
+focus,focus,1,event
+general adaptation syndrome,general adaptation syndrome,1,event
+Health psychology,health psychology,1,entity
+Heart disease,heart disease,1,entity
+heart rate,heart rate,1,entity
+homeostasis,homeostasis,1,event
+hormones,hormone,1,entity
+Hypertension,hypertension,1,event
+hypothalamus,hypothalamus,1,entity
+immune system,immune system,1,entity
+internal environment,internal environment,1,event
+lifestyle factors,lifestyle factor,1,event
+limbic structures,limbic structure,1,entity
+lymph node shrinkage,lymph node shrinkage,1,event
+major depressive disorder,major depressive disorder,1,entity
+memories,memory,1,entity
+morbidity,morbidity,1,event
+motivating force,motivate force,1,event
+nature,nature,1,entity
+negative emotions,negative emotion,1,entity
+nervous system,nervous system,1,entity
+noradrenaline,noradrenaline,1,entity
+norepinephrine,norepinephrine,1,entity
+objective threats,objective threat,1,entity
+onset,onset,1,event
+pain sensitivity,pain sensitivity,1,entity
+perceptions,perception,1,event
+physical responses,physical response,1,event
+physiological reactions,physiological reaction,1,event
+physiological responses,physiological response,1,event
+pituitary gland,pituitary gland,1,entity
+populations,population,1,entity
+positive feelings,positive feeling,1,entity
+post-traumatic stress disorder,post traumatic stress disorder,1,entity
+potential harm,potential harm,1,entity
+potential threat,potential threat,1,entity
+primary appraisal,primary appraisal,1,event
+psychiatric conditions,psychiatric condition,1,entity
+psychological influences,psychological influence,1,event
+Psychology,psychology,1,entity
+pupils,pupil,1,entity
+reactions,reaction,1,event
+readjustment,readjustment,1,event
+recall,recall,1,event
+resistance,resistance,1,event
+respiration,respiration,1,event
+response-based,response base,1,event
+secondary appraisals,secondary appraisal,1,event
+self-efficacy,self efficacy,1,entity
+series,series,1,entity
+stimulus,stimulus,1,event
+stress,stress,1,event
+stress field,stress field,1,entity
+stress hormones,stress hormone,1,event
+stress level,stress level,1,entity
+stress reactions,stress reaction,1,event
+stressor,stressor,1,entity
+survey,survey,1,entity
+sympathetic nervous system,sympathetic nervous system,1,entity
+symptoms,symptom,1,entity
+thymus,thymus,1,entity
+vernacular,vernacular,1,entity
+well-being,well be,1,entity
+hassle,hassle,1,entity
+happiness,happiness,1,entity
+asthma,asthma,1,entity
+positive psychology,positive psychology,1,entity
+affect,affect,1,entity
+positve affect,positive affect,1,entity
+negative affect,negative affect,1,entity
+optimism,optimism,1,entity
+flow,flow,1,event
