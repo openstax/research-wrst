@@ -10,6 +10,8 @@ class TaskBlock():
         self.variable_dictionary = variable_dictionary
 
     def get_starting_route(self):
+        print("imma go here")
+        print(self.task_starting_route)
         return url_for(self.task_starting_route)
 
 class QualtricsTask(TaskBlock):

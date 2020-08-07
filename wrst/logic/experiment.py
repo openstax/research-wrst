@@ -16,8 +16,13 @@ reading_task = ReadingTask(task_name='reading',
                            reading_link="https://openstax.org/books/psychology-2e/pages/14-1-what-is-stress",
                            reading_time=10
                            )
-training_task = TaskBlock(task_name='training',
+training_task_bio = TaskBlock(task_name='training',
                           task_starting_route='training_routes.training_1')
+
+
+training_task_psych = TaskBlock(task_name='training',
+                                task_starting_route='training_routes_psych.training_1_psych')
+
 
 wrst_task = WRSTTask(task_name='wrst',
                      task_starting_route='wrst_routes.get_new_task',
@@ -41,7 +46,7 @@ end_task = TaskBlock(task_name='final',
 task_queue = TaskQueue(task_block_list=[instruction_task,
                                         reading_task,
                                         #distractor_task1,
-                                        training_task,
+                                        training_task_psych,
                                         wrst_task,
                                         #qualtrics_task,
                                         end_task]
