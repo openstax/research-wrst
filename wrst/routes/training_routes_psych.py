@@ -311,7 +311,7 @@ def training_7_psych():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes_psych.training_8')
+        return redirect(url_for('training_routes_psych.training_8_psych')
                         )
 
 @training_routes_psych.route('/training_8_psych', methods=['GET', 'POST'])
@@ -345,7 +345,7 @@ def training_8_psych():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes_psych.training_9')
+        return redirect(url_for('training_routes_psych.training_9_psych')
                         )
 
 @training_routes_psych.route('/training_9_psych', methods=['GET', 'POST'])
