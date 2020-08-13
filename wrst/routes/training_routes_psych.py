@@ -692,7 +692,7 @@ def training_17_psych():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
         if form.submit3.data:  # 'no relationship' is submit3 for the spatial form
-            return redirect(url_for('training_routes_psych.training_18_psych', flash_message="Excellent job! While there definitely are connections between extreme stress and chronic stress, here proteins refers to a component of the plasma membrane. Hence, there is no *direct* relationship.")
+            return redirect(url_for('training_routes_psych.training_18_psych', flash_message="Excellent job! While there definitely are connections between extreme stress and chronic stress they are not *directly* related.")
                         )
         else:
             return redirect(url_for('training_routes_psych.training_17_psych', flash_message="This isn't the right relationship for this term pair.  Let's try another one"))
