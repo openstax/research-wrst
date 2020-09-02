@@ -14,7 +14,7 @@ instruction_task = TaskBlock(task_name='instruction',
 reading_task = ReadingTask(task_name='reading',
                            task_starting_route='reading_routes.display_reading_instructions',
                            reading_link="https://openstax.org/books/psychology-2e/pages/14-1-what-is-stress",
-                           reading_time=60*5
+                           reading_time=10
                            )
 training_task_bio = TaskBlock(task_name='training',
                           task_starting_route='training_routes.training_1')
