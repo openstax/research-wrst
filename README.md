@@ -1,7 +1,5 @@
 # The Waters Relationship Selection Task (WRST)
 
-One Paragraph of project description goes here
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -10,16 +8,16 @@ These instructions will get you a copy of the project up and running on your loc
 
 To run the app locally you will need to have the following installed:
 
-python 3.6+
-redis-server
-postgres (psql)
+* Anaconda Python (tested with 3.8.3)
+* redis-server
+* postgres (psql)
 
 ### Installing
 
-Once you have cloned the repository you should create a virtual environment to work in:
+Once you have cloned the repository you should create a virtual environment to work in, making sure to use the Anaconda version of python:
 
 ```
-virtualenv env
+virtualenv env -p /path/to/anaconda/python
 source venv/bin/activate
 ```
 
@@ -30,6 +28,12 @@ pip install -r requirements.txt
 ```
 
 This should install all the packages that you need to run the app.
+
+### Troubleshooting Installation
+
+If your `pip install -r requirements.txt` fails, you probably need to install packages manually. You can try to do a `pip install numpy scipy matplotlib pandas` to see whether your virtual environment can be set up with default versions of these packages. The package `psycopg2` installs from the binary, but you may need to build it from source by doing a `pip install psycopg2`. Keep in mind that building from source requires lots of compiler packages, so please refer to [their official documentation](https://www.psycopg.org/docs/install.html) for more help.
+
+### (Optional) Set up your CLI
 
 Installing the autoenv packages will make it very easy to configure your local development environment and not have to repeat the process again.  Do this as follows:
 
@@ -60,6 +64,10 @@ Now, whenever you cd back into the wrst directory it will automatically activate
 ## Configuring the database locally
 
 Before running the app locally, you need to configure and specify the database that will be used for logging.  This can be done in two steps:
+
+Step 0: Start Postgres
+
+This varies from platform to platform, so refer to the documentation for your version of postgres.
 
 Step 1: Create a local database
 
@@ -93,13 +101,15 @@ Now, you can run the app itself. Open another terminal window and go to the top 
 python -m wrst.app
 ```
 
+(if you get a `KeyError` you need to add the variables from the `.env` file to your environment)
+
 You can then open your browser and type the following URL:
 
 ```
 http://127.0.0.1:5000/login_test
 ```
 
-which should show the wrst consent form for tesst users.
+which should show the wrst consent form for test users.
 
 ## Other configurations
 
