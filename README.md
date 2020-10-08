@@ -74,7 +74,7 @@ Step 1: Create a local database
 Note we are using the name wrst here to match the environment variable set above.  You can name the database whatever you'd like but need to be consistent.
 
 ```
-CREATE DATABASE wrst
+CREATE DATABASE wrst;
 ```
 
 There are a variety of tables that will be created and populated by the app (users, relationships). You will not need to create these as the app will do this upon launch time.  The one exception to this is the tasks table, which must be generated via a script before running the app.  Not doing this will result in the app not being able to find any relationships selection tasks for the user.
