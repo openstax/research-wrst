@@ -17,7 +17,7 @@ To run the app locally you will need to have the following installed:
 Once you have cloned the repository you should create a virtual environment to work in, making sure to use the Anaconda version of python:
 
 ```
-virtualenv env -p /path/to/anaconda/python
+virtualenv venv -p /path/to/anaconda/python
 source venv/bin/activate
 ```
 
