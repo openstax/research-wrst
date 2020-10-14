@@ -1,8 +1,16 @@
 # The Waters Relationship Selection Task (WRST)
 
+<img align="right" src="documentation/cat.png">
+
+This is an end-to-end web user interface tool for crowd-sourced [relationship extraction](https://en.wikipedia.org/wiki/Relationship_extraction) from a text passage, given a set of terms pre-annotated from said text. This naturally requires a term/keyword extraction pre-processing step, for which there are many automated tools (for example, [spaCy](https://spacy.io)). Relationship extraction, however, is much trickier to automate given the presence of additional context and semantics. Therefore, WRST implements a straightforward, visually-guided Q&A tool for human labelers to quickly and accurately determine relationships, if any, between words.
+
+The following image shows an example relation extraction task for humans (text passage display not shown). The users read the text passage and answer the question.
+
+![Example task for WRST](documentation/relation.png)
+
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system such as Heroku.
 
 ### Prerequisites
 
@@ -12,13 +20,13 @@ To run the app locally you will need to have the following installed:
 * redis-server
 * postgres (psql)
 
-### Installing
+## Installing
 
 Once you have cloned the repository you should create a virtual environment to work in, making sure to use the Anaconda version of python:
 
 ```
-virtualenv venv -p /path/to/anaconda/python
-source venv/bin/activate
+virtualenv env -p /path/to/anaconda/python
+source env/bin/activate
 ```
 
 Now you can install the appropriate packages via the requirements.txt file:
@@ -33,45 +41,43 @@ This should install all the packages that you need to run the app.
 
 If your `pip install -r requirements.txt` fails, you probably need to install packages manually. You can try to do a `pip install numpy scipy matplotlib pandas` to see whether your virtual environment can be set up with default versions of these packages. The package `psycopg2` installs from the binary, but you may need to build it from source by doing a `pip install psycopg2`. Keep in mind that building from source requires lots of compiler packages, so please refer to [their official documentation](https://www.psycopg.org/docs/install.html) for more help.
 
-### (Optional) Set up your CLI
+### Enable environment variables (each run)
 
-Installing the autoenv packages will make it very easy to configure your local development environment and not have to repeat the process again.  Do this as follows:
-
-```
-deactivate
-pip install autoenv==1.0.0
-touch .env
-```
-
-Then in your .env file add the following lines:
+In your .env file located in the root directory confirm that your environment variables point to the correct locations:
 
 ```
 source env/bin/activate
 export APP_SETTINGS="config.DevelopmentConfig"
 export DATABASE_URL="postgresql://localhost/wrst"
 export REDIS_URL="redis://localhost:6379"
+export TEST_DATABASE_URL="postgresql://localhost/wrst"
 ```
 
-Now run the following commands in your terminal:
+Depending on how you installed postgres, you may need to enter your database password into the `DATABASE_URL` variable, using the following schema
 
 ```
-echo "source `which activate.sh`" >> ~/.bashrc
-source ~/.bashrc
+postgresql://[user[:password]@][netloc][:port][/dbname]
 ```
 
-Now, whenever you cd back into the wrst directory it will automatically activate your virtual environment and configure the local environment variables.
+so if your user is `john` and your password is `123456` then your `.env` file would show `export DATABASE_URL="postgresql://john:123456/wrst"`
+
+Now activate the variables:
+
+```
+source .env
+```
 
 ## Configuring the database locally
 
 Before running the app locally, you need to configure and specify the database that will be used for logging.  This can be done in two steps:
 
-Step 0: Start Postgres
+Step 1: Start Postgres
 
 This varies from platform to platform, so refer to the documentation for your version of postgres.
 
-Step 1: Create a local database
+Step 2: Create a local database
 
-Note we are using the name wrst here to match the environment variable set above.  You can name the database whatever you'd like but need to be consistent.
+Note we are using the name wrst here to match the environment variable set above.  You can name the database whatever you'd like but it needs to be consistent.
 
 ```
 CREATE DATABASE wrst;
@@ -79,7 +85,16 @@ CREATE DATABASE wrst;
 
 There are a variety of tables that will be created and populated by the app (users, relationships). You will not need to create these as the app will do this upon launch time.  The one exception to this is the tasks table, which must be generated via a script before running the app.  Not doing this will result in the app not being able to find any relationships selection tasks for the user.
 
-Populating the task table is done by running the create_task_database.py script in the scripts directory.  This file contains links to a sentence file and term file that can changed for whichever experiment is being run. To run this, just cd into the scripts directory and run python create_task_database.py.
+### Populating the task table
+
+Populating the task table is done by running the create_task_database.py script in the scripts directory: 
+
+```
+cd scripts
+python create_task_database.py
+```
+
+This file contains links to a sentence file and term file that can changed for whichever experiment is being run.
 
 ## Running the app locally
 
@@ -95,7 +110,7 @@ redis-server
 psql wrst
 ```
 
-Now, you can run the app itself. Open another terminal window and go to the top level directory of the wrst app.  Now type:
+Now, you can run the app itself. Open another terminal window and go to the root level directory of the wrst app.  Now type:
 
 ```
 python -m wrst.app
@@ -109,7 +124,7 @@ You can then open your browser and type the following URL:
 http://127.0.0.1:5000/login_test
 ```
 
-which should show the wrst consent form for test users.
+which should show the consent form for test users.
 
 ## Other configurations
 
