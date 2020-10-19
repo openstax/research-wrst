@@ -8,6 +8,8 @@ The following image shows an example relation extraction task for humans (text p
 
 ![Example task for WRST](documentation/relation.png)
 
+# Setup Guide
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system such as Heroku.
@@ -162,6 +164,33 @@ git push stage master
 git push stage master
 git push heroku dbm-terms-tmp:master #Merge your branch into master
 ```
+
+# Usage Guide
+
+## Overview
+
+WRST uses different web endpoints along with query parameters in order to provide functionality. This allows you to use tools such as Prolific or Amazon Mechanical Turk (AMT) to direct users to specific pages per user. Here is a list of all endpoints
+
+### /
+
+This endpoint is only used for redirection purposes and users that open the root endpoint should not expect any output
+
+### /login_prolific
+
+This endpoint is used for the testing platform Prolific. The complete list of query parameters is as follows:
+
+| Parameter Name | Value | Description
+| --- | --- | --- |
+| `PROLIFIC_PID` | alphanumeric (any length) | Must match your Prolific project ID |
+
+### /login_psych
+
+This endpoint is used for the testing psychology experiments with unique user ids and cohorts. The complete list of query parameters is as follows:
+
+| Parameter Name | Value | Description
+| --- | --- | --- |
+| `USER_ID` | alphanumeric (any length) | A unique user ID |
+| `COHORT` | alphanumeric (any length) | A unique ID per cohort of users |
 
 ## Authors
 
