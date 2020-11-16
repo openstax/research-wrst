@@ -58,4 +58,4 @@ docs/_build/
 .idea
 
 #VSCode
-.code-workspace
+*.code-workspace
