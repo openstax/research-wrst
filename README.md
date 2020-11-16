@@ -148,6 +148,10 @@ The prolific flow will include the consent form.  The PROLIFIC_PID variable is p
 
 ## Deployment
 
+### AWS
+See the [AWS Guide](documentation/AWS.md)
+
+### Heroku
 Deploying the app to Heroku is simple.  First we add the appropriate remote:
 
 ```
