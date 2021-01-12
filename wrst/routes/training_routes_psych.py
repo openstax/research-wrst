@@ -413,7 +413,7 @@ def training_10_psych():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
         if form.submit1.data:  # Causal relationship is submit1
-            return redirect(url_for('training_routes_psych.training_11_psych', flash_message="Good job! Now we need to select the correct subclass relationship from the new list. Here we would choose 'is inside of' on the right.")
+            return redirect(url_for('training_routes_psych.training_11_psych', flash_message="Good job! Now we need to select the correct subclass relationship from the new list. Here we would choose 'causes' on the right.")
                         )
         else:
             return redirect(url_for('training_routes_psych.training_10_psych', flash_message="This is a causal relationship so click on that button to continue on.")
