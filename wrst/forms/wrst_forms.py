@@ -242,7 +242,7 @@ class SpatialForm(FlaskForm):
 
 
 class FunctionalForm(FlaskForm):
-    type = "relationship"
+    type = "relationship_no_flip"
     name = "functional"
     button_dict = {'submit0': 'has function',
                    'submit1': 'facilitates',
@@ -308,7 +308,7 @@ class CausalForm(FlaskForm):
     go_back_button = SubmitField(label='Redo Family Selection')
 
 class ParticipantForm(FlaskForm):
-    type = "relationship"
+    type = "relationship_no_flip"
     name = "participant"
     button_dict = {'submit0': 'participant',
                    'submit1': 'instrument',

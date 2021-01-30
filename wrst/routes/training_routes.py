@@ -528,11 +528,11 @@ def training_13():
         # There is only one submit button so no need to check beyond "POST"
         if form.submit0.data:
             return redirect(url_for('training_routes.training_14',
-                                    flash_message="Good job! Now we need to pick the correct taxonomic relationship.  There is a problem, though.  The term order seems backwards. Click the 'Flip Relationship' button to change the order.")
+                                    flash_message="Good job! Now we need to pick the correct taxonomic relationship.  There is a problem, though.  The term order seems backwards. Click the 'Flip Relationship' button to change the order. This button is only available for certain relationship families.")
                             )
         else:
             return redirect(url_for('training_routes.training_13',
-                                    flash_message="That's not right -- the text is describing a class-oriented relationship, which is under the 'Taxonomic' cateogory.  Click that one.")
+                                    flash_message="That's not right -- the text is describing a class-oriented relationship, which is under the 'Taxonomic' category.  Click that one.")
                             )
 
 

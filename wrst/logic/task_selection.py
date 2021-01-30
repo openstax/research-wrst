@@ -69,6 +69,8 @@ def get_text_dynamic():
     content_url = session["reading_link"]
     term_1 = task.term_1
     term_2 = task.term_2
+    type_1 = task.type_1
+    type_2 = task.type_2
     base_term_1 = task.base_term_1
     base_term_2 = task.base_term_2
     terms = [term_1, term_2]
@@ -87,7 +89,7 @@ def get_text_dynamic():
     question_text = "What type of relationship exists between {} and {}?".format(
         term_1, term_2
     )
-    types = [task.type_1, task.type_2]
+    types = [type_1, type_2]
     N_entity = sum([t == "entity" for t in types])
     N_event = sum([t == "event" for t in types])
     if N_entity == 2:  # entity-entity relationship
@@ -104,6 +106,8 @@ def get_text_dynamic():
         term_2,
         base_term_1,
         base_term_2,
+        type_1,
+        type_2,
         family_form_name,
         content,
         question_text,

@@ -529,7 +529,7 @@ def training_13_psych():
         # There is only one submit button so no need to check beyond "POST"
         if form.submit0.data:
             return redirect(url_for('training_routes_psych.training_14_psych',
-                                    flash_message="Good job! Now we need to pick the correct taxonomic relationship.  There is a problem, though.  The term order seems backwards. Click the 'Flip Relationship' button to change the order.")
+                                    flash_message="Good job! Now we need to pick the correct taxonomic relationship.  There is a problem, though.  The term order seems backwards. Click the 'Flip Relationship' button to change the order. This button will only be available for certain relationship families.")
                             )
         else:
             return redirect(url_for('training_routes_psych.training_13_psych',
