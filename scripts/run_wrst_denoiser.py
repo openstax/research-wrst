@@ -3,13 +3,16 @@ import numpy as np
 import pandas as pd
 from scipy.stats import mode
 
-# Load up the data and filter to users who completed the task
+# User parameters
+input_file_name = '~/Desktop/wrst_data/Psych/psych_processed.csv'
 output_file_name = 'Psych_mcmc_task_output.csv'
-df = pd.read_csv('~/Desktop/wrst_data/Psych/psych_processed.csv')
+
+# Load the data
+df = pd.read_csv(input_file_name)
 df_users = pd.read_csv('~/Desktop/wrst_data/Psych/kg_users_export_2020-08-13.csv')
 df_users = df_users[df_users['task_complete']=='t']
 df_users = df_users[df_users['user_id'].apply(lambda x: x[0]=='5')]
-df_tasks = pd.read_csv('~/Desktop/wrst_data/Psych/psych_tasks.csv', encoding='latin')
+# df_tasks = pd.read_csv('~/Desktop/wrst_data/Psych/psych_tasks.csv', encoding='latin')
 df = df[df['user'].isin(df_users['user_id'].unique())]
 df = df.drop_duplicates(['user', 'task_id'])
 
@@ -52,7 +55,7 @@ modes = modes.merge(df_tasks_out, how='left')
 modes = modes.drop(columns='family_idx_out')
 
 # Finally assemble modes df with tasks to also get sentence and term pair
-df_tasks = df_tasks[['task_id', 'sentence', 'term_1', 'term_2']]
-modes = modes.merge(df_tasks, how='left')
-modes = modes[['task_id', 'sentence', 'term_1', 'term_2', 'family_mode', 'family_out', 'difficulty']]
+# df_tasks = df_tasks[['task_id', 'sentence', 'term_1', 'term_2']]
+# modes = modes.merge(df_tasks, how='left')
+# modes = modes[['task_id', 'sentence', 'term_1', 'term_2', 'family_mode', 'family_out', 'difficulty']]
 modes.to_csv(output_file_name, index=None)
