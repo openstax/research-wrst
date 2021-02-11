@@ -95,8 +95,8 @@ cd research-wrst
 sudo su -
 apt-get update
 apt-get install python3.8 python3-pip postgresql-client gcc libpq-dev virtualenv redis-server
-systemctl start redis.service
-systemctl enable redis.service
+systemctl start redis-server.service
+systemctl enable redis-server.service
 exit
 ```
 
