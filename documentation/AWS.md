@@ -105,8 +105,8 @@ Then go back to your user shell in the `/home/ubuntu/research-wrst` directory an
 ```
 python3 -m venv env
 source env/bin/activate
+pip install wheel gunicorn
 pip install -r requirements.txt
-pip install gunicorn
 ```
 
 Edit your environment variables to match your environment. Be sure to use the username and password format in the root README of this file to enter your database username and password. You should be able to run the python server from the root directory
