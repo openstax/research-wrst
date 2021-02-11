@@ -103,7 +103,7 @@ exit
 Then go back to your user shell in the `/home/ubuntu/research-wrst` directory and install the rest of your dependencies
 
 ```
-virtualenv env
+python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 pip install gunicorn
