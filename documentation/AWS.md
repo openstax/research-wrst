@@ -94,7 +94,7 @@ git clone git@github.com:openstax/research-wrst.git
 cd research-wrst
 sudo su -
 apt-get update
-apt-get install python3.8 python3-pip postgresql-client gcc libpq-dev virtualenv redis-server
+apt-get install python3.8 python3-pip python3-venv virtualenv redis-server postgresql-client gcc libpq-dev libblas-dev liblapack-dev
 systemctl start redis-server.service
 systemctl enable redis-server.service
 exit
@@ -105,6 +105,7 @@ Then go back to your user shell in the `/home/ubuntu/research-wrst` directory an
 ```
 python3 -m venv env
 source env/bin/activate
+pip install --upgrade pip
 pip install wheel gunicorn
 pip install -r requirements.txt
 ```
