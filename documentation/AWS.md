@@ -41,7 +41,9 @@ Select your VPC or create a new one, and make sure to check the option for 'publ
 
 ![RDS VPC](./rds7.png)
 
-Finally, click 'create'.
+In the 'additional configuration' section, there is a field for entering the 'Initial Database Name'. In that field, type `wrst`, so that the default database with that name is available immediately.
+
+When you have checked all these options, click 'create'.
 
 ![RDS create](./rds8.png)
 
