@@ -44,6 +44,41 @@ def training_1():
         return redirect(url_for('training_routes.training_1b')
                         )
 
+@training_routes.route('/training_1_pedagogical_eval', methods=['GET', 'POST'])
+@login_required
+def training_1_pedagogical_eval():
+
+    form = InstructionForm(request.form)
+    header = "Relationship selection: Training"
+    content_items = Markup(
+        """<p>You will now go through a brief training on relationship mapping, which is a study technique to aid in learning.
+        <br><br>
+        In relationship mapping, you are shown two terms. Your job will be to identify the relationship 
+        that exists between the terms (if there is one).<br><br>
+        There are a LOT of possible relationships available and so, to make this easier, we have broken the task up into two parts: </p>
+        <ul>
+        <li>First, you will select a high-level relationship family</li>
+        <li>Second, you will select the specific relationship within the family that you have chosen</li>
+        </ul>
+        <br>
+        <p>DON'T FEEL LIKE YOU NEED TO MEMORIZE ALL THE RELATIONSHIPS! There will be reminders in the task to help you 
+        if you get stuck.<br></p>
+        """
+    )
+    content = Markup(header)
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+
+        return redirect(url_for('training_routes.training_1b')
+                        )
+
 @training_routes.route('/training_1b', methods=['GET', 'POST'])
 @login_required
 def training_1b():
@@ -868,11 +903,12 @@ def training_text_submission_4():
     if request.method == 'POST':
         # Make sure they hit the right button
             if form.submit.data:  # 'Define' is submit4 on entity-event
-                return redirect(url_for('training_routes.training_19'))
+                return redirect(url_for('instruction_routes.generic_reroute'))
             else:
                 return redirect(url_for('training_routes.training_text_submission_4',
                                         flash_message="Type some text and click on the 'Submit' button to move on"))
 
+# Note: Currently no way to get here -- we should be moving this into its own instruction block for generalizability
 @training_routes.route('/training_19', methods=['GET', 'POST'])
 @login_required
 def training_19():

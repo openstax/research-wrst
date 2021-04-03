@@ -30,6 +30,96 @@ def display_task_instructions():
         return redirect(url_for('instruction_routes.generic_reroute'))
         # return redirect(url_for('reading_routes.display_reading_instructions'))
 
+@instruction_routes.route('/display_pedagogical_evaluation_instructions', methods=['GET', 'POST'])
+@login_required
+def display_pedagogical_evaluation_instructions():
+    # Load the form
+    form = InstructionForm(request.form)
+    header = "Convergence Accelerator Study"
+    content_items = Markup("""<p>In this study, you first receive training on a particular type of study strategy.<br><br> After this you will read from an introductory-level textbook for 15 minutes. <br><br>
+                    After reading the text, you will perform some additional study, followed by a brief break.<br><br> Finally, you will be given a brief quiz with questions taken from the material that you have studied. <br><br>
+                    When you are ready to begin, press next.<br></p>
+                    """)
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+        return redirect(url_for('instruction_routes.generic_reroute'))
+        # return redirect(url_for('reading_routes.display_reading_instructions'))
+
+@instruction_routes.route('/display_encoding_instructions', methods=['GET', 'POST'])
+@login_required
+def display_encoding_instructions():
+    # Load the form
+    form = InstructionForm(request.form)
+    header = "Convergence Accelerator Study"
+    content_items = Markup("""<p>You have finished the reading <br><br>
+                    Now you will go through some additional learning practice on the material that you studied<br><br>
+                    When you are ready to begin, press next.<br></p>
+                    """)
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+        return redirect(url_for('instruction_routes.generic_reroute'))
+        # return redirect(url_for('reading_routes.display_reading_instructions'))
+
+@instruction_routes.route('/display_distractor_instructions', methods=['GET', 'POST'])
+@login_required
+def display_distractor_instructions():
+    # Load the form
+    form = InstructionForm(request.form)
+    header = "Convergence Accelerator Study"
+    content_items = Markup("""<p>
+                    Now you will take a brief break by playing a game<br><br>
+                    When you are ready to begin, press next.<br></p>
+                    """)
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+        return redirect(url_for('instruction_routes.generic_reroute'))
+        # return redirect(url_for('reading_routes.display_reading_instructions'))
+
+@instruction_routes.route('/display_quiz_instructions', methods=['GET', 'POST'])
+@login_required
+def display_quiz_instructions():
+    # Load the form
+    form = InstructionForm(request.form)
+    header = "Convergence Accelerator Study"
+    content_items = Markup("""<p>
+                    Now you will take a short quiz on the material that you studied previously<br><br>
+                    When you are ready to begin, press next.<br></p>
+                    """)
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+        return redirect(url_for('instruction_routes.generic_reroute'))
+        # return redirect(url_for('reading_routes.display_reading_instructions'))
+
+
+
 @instruction_routes.route('/consent_not_provided', methods=['GET', 'POST'])
 def consent_not_provided():
     form = InstructionForm(request.form)

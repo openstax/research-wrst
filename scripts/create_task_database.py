@@ -102,7 +102,7 @@ df_terms = pd.read_csv(
 )
 df_terms["term"] = df_terms["term"].apply(lambda x: x.lower())
 all_terms = set(df_terms["term"].unique().tolist())
-print("I have foune {} total terms".format(df_terms.shape[0]))
+print("I have found {} total terms".format(df_terms.shape[0]))
 
 # Get the book dataframe, filtered down to sentences allowed in the current experiment
 df_book, df_book_full = create_book_dataframe(sentences_file, all_terms)
