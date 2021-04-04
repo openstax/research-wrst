@@ -764,7 +764,7 @@ def training_18():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('training_routes.training_text_submission_1', flash_message="There is one last relationship option that we want tp discuss: creating your own relationships!"))
+        return redirect(url_for('training_routes.training_text_submission_1', flash_message="There is one last relationship option that we want to discuss: creating your own relationships!"))
 
 
 @training_routes.route('/training_text_submission_1', methods=['GET', 'POST'])

@@ -50,7 +50,7 @@ def get_text_dynamic():
     if num_tasks_completed >= num_tasks_available:
         print("User has finished everything")
         # Do something to signal the calling function that this person is done and route accordingly
-        return (-1, "", "", "", "", "", "", "", "", "")
+        return (-1, "", "", "", "", "", "", "", "", "", "", "")
     elif num_tasks_completed==0:
         current_task_id = np.random.choice(num_tasks_available)
     else:
