@@ -13,3 +13,4 @@ task_id,paragraph_id,sentence_id,sentence,term_1,term_2,type_1,type_2,base_term_
 4,2960,1,We classify only the predominantly single-celled organisms Bacteria and Archaea as prokaryotes (pro- = â€œbeforeâ€; -kary- = â€œnucleusâ€).,bacteria,prokaryotes,entity,entity,bacterium,prokaryote,taxonomy,taxonomy,0.170339044,
 12,2960,2,"Animal cells, plants, fungi, and protists are all eukaryotes (eu- = â€œtrueâ€).",eukaryotes,fungi,entity,entity,eukaryote,fungus,taxonomy,taxonomy,-0.756400213,1
 193,2969,30,"Small size, in general, is necessary for all cells, whether prokaryotic or eukaryotic.",cells,eukaryotic,entity,entity,cell,eukaryotic cell,taxonomy,taxonomy,-0.762534027,1
+114,2964,14,Because microbes (organisms so tiny that they can only be seen with microscopes) are ubiquitous.,microscopes,organisms,entity,entity,microscope,organism,no_relationship,no_relationship,-1.188414038,1
