@@ -578,7 +578,7 @@ def training_14():
     form = TaxonomyForm(request.form)
     term_1 = "cell"
     term_2 = "eukaryotic"
-    content = '<h3>The <span style="background-color: #FFFF00">Cells</span> fall into one of two broad categories: prokaryotic and <span style="background-color: #FFFF00">eukaryotic</span>. We classify only the predominantly single-cells organisms Bacteria and Archaea as prokaryotes (pro- = “before”; -kary- = “nucleus”). Animal cells, plants, fungi, and protists are all eukaryotes (eu- = “true”)</h3>'
+    content = '<h3>The <span style="background-color: #FFFF00">Cells</span> fall into one of two broad categories: prokaryotic and <span style="background-color: #FFFF00">eukaryotic</span>. We classify only the predominantly single-cells organisms Bacteria and Archaea as prokaryotes (pro- = "before"; -kary- = "nucleus"). Animal cells, plants, fungi, and protists are all eukaryotes (eu- = "true")</h3>'
     content = Markup(content)
     question_text = "What type of relationship exists between {} and {}?".format(term_1, term_2)
     content_url = "https://openstax.org/books/biology-2e/pages/4-3-eukaryotic-cells"
