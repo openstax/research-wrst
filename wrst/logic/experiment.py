@@ -46,7 +46,7 @@ wrst_task = WRSTTask(task_name='wrst',
 
 distractor_task1 = DistractorTask(task_name='2048',
                                  task_starting_route='distractor_routes.distractor_task',
-                                 task_time=10*60)
+                                 task_time=15*60)
 
 distractor_task2 = DistractorTask(task_name='2048_2',
                                  task_starting_route='distractor_routes.distractor_task',
