@@ -13,7 +13,7 @@ Study Title: Convergence Accelerator Study
 Principal Investigator: Dr. Richard Baraniuk
 OpenStax at Rice University
 6100 Main St. MS 375, Houston, TX, 77005, 713-348-5132; richb@rice.edu
-Other Investigator(s): Dr. Phillip Grimaldi, Dr. Andrew Waters
+Other Investigator(s): Dr. Andrew Waters
 _______________________________________________________________________________
 
 You may be eligible to take part in a research study. This form gives you important information about
