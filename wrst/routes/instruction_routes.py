@@ -57,7 +57,7 @@ def display_pedagogical_evaluation_instructions():
 def display_encoding_instructions():
     # Load the form
     form = InstructionForm(request.form)
-    header = None
+    header = ""
     content_items = Markup("""<p>You have finished the reading <br><br>
                     Now you will go through some additional learning practice on the material that you studied.<br><br>
                     When you are ready to begin, press next.<br></p>
