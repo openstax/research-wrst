@@ -101,7 +101,7 @@ def display_distractor_instructions():
 def display_quiz_instructions():
     # Load the form
     form = InstructionForm(request.form)
-    header = "Convergence Accelerator Study"
+    header = ""
     content_items = Markup("""<p>
                     Now you will take a short quiz on the material that you studied previously<br><br>
                     When you are ready to begin, press next.<br></p>
