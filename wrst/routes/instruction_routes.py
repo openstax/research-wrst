@@ -58,7 +58,7 @@ def display_encoding_instructions():
     # Load the form
     form = InstructionForm(request.form)
     header = ""
-    content_items = Markup("""<p>You have finished the reading <br><br>
+    content_items = Markup("""<p>You have finished the reading. <br><br>
                     Now you will go through practice of the study strategy you initially learned.<br><br>
                     When you are ready to begin, press next.<br></p>
                     """)
@@ -79,7 +79,7 @@ def display_encoding_instructions():
 def display_distractor_instructions():
     # Load the form
     form = InstructionForm(request.form)
-    header = "Convergence Accelerator Study"
+    header = ""
     content_items = Markup("""<p>
                     Now you will take a brief break by playing a game<br><br>
                     When you are ready to begin, press next.<br></p>

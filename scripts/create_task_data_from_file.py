@@ -12,6 +12,7 @@ num_repititions = 2
 # Read the data
 df = pd.read_csv(sentences_file)
 df = df.sample(n=df.shape[0], random_state=42)
+print(df[['sentence', 'family_mode']])
 
 # Purge the current db
 app = create_app()
