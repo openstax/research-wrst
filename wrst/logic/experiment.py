@@ -29,7 +29,7 @@ instruction_quiz = TaskBlock(task_name='instruction_quiz',
 reading_task = ReadingTask(task_name='reading',
                            task_starting_route='reading_routes.display_reading_instructions',
                            reading_link="https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
-                           reading_time=5
+                           reading_time=15*60
                            )
 training_task_bio = TaskBlock(task_name='training',
                           task_starting_route='training_routes.training_1_pedagogical_eval')
