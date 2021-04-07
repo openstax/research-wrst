@@ -19,8 +19,8 @@ def display_reading_instructions():
     reading_link = session["reading_link"]
     header = "You are now going to read a brief section from an introductory Biology textbook"
     content_items = Markup(
-        """<p>During this portion of the study, please read the text that is linked at the bottom of this page. Don't worry about memorizing all of the information. Just try get a general familiarity with the topic to the best of your ability.<br><br>
-        Please spend at least 15 minutes reading the text. We have provided a timer on this page to help you keep track. <br><br>
+        """<p>During this portion of the study, please read the text that is linked at the bottom of this page. Don't worry about memorizing all of the information.<br><br>
+        Please spend at least 15 minutes reading the text to the best of your ability. We have provided a timer on this page to help you keep track. <br><br>
         When the timer expires, you can click on the 'Next' button to move to the next step of the activity.<br></p>
         """
     )

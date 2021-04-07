@@ -35,7 +35,7 @@ def display_task_instructions():
 def display_pedagogical_evaluation_instructions():
     # Load the form
     form = InstructionForm(request.form)
-    header = "Convergence Accelerator Study"
+    header = "Pedagogical evaluation of different study strategies"
     content_items = Markup("""<p>In this study, you first receive training on a particular type of study strategy.<br><br> After this you will read from an introductory-level textbook for 15 minutes. <br><br>
                     After reading the text, you will perform some additional study, followed by a brief break.<br><br> Finally, you will be given a brief quiz with questions taken from the material that you have studied. <br><br>
                     When you are ready to begin, press next.<br></p>
@@ -59,7 +59,7 @@ def display_encoding_instructions():
     form = InstructionForm(request.form)
     header = ""
     content_items = Markup("""<p>You have finished the reading <br><br>
-                    Now you will go through some additional learning practice on the material that you studied.<br><br>
+                    Now you will go through practice of the study strategy you initially learned.<br><br>
                     When you are ready to begin, press next.<br></p>
                     """)
 

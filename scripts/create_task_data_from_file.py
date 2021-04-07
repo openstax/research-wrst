@@ -9,10 +9,9 @@ import os
 sentences_file = "../textbook_data/bio_42/bio_42_quiz_tasks.csv"
 num_repititions = 2
 
-print(os.listdir(".."))
-
 # Read the data
 df = pd.read_csv(sentences_file)
+df = df.sample(n=df.shape[0], random_state=42)
 
 # Purge the current db
 app = create_app()
