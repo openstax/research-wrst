@@ -22,6 +22,16 @@ class QualtricsTask(TaskBlock):
         url = self.task_starting_route
         url += "?PROLIFIC_PID="
         url += session['user_id']
+        if 'session_id' in session:
+            url += "&"
+            url += "SESSION_ID="
+            url += session['session_id']
+        if 'study_id' in session:
+            url += "&"
+            url += "STUDY_ID="
+            url += session['study_id']
+        print("Qualtrics URL")
+        print(url)
         return url
 
 class ProlificReroute(TaskBlock):

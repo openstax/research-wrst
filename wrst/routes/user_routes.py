@@ -26,6 +26,8 @@ def login_prolific():
 
     experiment = ProlificExperiment()
     user_id = request.args["PROLIFIC_PID"]
+    session_id = request.args["SESSION_ID"]
+    study_id = request.args["STUDY_ID"]
     study_name = 'prolific'
     prolific_cohorts = db.session.query(User.study_cohort).filter(User.study_name=='prolific')
     N_a = len([c for c in prolific_cohorts if c=='a'])
@@ -73,6 +75,8 @@ def login_prolific():
             db.session.commit()
 
             session['user_id'] = user_id
+            session['session_id'] = session_id
+            session['study_id'] = study_id
             return redirect(url_for('instruction_routes.generic_reroute'))
         else:
             return redirect(url_for('instruction_routes.consent_not_provided'))
