@@ -54,7 +54,8 @@ distractor_task2 = DistractorTask(task_name='2048_2',
                                  task_time=10)
 
 qualtrics_task = QualtricsTask(task_name='bio_4_2_quiz_a',
-                               task_starting_route='https://riceuniversity.co1.qualtrics.com/jfe/form/SV_3Dhy4ALx66ao33w')
+                               task_starting_route='https://riceuniversity.co1.qualtrics.com/jfe/form/SV_elLIUNC2vYy9tae')
+#old_bio_42_link = 'https://riceuniversity.co1.qualtrics.com/jfe/form/SV_3Dhy4ALx66ao33w'
 
 end_task = TaskBlock(task_name='final',
                      task_starting_route='instruction_routes.prolific_final')
