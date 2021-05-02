@@ -7,7 +7,7 @@
 # redirect_link is the redirect_link supplied by Prolific for your experiment
 # All of the times are in seconds so handle accordingly
 
-from wrst.logic.task_block import TaskBlock, ReadingTask, QualtricsTask, TaskQueue, WRSTTask, DistractorTask
+from wrst.logic.task_block import TaskBlock, ReadingTask, ReReadingTask, QualtricsTask, TaskQueue, WRSTTask, DistractorTask
 
 instruction_task = TaskBlock(task_name='instruction',
                              task_starting_route='instruction_routes.display_task_instructions')
@@ -29,14 +29,25 @@ instruction_quiz = TaskBlock(task_name='instruction_quiz',
 reading_task = ReadingTask(task_name='reading',
                            task_starting_route='reading_routes.display_reading_instructions',
                            reading_link="https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
-                           reading_time=15*60
+                           reading_time=10#15*60
                            )
+
+rereading_task = ReReadingTask(task_name='rereading',
+                           task_starting_route='reading_routes.display_rereading_instructions',
+                           reading_link="https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
+                           reading_time=10#15*60
+                           )
+
+
 training_task_bio = TaskBlock(task_name='training',
                           task_starting_route='training_routes.training_1_pedagogical_eval')
 
 
 training_task_psych = TaskBlock(task_name='training',
                                 task_starting_route='training_routes_psych.training_1_psych')
+
+training_task_reading = TaskBlock(task_name='reading_training',
+                                task_starting_route='reading_training_routes.reading_training_1')
 
 
 wrst_task = WRSTTask(task_name='wrst',
@@ -46,7 +57,7 @@ wrst_task = WRSTTask(task_name='wrst',
 
 distractor_task1 = DistractorTask(task_name='2048',
                                  task_starting_route='distractor_routes.distractor_task',
-                                 task_time=10*60
+                                 task_time=10#10*60
                                 )
 
 distractor_task2 = DistractorTask(task_name='2048_2',
@@ -54,17 +65,16 @@ distractor_task2 = DistractorTask(task_name='2048_2',
                                  task_time=10)
 
 qualtrics_task = QualtricsTask(task_name='bio_4_2_quiz_a',
-                               task_starting_route='https://riceuniversity.co1.qualtrics.com/jfe/form/SV_elLIUNC2vYy9tae')
-#old_bio_42_link = 'https://riceuniversity.co1.qualtrics.com/jfe/form/SV_3Dhy4ALx66ao33w'
-
+                               task_starting_route='https://riceuniversity.co1.qualtrics.com/jfe/form/SV_3Dhy4ALx66ao33w')
+#bio_42_first_link = 'https://riceuniversity.co1.qualtrics.com/jfe/form/SV_3Dhy4ALx66ao33w'
+#bio_42_second_link = 'https://riceuniversity.co1.qualtrics.com/jfe/form/SV_elLIUNC2vYy9tae'
 end_task = TaskBlock(task_name='final',
                      task_starting_route='instruction_routes.prolific_final')
 
 task_queue = TaskQueue(task_block_list=[instruction_task_peda,
-                                        training_task_bio,
+                                        training_task_reading,
                                         reading_task,
-                                        instruction_task_encoding,
-                                        wrst_task,
+                                        rereading_task,
                                         instruction_task_distractor,
                                         distractor_task1,
                                         instruction_quiz,

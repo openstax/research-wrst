@@ -56,6 +56,18 @@ class ReadingTask(TaskBlock):
         session['reading_link'] = self.reading_link
         return url_for(self.task_starting_route)
 
+class ReReadingTask(TaskBlock):
+    def __init__(self, task_name, task_starting_route, reading_link, reading_time=600, variable_dictionary=None):
+        super().__init__(task_name, task_starting_route, variable_dictionary)
+        self.reading_time = reading_time
+        self.reading_link = reading_link
+
+    def get_starting_route(self):
+        session['required_rereading_time'] = self.reading_time
+        session['reading_link'] = self.reading_link
+        return url_for(self.task_starting_route)
+
+
 class WRSTTask(TaskBlock):
     def __init__(self, task_name, task_starting_route, task_time, variable_dictionary=None):
         super().__init__(task_name, task_starting_route, variable_dictionary)

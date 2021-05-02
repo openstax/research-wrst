@@ -1,0 +1,43 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <h3> {{ instruction_header }}</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <h4> {{ content_items }} </h4>
+            </div>
+            <div class="col-4">
+            {% for image in images %}
+            <figure>
+                <img src="static/images/{{ image[0]}}" style="height:150px;">
+                <figcaption>{{ image[1]}}</figcaption>
+            </figure>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <br>
+    <br>
+    {% if obscure_form is not defined %}
+    <div class="container">
+        {{ wtf.quick_form(form) }}
+    </div>
+    {%  endif %}
+{% endblock %}

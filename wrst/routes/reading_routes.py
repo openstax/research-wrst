@@ -51,3 +51,46 @@ def display_reading_instructions():
             return redirect(url_for('reading_routes.display_reading_instructions')
                             )
         # Else, flash a message and re-render the page
+
+@reading_routes.route('/display_rereading_instructions', methods=['GET', 'POST'])
+@login_required
+def display_rereading_instructions():
+
+    total_reading_time = session['required_rereading_time']
+
+    # Load the form
+    form = ReadingForm(request.form)
+    reading_link = session["reading_link"]
+    header = "Re-reading Content"
+    content_items = Markup(
+        """<p>During this portion of the study, you will simply re-read the content that you previously studied<br><br>
+        Please spend at least 15 minutes re-reading the text to the best of your ability. As before, we have provided a timer on this page to help you keep track. <br><br>
+        When the timer expires, you can click on the 'Next' button to move to the next step of the activity.<br></p>
+        """
+    )
+    content = Markup(header)
+
+    if not form.validate_on_submit():
+
+        if not session.get('rereading_start_time'):
+            session['rereading_start_time'] = time.time()
+
+        current_time_reading = time.time() - session['rereading_start_time']
+
+        return render_template('reading_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items,
+                               reading_link=reading_link,
+                               num=total_reading_time-current_time_reading)
+    if request.method == 'POST':
+
+        # Verify that the user has spent the required reading time
+        # If so, they can pass on
+        current_time_reading = time.time() - session['rereading_start_time']
+        if (current_time_reading>=total_reading_time):
+            return redirect(url_for('instruction_routes.generic_reroute'))
+        else:
+            flash("You need to spend at least ten minutes reading before moving on to the next activity!")
+            return redirect(url_for('reading_routes.display_reading_instructions')
+                            )
