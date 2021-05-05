@@ -269,7 +269,7 @@ def reading_training_after_reading():
 def reading_training_maximizing_retention():
 
     form = InstructionForm(request.form)
-    header = "Maximizing Your Retention for Exams"
+    header = "Maximizing Your Retention"
     content_items = Markup(
         """<p>
         Overall, reading to maximize your retention should involve some effort. By paying attention to not 
