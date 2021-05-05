@@ -19,14 +19,37 @@ def reading_training_1():
         """<p>
         Before you begin reading, think about your <b>goals</b>. What are you trying to achieve by reading a certain text? 
         For example, are you trying to understand a topic in depth, memorize concepts for an exam, or get a general 
-        idea of a subject you’re interested in? Knowing your goals will help you focus your attention and effort.<br><br>
+        idea of a subject you’re interested in? Knowing your goals will help you focus your attention and effort.
+        </p>
+        """
+    )
+    content = Markup(header)
 
-        Next, consider how using reading strategies can be personally <b>useful</b> to you. Many students do not automatically 
-        apply reading strategies, but certain strategies can be very useful. This particular study will only involve 
-        one text, but you can apply reading strategies to anything else you read in your life, which will help you 
-        learn faster and retain your knowledge longer. You will be more likely to retain these reading strategies if 
-        you believe they are useful. 
+    if not form.validate_on_submit():
 
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+
+        return redirect(url_for('reading_training_routes.reading_training_2')
+                        )
+
+@reading_training_routes.route('/reading_training_2', methods=['GET', 'POST'])
+@login_required
+def reading_training_2():
+
+    form = InstructionForm(request.form)
+    header = "Reading Strategies Training"
+    content_items = Markup(
+        """<p>
+        Next, consider how using reading strategies can be personally <b>useful</b> to you. Many students do not automatically
+        apply reading strategies, but certain strategies can be very useful. This particular study will only involve
+        one text, but you can apply reading strategies to anything else you read in your life, which will help you
+        learn faster and retain your knowledge longer. You will be more likely to retain these reading strategies if
+        you believe they are useful.
         </p>
         """
     )
@@ -43,6 +66,7 @@ def reading_training_1():
 
         return redirect(url_for('reading_training_routes.reading_training_before_you_start')
                         )
+
 
 @reading_training_routes.route('/reading_training_before_you_start', methods=['GET', 'POST'])
 @login_required
@@ -118,7 +142,7 @@ def reading_training_evaluate():
     header = "While Reading"
     content_items = Markup(
         """<p>
-        You should also evaluate the text as you read it. Who wrote the content? Why did they write it, and are there 
+        You should also <b>evaluate</b> the text as you read it. Who wrote the content? Why did they write it, and are there 
         multiple purposes the text could serve? What kind of audience did the author intend to read it? What purpose 
         does reading it serve you? Answering these questions will help you process and retain the information that you 
         read.
@@ -151,9 +175,8 @@ def reading_training_keyword_strategy():
     header = "While Reading"
     content_items = Markup(
         """<p>
-        The <b>keyword</b> strategy involves mentally assigning a “keyword” to each paragraph or section of text after you 
-        read the section, generally using a keyword the text actually contains. Create a mental image of this keyword 
-        once you have selected it, and then expand your mental image with other information in that text section.
+        Use the <b>keyword</b> strategy to mentally assign a "keyword" to each paragraph or section of text after 
+        you read the section. Try to use a keyword the text actually contains. 
         </p>
         """
     )
@@ -172,9 +195,10 @@ def reading_training_keyword_strategy():
     if request.method == 'POST':
         # There is only one submit button so no need to check beyond "POST"
 
-        return redirect(url_for('reading_training_routes.reading_training_mental_imagery')
+        return redirect(url_for('reading_training_routes.reading_training_after_reading')
                         )
 
+# This route is currently deprecated but leaving in here for now in case we bring it back . . . .
 @reading_training_routes.route('/reading_training_mental_imagery', methods=['GET', 'POST'])
 @login_required
 def reading_training_mental_imagery():
@@ -216,7 +240,7 @@ def reading_training_after_reading():
     header = "After Reading"
     content_items = Markup(
         """<p>
-        In some cases, re-reading is a useful strategy. You do not need to <b>re-read</b> the entire text. Re-reading 
+        In some cases, <b>re-reading</b> is a useful strategy. You do not need to <b>re-read</b> the entire text. Re-reading 
         is most effective when you focus on the sections you struggled with the most. Go slowly and pause if you need 
         to as you re-read difficult passages.
         </p>
@@ -248,10 +272,11 @@ def reading_training_maximizing_retention():
     header = "Maximizing Your Retention for Exams"
     content_items = Markup(
         """<p>
-        Overall, reading to maximize your retention should involve some cognitive effort. By paying attention to not 
-        only <i>what</i> you are reading but <i>how</i> you are reading, and coming up with strategies like mental images, you will 
-        be building a deeper understanding of the topic. The deeper you understand something, the better you will 
-        retain that information long-term, and the better prepared you will be to be tested on it later.
+        Overall, reading to maximize your retention should involve some effort. By paying attention to not 
+        only <i>what</i> you are reading but <i>how</i> you are reading, and coming up with strategies like 
+        assigning keywords to paragraphs, you will be building a deeper understanding of the topic. The deeper you 
+        understand something, the better you will retain that information long-term, and the better prepared you 
+        will be to be tested on it later.
         </p>
         """
     )
