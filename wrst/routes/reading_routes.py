@@ -47,7 +47,7 @@ def display_reading_instructions():
         if (current_time_reading>=total_reading_time):
             return redirect(url_for('instruction_routes.generic_reroute'))
         else:
-            flash("You need to spend at least ten minutes reading before moving on to the next activity!")
+            flash("You need to spend at least fifteen minutes reading before moving on to the next activity!")
             return redirect(url_for('reading_routes.display_reading_instructions')
                             )
         # Else, flash a message and re-render the page
