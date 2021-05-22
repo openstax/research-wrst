@@ -34,6 +34,13 @@ reading_task = ReadingTask(task_name='reading',
                            reading_time=15 # 15*60
                            )
 
+reading_task_psych = ReadingTask(task_name='reading',
+                           task_starting_route='reading_routes.display_reading_instructions',
+                           reading_link="https://openstax.org/books/psychology-2e/pages/14-1-what-is-stress",
+                           reading_time=15 # 15*60
+                           )
+
+
 rereading_task = ReReadingTask(task_name='rereading',
                            task_starting_route='reading_routes.display_rereading_instructions',
                            reading_link="https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
@@ -77,6 +84,15 @@ qualtrics_task = QualtricsTask(task_name='bio_4_2_quiz_a',
 #bio_42_first_link = 'https://riceuniversity.co1.qualtrics.com/jfe/form/SV_3Dhy4ALx66ao33w'
 #bio_42_second_link = 'https://riceuniversity.co1.qualtrics.com/jfe/form/SV_elLIUNC2vYy9tae'
 #bio_42_reading_first_link = 'https://riceuniversity.co1.qualtrics.com/jfe/form/SV_eX4nqMQaCGEWQ9o'
+
+
+psych_quiz_a = QualtricsTask(task_name='psych_14_1_quiz_a',
+                             task_starting_route='https://riceuniversity.co1.qualtrics.com/jfe/form/SV_3kMU29Dny5g0OR8')
+
+psych_quiz_b = QualtricsTask(task_name='psych_14_1_quiz_b',
+                             task_starting_route='https://riceuniversity.co1.qualtrics.com/jfe/form/SV_bfttpWdaxuwJOtw')
+
+
 end_task = TaskBlock(task_name='final',
                      task_starting_route='instruction_routes.prolific_final')
 
@@ -93,6 +109,17 @@ task_queue = TaskQueue(task_block_list=[instruction_task_peda,
                                         end_task]
                        )
 
+task_queue_psych = TaskQueue(task_block_list=[instruction_task_peda,
+                                        #training_task_reading,
+                                        training_task_psych,
+                                        reading_task_psych,
+                                        wrst_task,
+                                        instruction_task_distractor,
+                                        distractor_task1,
+                                        instruction_quiz,
+                                        psych_quiz_a,
+                                        end_task]
+                       )
 
 
 
