@@ -119,6 +119,28 @@ def display_quiz_instructions():
         # return redirect(url_for('reading_routes.display_reading_instructions'))
 
 
+@instruction_routes.route('/display_retrieval_instructions', methods=['GET', 'POST'])
+@login_required
+def display_retrieval_instructions():
+    # Load the form
+    form = InstructionForm(request.form)
+    header = ""
+    content_items = Markup("""<p>
+                    You will now practice the retrieval strategies that you studied earlier.<br><br>
+                    When you are ready to begin, press next.<br></p>
+                    """)
+
+    if not form.validate_on_submit():
+
+        return render_template('instruction_pages.html',
+                               form=form,
+                               instruction_header=header,
+                               content_items=content_items)
+    if request.method == 'POST':
+        # There is only one submit button so no need to check beyond "POST"
+        return redirect(url_for('instruction_routes.generic_reroute'))
+        # return redirect(url_for('reading_routes.display_reading_instructions'))
+
 
 @instruction_routes.route('/consent_not_provided', methods=['GET', 'POST'])
 def consent_not_provided():

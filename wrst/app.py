@@ -10,6 +10,7 @@ from wrst.routes.instruction_routes import instruction_routes
 from wrst.routes.reading_routes import reading_routes
 from wrst.routes.training_routes import training_routes
 from wrst.routes.reading_training_routes import reading_training_routes
+from wrst.routes.nonrelational_retrieval_training import retrieval_training_routes
 from wrst.routes.training_routes_psych import training_routes_psych
 from wrst.routes.user_routes import user_routes
 from wrst.routes.admin_routes import admin_routes
@@ -35,6 +36,7 @@ def initialize_app(flask_app):
     flask_app.register_blueprint(admin_routes)
     flask_app.register_blueprint(distractor_routes)
     flask_app.register_blueprint(reading_training_routes)
+    flask_app.register_blueprint(retrieval_training_routes)
     db.init_app(flask_app)
     db.create_all(app=flask_app)
 
