@@ -31,7 +31,7 @@ instruction_retrieval = TaskBlock(task_name='instruction_retrieval',
 reading_task = ReadingTask(task_name='reading',
                            task_starting_route='reading_routes.display_reading_instructions',
                            reading_link="https://openstax.org/books/biology-2e/pages/4-2-prokaryotic-cells",
-                           reading_time=15 # 15*60
+                           reading_time=15*60
                            )
 
 reading_task_psych = ReadingTask(task_name='reading',
@@ -68,7 +68,7 @@ wrst_task = WRSTTask(task_name='wrst',
 
 distractor_task1 = DistractorTask(task_name='2048',
                                  task_starting_route='distractor_routes.distractor_task',
-                                 task_time=10 #10*60
+                                 task_time=10*60
                                 )
 
 distractor_task2 = DistractorTask(task_name='2048_2',
