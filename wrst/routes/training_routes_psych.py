@@ -869,11 +869,13 @@ def training_text_submission_4_psych():
     if request.method == 'POST':
         # Make sure they hit the right button
             if form.submit.data:  # 'Define' is submit4 on entity-event
-                return redirect(url_for('training_routes_psych.training_19_psych'))
+                return redirect(url_for('instruction_routes.generic_reroute'))
             else:
                 return redirect(url_for('training_routes_psych.training_text_submission_4_psych',
                                         flash_message="Type some text and click on the 'Submit' button to move on"))
 
+
+# This is used when moving them into relationship selection
 @training_routes_psych.route('/training_19_psych', methods=['GET', 'POST'])
 @login_required
 def training_19_psych():

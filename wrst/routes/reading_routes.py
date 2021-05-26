@@ -17,7 +17,7 @@ def display_reading_instructions():
     # Load the form
     form = ReadingForm(request.form)
     reading_link = session["reading_link"]
-    header = "You are now going to read a brief section from an introductory Biology textbook"
+    header = "You are now going to read a brief section from an introductory Psychology textbook"
     content_items = Markup(
         """<p>During this portion of the study, please read the text that is linked at the bottom of this page. Don't worry about memorizing all of the information.<br><br>
         Please spend at least 15 minutes reading the text to the best of your ability. We have provided a timer on this page to help you keep track. <br><br>

@@ -37,7 +37,7 @@ reading_task = ReadingTask(task_name='reading',
 reading_task_psych = ReadingTask(task_name='reading',
                            task_starting_route='reading_routes.display_reading_instructions',
                            reading_link="https://openstax.org/books/psychology-2e/pages/14-1-what-is-stress",
-                           reading_time=15*60
+                           reading_time=10#15*60
                            )
 
 
@@ -55,6 +55,10 @@ training_task_bio = TaskBlock(task_name='training',
 training_task_psych = TaskBlock(task_name='training',
                                 task_starting_route='training_routes_psych.training_1_psych')
 
+training_task_psych_part2 = TaskBlock(task_name='training2',
+                                task_starting_route='training_routes_psych.training_19_psych')
+
+
 training_task_reading = TaskBlock(task_name='reading_training',
                                 task_starting_route='reading_training_routes.reading_training_1')
 
@@ -63,13 +67,13 @@ training_task_retrieval = TaskBlock(task_name='retrieval_training',
 
 wrst_task = WRSTTask(task_name='wrst',
                      task_starting_route='wrst_routes.get_new_task',
-                     task_time=15*60
+                     task_time=10#15*60
                      )
 
 
 distractor_task1 = DistractorTask(task_name='2048',
                                  task_starting_route='distractor_routes.distractor_task',
-                                 task_time=10*60
+                                 task_time=10#10*60
                                 )
 
 distractor_task2 = DistractorTask(task_name='2048_2',
@@ -115,6 +119,7 @@ task_queue = TaskQueue(task_block_list=[instruction_task_peda,
                                         #training_task_reading,
                                         training_task_psych,
                                         reading_task_psych,
+                                        training_task_psych_part2,
                                         wrst_task,
                                         instruction_task_distractor,
                                         distractor_task1,
