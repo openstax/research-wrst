@@ -6,13 +6,14 @@ from wrst.database import db
 from wrst.database.models import Tasks
 import os
 
-sentences_file = "../textbook_data/bio_42/bio_42_quiz_tasks.csv"
+#sentences_file = "../textbook_data/bio_42/bio_42_quiz_tasks.csv"
+sentences_file = "../textbook_data/psych_14_1/psych_14_1_quiz_tasks.csv"
 num_repititions = 2
 
 # Read the data
 df = pd.read_csv(sentences_file)
 df = df.sample(n=df.shape[0], random_state=42)
-print(df[['sentence', 'family_mode']])
+#print(df[['sentence', 'family_mode']])
 
 # Purge the current db
 app = create_app()

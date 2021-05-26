@@ -63,12 +63,12 @@ training_task_retrieval = TaskBlock(task_name='retrieval_training',
 
 wrst_task = WRSTTask(task_name='wrst',
                      task_starting_route='wrst_routes.get_new_task',
-                     task_time=15*60)
+                     task_time=15)#15*60)
 
 
 distractor_task1 = DistractorTask(task_name='2048',
                                  task_starting_route='distractor_routes.distractor_task',
-                                 task_time=10*60
+                                 task_time=10#10*60
                                 )
 
 distractor_task2 = DistractorTask(task_name='2048_2',
@@ -96,20 +96,21 @@ psych_quiz_b = QualtricsTask(task_name='psych_14_1_quiz_b',
 end_task = TaskBlock(task_name='final',
                      task_starting_route='instruction_routes.prolific_final')
 
-task_queue = TaskQueue(task_block_list=[instruction_task_peda,
-                                        #training_task_reading,
-                                        training_task_retrieval,
-                                        reading_task,
-                                        instruction_retrieval,
-                                        qualtrics_retrieval_task,
-                                        instruction_task_distractor,
-                                        distractor_task1,
-                                        instruction_quiz,
-                                        qualtrics_task,
-                                        end_task]
-                       )
+#task_queue_bio = TaskQueue(task_block_list=[instruction_task_peda,
+#                                        #training_task_reading,
+#                                        training_task_retrieval,
+#                                        reading_task,
+#                                        instruction_retrieval,
+#                                        qualtrics_retrieval_task,
+#                                        instruction_task_distractor,
+#                                        distractor_task1,
+#                                        instruction_quiz,
+#                                        qualtrics_task,
+#                                        end_task]
+#                       )
 
-task_queue_psych = TaskQueue(task_block_list=[instruction_task_peda,
+# Psych queue
+task_queue = TaskQueue(task_block_list=[instruction_task_peda,
                                         #training_task_reading,
                                         training_task_psych,
                                         reading_task_psych,

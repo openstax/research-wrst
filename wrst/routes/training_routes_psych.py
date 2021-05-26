@@ -889,7 +889,7 @@ def training_19_psych():
     content_items = Markup(
         """
         <p>You will now be moved on to create your own relationships on new content. <br><br>
-        You will spend 30 minutes on these tasks.  There is a timer in the upper right hand corner to show you how
+        You will spend 15 minutes on these tasks.  There is a timer in the upper right hand corner to show you how
         long you have spent thus far. <br><br>
         Remember that you can always hover your mouse over the relationship choices to get a reminder on what they mean. <br><br>
         Finally, you can always chose the 'I don't know' button to get a new example if you get stuck on one example.<br>
