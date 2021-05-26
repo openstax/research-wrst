@@ -45,7 +45,7 @@ all_forms = [
 def get_text_dynamic():
 
     # Check to see if the user has finished all available tasks . . . if so route to completion screen
-    num_tasks_available = db.session.query(func.max(Tasks.task_id)).first()[0]
+    num_tasks_available = db.session.query(func.max(Tasks.task_id)).first()[0] + 1
     num_tasks_completed = db.session.query(Relationship).filter(Relationship.user==session["user_id"]).count()
     if num_tasks_completed >= num_tasks_available:
         print("User has finished everything")
