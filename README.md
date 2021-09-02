@@ -142,3 +142,5 @@ git push heroku dbm-terms-tmp:master #Merge your branch into master
 
 * **Drew Waters**
 * **Debshila Basu Mallick** 
+* Vinay Chaudhri
+* Abhay Agarwal
